@@ -4,6 +4,8 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user_info">
+    <%= current_user.email %>
+    <%= current_user.first_name %>
 
     <h1><%= @user.first_name %> <%= @user.last_name %></h1><br>
 

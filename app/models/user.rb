@@ -1,8 +1,16 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+    has_many :adventures, dependent: :destroy
+    
+    accepts_nested_attributes_for :adventures,
+                                  reject_if: proc { |attributes| attributes['title'].blank? },
+                                  allow_destroy: true
+                                      
+    devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+    
+    
     
 #
 #    has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
