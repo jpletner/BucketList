@@ -11,15 +11,26 @@ class UsersController < ApplicationController
    end
 
   def show
-      @user = current_user
-      render 'show.html.erb'
+    @user = current_user
+    render 'show.html.erb'
   end
 
+  def add_adventure
+    @user = User.find(params[:id])
+    newAdventure = Adventure.new(params[:adventure])
+    if newAdventure.valid?
+      newAdventure.title.downcase! # ! alters the original
+      newAdventure.save
+      @user.adventures << newAdventure
+      @user.save
+    end
+    render 'show.html.erb'
+  end
     
 private
   
   def set_recipe
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
 

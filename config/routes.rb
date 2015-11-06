@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
     devise_for :users, :controllers => { registrations: 'registrations' }
 
-    match 'users/show' , {:via => :get, :to => 'users#show'}
-    
+    match('users/show' , {:via => :get, :to => 'users#show'})
+    match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
 
 #  Rails.application.routes.draw do
 #      devise_for :users, controllers: {

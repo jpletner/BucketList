@@ -4,10 +4,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
   
-  def configure_devise_params
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation) }
-    devise_parameter_sanitizer.for(:account_update){ |u| u.permit(:first_name, :email, :password, :password_confirmation) }
-  end
     
   def update
      self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
@@ -26,8 +22,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
   def configure_permitted_parameters
      devise_parameter_sanitizer.for(:sign_in){ |u| u.permit(:email, :password) }
-     devise_parameter_sanitizer.for(:sign_up){ |u| u.permit(:first_name, :email, :password, :password_confirmation)}
-     devise_parameter_sanitizer.for(:account_update){ |u| u.permit(:first_name, :email, :password, :password_confirmation) }
+     devise_parameter_sanitizer.for(:sign_up){ |u| u.permit(:first_name, :last_name, :city, :state, :email, :password, :password_confirmation)}
+      devise_parameter_sanitizer.for(:account_update){ |u| u.permit(:first_name, :last_name, :city, :state, :about, :email, :password, :password_confirmation) }
    end
   # GET /resource/sign_up
   # def new

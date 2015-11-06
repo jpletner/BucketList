@@ -4,10 +4,8 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user_info">
-    <%= current_user.email %>
-    <%= current_user.first_name %>
 
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1><br>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3><br>
 
     <p><%= @user.city %>, <%= @user.state %></p><br>
     
@@ -16,6 +14,45 @@
     <p><%= @user.about %></p>
 
 </div>
+
+<div>
+<h3>My Adventures:</h3>
+<% if @user.adventures.any? %>
+  <p>
+      <% @user.adventures.each do |adventure| %>
+      Title: <%= adventure.title %> |
+      Description: <%= adventure.description %> |
+      Due: <%= adventure.duedate %> |
+      Priority: <%= adventure.priority %> |
+      Done?: <%= adventure.completed %> <br>
+    <% end %>
+  </p>
+<% else %>
+  <p>no adventures added</p>
+<% end %>
+
+  <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" accept-charset="UTF-8" method="post">
+    <div class="field">
+      <h3>Add New Adventure</h3>
+      <label for="adventure_title">Adventure Name</label><br> 
+      <input type="text" name="adventure[title]" id="adventure_title" /><br>
+        
+      <label for="adventure_description">Description</label><br>
+      <input type="text" rows="4" cols="50" name="adventure[description]" id="adventure_description" /><br>
+        
+      <label for="adventure_duedate">Due Date</label><br>
+      <input type="date" name="adventure[duedate]" id="adventure_duedate" /><br>
+        
+      <label for="adventure_priority">Priority</label><br>
+      <input type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority" /><br>
+        
+      <label for="adventure_completed">Done?</label><br>
+      <input type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done" /><br>
+    </div>
+    <div class="actions">
+      <input type="submit" name="commit" value="Add" />
+    </div>
+  </form> 
     
 
 
