@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Adventure:</strong>
+  <%= @adventure.title %>
+</h1>
+
+<h2>
+  <strong>Description:</strong>
+  <%= @adventure.description %>
+</h2>
+
+<p>
+  <strong>How motivated are you?  Get it done by:</strong>
+  <%= @adventure.duedate %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @adventure.creator %>
+</p>
+
+<p>
+  <strong>How this ranks on your list of adventures:</strong>
+  <%= @adventure.priority %>
+</p>
+
+<p>
+  <strong>I did it!</strong>
+  <%= @adventure.completed %>
+</p>
+
+<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+<%= link_to 'Back', adventures_path %>
