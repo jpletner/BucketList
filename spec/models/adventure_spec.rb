@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe Adventure, type: :model do
   it "should have a title (bucket list item)" do
@@ -40,3 +40,4 @@ RSpec.describe Adventure, type: :model do
   end
 
 end
+
