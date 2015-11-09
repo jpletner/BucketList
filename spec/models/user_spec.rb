@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 describe User, type: :model do
  it "should accept a first name, last name, email, city, state, password, and password confirmation" do
