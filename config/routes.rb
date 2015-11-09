@@ -3,14 +3,15 @@ Rails.application.routes.draw do
 
     match('users/show' , {:via => :get, :to => 'users#show'})
     match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
+    match('/adventures/search_adventures' , {:via => :get, :to => 'adventures#search_adventures'})
 
 #  Rails.application.routes.draw do
 #      devise_for :users, controllers: {
 #        sessions: 'users/sessions'
 #      }
-#  end    
-  
-  
+#  end
+
+
   resources :adventures
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

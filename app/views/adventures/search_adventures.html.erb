@@ -1,0 +1,22 @@
+<!--Search Adventure -->
+<p id="notice"><%= notice %></p>
+
+<h3>Seach adventures by name</h3>
+<form action='/adventures/search_adventures' method='get'>
+  <label for="adventure_title">Adventure Name</label><br>
+  <input type="text" name="adventure_title" id="adventure_title" /><br>
+  <div class="actions">
+    <input type="submit" value="Search"/>
+  </div>
+</form>
+
+<% if !@adventures.nil? %>
+  <% if !@adventures.empty? %>
+    <h3>Adventures found:</h3>
+    <% @adventures.each do |adventures| %>
+      <%= link_to adventures.title, adventures %><br>
+    <% end %>
+  <% else %>
+    <h3>No Adventures Found</h3>
+  <% end %>
+<% end %>

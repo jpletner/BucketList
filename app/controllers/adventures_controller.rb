@@ -61,10 +61,15 @@ class AdventuresController < ApplicationController
     end
   end
 
-  def profile_home  
+  def profile_home
   end
 
-        
+  def search_adventures
+   if !params[:adventure_title].nil?
+     search_string = params[:adventure_title]
+     @adventures = Adventure.basic_search(title: search_string)
+   end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
