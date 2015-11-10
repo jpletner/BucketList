@@ -71,6 +71,18 @@ class AdventuresController < ApplicationController
    end
   end
 
+  def add_comment
+    @adventure = Adventure.find(params[:id])
+    comment = params[:comment]
+    if !comment.nil?
+      @adventure.comments << comment
+      @adventure.save
+    end
+    render "show.html.erb"
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure
@@ -79,6 +91,6 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed)
+      params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments)
     end
 end

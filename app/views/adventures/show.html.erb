@@ -30,19 +30,30 @@
   <%= @adventure.completed %>
 </p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @adventure.completed %>
-</p>
+
 
 <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
 <%= link_to 'Back', adventures_path %>
 
+
+<form action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
+    <label for="adventure_comment">Add A Comment For This Adventure</label><br>
+    <input type="text" name="comment" id="adventure_comment" /><br>
+    <div class="actions">
+      <input type="submit" value="Add Comment"/>
+    </div>
+</form>
+
 <p>
-  <strong>Add Comment:</strong>
-  <%= @adventure.comment %>
-  <div class="field">
-    <%= f.label :comments %><br>
-    <%= f.text_area :comments %>
-  </div>
+  <strong>Comments:</strong><br>
+  <% if !@adventure.comments.empty? %>
+  <% @adventure.comments.each do | adventure | %>
+
+    <strong>User</strong><br>
+    <%= adventure %><br><br>
+    <% end %>
+    <% else %>
+      <strong>Be the first to comment on this adventure</strong>
+
+  <% end %>
 </p>
