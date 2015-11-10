@@ -18,9 +18,11 @@
 <div>
 <h3>My Adventures:</h3>
 <% if @user.adventures.any? %>
+    
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>Description</th>
       <th>Duedate</th>
@@ -33,6 +35,7 @@
   <tbody>
     <% @user.adventures.each do |adventure| %>
       <tr>
+        <td><%= image_tag(adventure.image.url(:med)) %></td>
         <td><%= adventure.title %></td>
         <td><%= adventure.description %></td>
         <td><%= adventure.duedate %></td>
@@ -52,9 +55,6 @@
 
 
   <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
-    
-  <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" accept-charset="UTF-8" method="post">
->>>>>>> enhanceProfileLook
     <div class="field">
       <h3>Add New Adventure</h3>
       <label for="adventure_title">Adventure Name</label><br> 
