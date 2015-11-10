@@ -29,13 +29,13 @@ class UsersController < ApplicationController
     
 private
   
-  def set_recipe
+  def set_user
     @user = User.find(params[:id])
   end
 
 
  def user_params
-     params.require(:user).permit(:first_name, :last_name, :city, :state, :about, adventures_attributes: [:id, :title, :description, :duedate, :creator, :priority, :completed, :_destroy])
+     params.require(:user).permit(:first_name, :last_name, :city, :state, :about, adventures_attributes: [:id, :title, :description, :duedate, :creator, :priority, :completed, :image, :_destroy])
  end    
     
     

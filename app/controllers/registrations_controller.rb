@@ -1,6 +1,17 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def after_update_path_for(resource)
+      users_show_path
+  end
+   
+  def after_sign_in_path_for(resource)
+      users_show_path
+  end
 
+  def after_sign_up_path_for(resource)
+      users_show_path
+  end
+    
 private
 
   def sign_up_params

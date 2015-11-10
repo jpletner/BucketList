@@ -18,20 +18,43 @@
 <div>
 <h3>My Adventures:</h3>
 <% if @user.adventures.any? %>
-  <p>
-      <% @user.adventures.each do |adventure| %>
-      Title: <%= adventure.title %> |
-      Description: <%= adventure.description %> |
-      Due: <%= adventure.duedate %> |
-      Priority: <%= adventure.priority %> |
-      Done?: <%= adventure.completed %> <br>
+    
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Duedate</th>
+      <th>Priority</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.adventures.each do |adventure| %>
+      <tr>
+        <td><%= image_tag(adventure.image.url(:med)) %></td>
+        <td><%= adventure.title %></td>
+        <td><%= adventure.description %></td>
+        <td><%= adventure.duedate %></td>
+        <td><%= adventure.priority %></td>
+        <td><%= adventure.completed %></td>
+        <td><%= link_to 'Show', adventure %></td>
+        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
+        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </p>
+  </tbody>
+</table>    
+    
 <% else %>
   <p>no adventures added</p>
 <% end %>
 
-  <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" accept-charset="UTF-8" method="post">
+
+  <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
     <div class="field">
       <h3>Add New Adventure</h3>
       <label for="adventure_title">Adventure Name</label><br> 
@@ -45,6 +68,9 @@
         
       <label for="adventure_priority">Priority</label><br>
       <input type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority" /><br>
+    
+      <label for="adventure_image">Add Image</label><br>
+      <input type="file" name="adventure[image]" id="adventure_image" /><br>
         
       <label for="adventure_completed">Done?</label><br>
       <input type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done" /><br>
