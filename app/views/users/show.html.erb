@@ -18,21 +18,43 @@
 <div>
 <h3>My Adventures:</h3>
 <% if @user.adventures.any? %>
-  <p>
-      <% @user.adventures.each do |adventure| %>
-      <%= image_tag(adventure.image.url(:med)) %>
-      Title: <%= adventure.title %> |
-      Description: <%= adventure.description %> |
-      Due: <%= adventure.duedate %> |
-      Priority: <%= adventure.priority %> |
-      Done?: <%= adventure.completed %> <br>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Duedate</th>
+      <th>Priority</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.adventures.each do |adventure| %>
+      <tr>
+        <td><%= adventure.title %></td>
+        <td><%= adventure.description %></td>
+        <td><%= adventure.duedate %></td>
+        <td><%= adventure.priority %></td>
+        <td><%= adventure.completed %></td>
+        <td><%= link_to 'Show', adventure %></td>
+        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
+        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </p>
+  </tbody>
+</table>    
+    
 <% else %>
   <p>no adventures added</p>
 <% end %>
 
+
   <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+    
+  <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" accept-charset="UTF-8" method="post">
+>>>>>>> enhanceProfileLook
     <div class="field">
       <h3>Add New Adventure</h3>
       <label for="adventure_title">Adventure Name</label><br> 
