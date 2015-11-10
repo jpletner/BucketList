@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151109221144) do
-=======
 ActiveRecord::Schema.define(version: 20151109222533) do
->>>>>>> addImageToAdventure
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,20 +23,14 @@ ActiveRecord::Schema.define(version: 20151109222533) do
     t.string   "creator"
     t.integer  "priority"
     t.boolean  "completed"
-<<<<<<< HEAD
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "user_id"
-    t.string   "comments",    default: [],              array: true
-=======
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "user_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
->>>>>>> addImageToAdventure
+    t.string   "comments",           default: [],              array: true
   end
 
   add_index "adventures", ["user_id"], name: "index_adventures_on_user_id", using: :btree
