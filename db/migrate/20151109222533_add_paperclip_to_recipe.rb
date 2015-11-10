@@ -1,5 +1,5 @@
 class AddPaperclipToRecipe < ActiveRecord::Migration
   def change
-      add_attachment :adventure, :image
+      add_attachment :adventures, :image
   end
 end
