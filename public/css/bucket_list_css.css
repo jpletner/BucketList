@@ -1,0 +1,129 @@
+/*Carousel*/
+.carousel .item {
+    max-height: 600px; /*slider height*/
+    width: 100%; /*slider width*/
+
+}
+.carousel .item img {
+    opacity: 0.4;
+    width: 100%; /*img width*/
+
+}
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+.carousel-indicators li {
+  background-color: transparent;
+  border: none;
+}
+.carousel-indicators .active {
+  background-color: transparent;
+}
+
+/* below is box for headline-text overlay on carousel*/
+
+#headline-text{
+  color:#353536;
+  left:0;
+  position:absolute;
+  text-align:center;
+  top:10%;
+  width:100%;
+  z-index:12;/* z-index of carousel is 10*/
+
+}
+
+/*sign in form*/
+
+#sign-in-main-page{
+  background-color: #353536;
+  border-radius: 20px;
+  top: 65%;
+  color: white;
+  left: 10%;
+  padding: 20px;
+  position: absolute;
+  /*text-align: center;*/
+  width: 80%;
+  z-index:12;
+
+}
+.form-button{
+  margin-left: 45px;
+
+}
+.email_input_landing {
+  margin left: 20px;
+}
+.password_input_landing {
+  margin-left: 30px;
+}
+
+/*Navigation Bar*/
+
+
+.mynavbar {
+  background-color: #353536;
+  border: none;
+  border-radius: 0px;
+
+}
+.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-nav>li>a{
+  color: white;
+}
+.navbar-brand {
+  padding-top: 7px;
+
+}
+/*Links*/
+#links{
+  margin-bottom: 80px;
+  padding-bottom: 15px;
+  padding-top: 8px;
+}
+.fa-circle{
+  color: #353536;
+}
+.my_link_description {
+    background-color: rgba(53, 53, 54, 0.6);
+    border: 6px solid #353536;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-right:10px;
+    margin-top: -50px;
+    padding: 25px;
+
+}
+.link-box {
+  color: #353536;
+  text-align: center;
+}
+
+/*begin footer*/
+#footer_logo{
+  padding-top: 30px;
+}
+.footer{
+  background-color: #353536;
+  color: white;
+  padding: 25px;
+  text-align:right;
+}
+
+.footerlist{
+  list-style-type: none;
+}
+
+.footer-info-headline{
+  line-height: 25px;
+  text-decoration: underline;
+}
+
+/*Responsive CSS for navbar http://www.bootply.com/nc7LvdaQMS*/
