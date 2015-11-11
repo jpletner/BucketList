@@ -1,6 +1,7 @@
 require_relative '../rails_helper'
 
 include Capybara::DSL
+
 describe "user profile page" do
   it "user should have a profile page that includes my info and interests" do
    visit "/users/sign_up"
@@ -23,6 +24,13 @@ describe "user profile page" do
    expect(page).to have_content "city"
    expect(page).to have_content "state"
   end
+
+it "should have social media buttons" do
+  visit "/users/show"
+  page.should have_selector(:link_or_button, 'Tweet')
+  page.should have_css('.fb-like')
+  page.should have_xpath('//img[contains(@src,"assets.pinterest.com/images/pidgets/pin_it_button.png")]')
+end
 
 it "user should be able to add adventures and view them" do
    visit "/users/sign_up"
