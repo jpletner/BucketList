@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     if newAdventure.valid?
       newAdventure.title.downcase! # ! alters the original
       newAdventure.save
+      newAdventure.creator = @user.first_name + ' ' + @user.last_name
       @user.adventures << newAdventure
       @user.save
     end

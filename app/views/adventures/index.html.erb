@@ -5,12 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
-      <th>Description</th>
-      <th>Duedate</th>
       <th>Creator</th>
-      <th>Priority</th>
-      <th>Completed</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +15,10 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-        <td data-toggle="modal" data-target="#myModal<%= adventure.id %>", remote: true><%= adventure.title %></td>
-        <td><%= adventure.description %></td>
-        <td><%= adventure.duedate %></td>
+        <td data-toggle="modal" data-target="#myModal<%= adventure.id %>"><%= image_tag(adventure.image.url(:med)) %></td>
+        <td data-toggle="modal" data-target="#myModal<%= adventure.id %>"><%= adventure.title %></td> 
         <td><%= adventure.creator %></td>
-        <td><%= adventure.priority %></td>
-        <td><%= adventure.completed %></td>
-        <td><%= link_to 'Show', adventure %></td>
-        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
-        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
 
     <!--Modal Action-->

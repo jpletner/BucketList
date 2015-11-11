@@ -24,6 +24,7 @@
     <tr>
       <th></th>
       <th>Title</th>
+      <th>Creator</th>
       <th>Description</th>
       <th>Duedate</th>
       <th>Priority</th>
@@ -37,6 +38,7 @@
       <tr>
         <td><%= image_tag(adventure.image.url(:med)) %></td>
         <td><%= adventure.title %></td>
+        <td><%= adventure.creator %></td>
         <td><%= adventure.description %></td>
         <td><%= adventure.duedate %></td>
         <td><%= adventure.priority %></td>
@@ -52,7 +54,7 @@
 <% else %>
   <p>no adventures added</p>
 <% end %>
-
+<div class="bucket"></div>
 
   <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
     <div class="field">
