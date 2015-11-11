@@ -81,6 +81,17 @@ class AdventuresController < ApplicationController
     render "show.html.erb"
   end
 
+  def add_tag
+    @adventure = Adventure.find(params[:id])
+    tag = params[:tag]
+    if !tag.nil?
+      @adventure.tags << tag
+      @adventure.save
+    end
+    render "show.html.erb"
+  end
+
+
 
 
   private
@@ -91,7 +102,7 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments, :image)
+      params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments, :image, :tags)
 
     end
 end

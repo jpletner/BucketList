@@ -31,7 +31,7 @@ RSpec.describe Adventure, type: :model do
     adventure.priority = 3
     expect(adventure.priority).to eq 3
   end
-  
+
   it "should be completed (maybe)" do
     adventure = Adventure.new
     adventure.completed = false
@@ -39,5 +39,22 @@ RSpec.describe Adventure, type: :model do
     expect(adventure.completed).to eq false
   end
 
-end
+  it "should have a comment" do
+    adventure = Adventure.new
+    comment1 = "party"
+    comment2 = "time"
+    adventure.comments << comment1
+    adventure.comments << comment2
+    expect(adventure.comments).to eq ["party", "time"]
+  end
 
+  it "should have a tag" do
+    adventure = Adventure.new
+    tag1 = "fun"
+    tag2 = "times"
+    adventure.tags << tag1
+    adventure.tags << tag2
+    expect(adventure.tags).to eq ["fun", "times"]
+  end
+
+end

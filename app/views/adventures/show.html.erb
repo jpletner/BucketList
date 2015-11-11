@@ -35,7 +35,7 @@
 <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
 <%= link_to 'Back', adventures_path %>
 
-
+<!-- Comments -->
 <form action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
     <label for="adventure_comment">Add A Comment For This Adventure</label><br>
     <input type="text" name="comment" id="adventure_comment" /><br>
@@ -56,4 +56,28 @@
       <strong>Be the first to comment on this adventure</strong>
 
   <% end %>
+
+<!-- Tags -->
+  <form action='/adventures/<%= @adventure.id %>/add_tag' method='post'>
+      <label for="adventure_tag">Add A Tag For This Adventure</label><br>
+      <input type="text" name="tag" id="adventure_tag" /><br>
+      <div class="actions">
+        <input type="submit" value="Add Tag"/>
+      </div>
+  </form>
+
+  <p>
+    <strong>Tags:</strong><br>
+    <% if !@adventure.tags.empty? %>
+      <% @adventure.tags.each do | adventure | %>
+
+        <strong>User</strong><br>
+        <%= adventure %><br><br>
+      <% end %>
+    <% else %>
+      <strong>Be the first to tag this adventure</strong>
+
+    <% end %>
+
+
 </p>
