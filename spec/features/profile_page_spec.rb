@@ -47,7 +47,7 @@ it "user should be able to add adventures and view them" do
    expect(page).to have_content "interests"
    fill_in 'Adventure Name', :with => "sky diving"
    fill_in 'Description', :with => "I love sky diving"
-   fill_in 'Due Date', :with => "12" "20" "2015"    
+   fill_in 'Due Date', :with => "12" "20" "2015"
    attach_file('adventure[image]', fixture_image_path)
    click_button "Add"
    expect(page).to have_content "sky diving"

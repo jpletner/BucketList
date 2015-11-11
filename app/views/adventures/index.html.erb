@@ -18,7 +18,7 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-        <td><%= adventure.title %></td>
+        <td data-toggle="modal" data-target="#myModal<%= adventure.id %>", remote: true><%= adventure.title %></td>
         <td><%= adventure.description %></td>
         <td><%= adventure.duedate %></td>
         <td><%= adventure.creator %></td>
@@ -28,7 +28,40 @@
         <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
         <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+
+    <!--Modal Action-->
+    <div class="modal fade" id="myModal<%= adventure.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title black-text" id="myModal<%= adventure.id %>"><%= adventure.title %></h4>
+          </div>
+          <div class="modal-body">
+
+            <p id="notice"><%= notice %></p>
+
+            <%= image_tag(adventure.image.url(:med)) %>
+
+            <p><strong>Title:</strong>
+              <%= adventure.title %></p>
+
+            <p><strong>Description:</strong>
+              <%= adventure.description %></p>
+
+            <p><strong>Creator:</strong>
+              <%= adventure.creator %></p>
+
+            <p><%= link_to 'View This Adventure', adventure %></p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        <% end %>
   </tbody>
 </table>
 
