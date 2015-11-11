@@ -63,6 +63,12 @@
   margin-left: 30px;
 }
 
+.sign-inlinks a {
+ color: white;
+ margin-left: 45px;
+ text-decoration: underline
+}
+
 /*Navigation Bar*/
 
 
