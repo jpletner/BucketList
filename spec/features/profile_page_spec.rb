@@ -59,7 +59,6 @@ it "user should be able to add adventures and view them" do
    attach_file('adventure[image]', fixture_image_path)
    click_button "Add"
    expect(page).to have_content "sky diving"
-   expect(page).to have_content "I love sky diving"
    expect(page).to have_xpath('//img[contains(@src,"ruby.jpg")]')
 end
      #page is currently routing to the index file on completion. we should re-route to the profile page.

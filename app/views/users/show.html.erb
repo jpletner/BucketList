@@ -5,83 +5,75 @@
 
 <div class="user_info">
 
-    <h3><%= @user.first_name %> <%= @user.last_name %></h3><br>
+    <h3 class="well"><%= @user.first_name %> <%= @user.last_name %></h3><br>
 
     <p><%= @user.city %>, <%= @user.state %></p><br>
     
-<h3>About Me</h3>    
+<h3 class="well">About Me</h3>    
 
     <p><%= @user.about %></p>
 
 </div>
 
-<div>
-<h3>My Adventures:</h3>
+
+<h3 class="well">My Bucket List:</h3>
 <% if @user.adventures.any? %>
-    
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Creator</th>
-      <th>Description</th>
-      <th>Duedate</th>
-      <th>Priority</th>
-      <th>Completed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.adventures.each do |adventure| %>
-      <tr>
-        <td><%= image_tag(adventure.image.url(:med)) %></td>
-        <td><%= adventure.title %></td>
-        <td><%= adventure.creator %></td>
-        <td><%= adventure.description %></td>
-        <td><%= adventure.duedate %></td>
-        <td><%= adventure.priority %></td>
-        <td><%= adventure.completed %></td>
-        <td><%= link_to 'Show', adventure %></td>
-        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
-        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @user.adventures.each do |adventure| %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="bucket col-md-3 col-sm-6">
+        <div class="handle"></div>
+            <%= image_tag(adventure.image.url(:large)) %>
+            <h4><%= adventure.title %></h4>
+            <h5><%= adventure.creator %></h5>
+            <% if user_signed_in? %>
+            <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Dump', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+            <% end %>
+        </div>
     <% end %>
-  </tbody>
-</table>    
-    
-<% else %>
-  <p>no adventures added</p>
-<% end %>
-<div class="bucket"></div>
+    <% else %>
+      <p>no adventures added</p>
+    <% end %>
 
-  <form class="new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
-    <div class="field">
-      <h3>Add New Adventure</h3>
-      <label for="adventure_title">Adventure Name</label><br> 
-      <input type="text" name="adventure[title]" id="adventure_title" /><br>
-        
-      <label for="adventure_description">Description</label><br>
-      <input type="text" rows="4" cols="50" name="adventure[description]" id="adventure_description" /><br>
-        
-      <label for="adventure_duedate">Due Date</label><br>
-      <input type="date" name="adventure[duedate]" id="adventure_duedate" /><br>
-        
-      <label for="adventure_priority">Priority</label><br>
-      <input type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority" /><br>
-    
-      <label for="adventure_image">Add Image</label><br>
-      <input type="file" name="adventure[image]" id="adventure_image" /><br>
-        
-      <label for="adventure_completed">Done?</label><br>
-      <input type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done" /><br>
     </div>
-    <div class="actions">
-      <input type="submit" name="commit" value="Add" />
+</div>
+<!--<div class="bucket"></div>-->
+
+<% if user_signed_in? %>
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="well">Add New Adventure</h3> 
+        <div class="col-md-6">
+          <form role="form" class="form-group new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+                <div class="form-group">
+                      <label for="adventure_title">Adventure Name</label> 
+                      <input class="form-control" type="text" name="adventure[title]" id="adventure_title" />
+                </div>
+                <div class="form-group">
+                      <label for="adventure_description">Description</label>
+                      <textarea class="form-control" rows="3" name="adventure[description]" id="adventure_description"></textarea>
+                </div>
+                <div class="form-group">
+                      <label for="adventure_duedate">Due Date</label>
+                      <input class="form-control" type="date" name="adventure[duedate]" id="adventure_duedate" />
+                </div>
+                <div class="form-group">
+                      <label for="adventure_priority">Priority</label>
+                      <input class="form-control" type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority"/>
+                </div>
+                <div class="form-group">
+                      <label for="adventure_image">Add Image</label>
+                      <input type="file" name="adventure[image]" id="adventure_image" />
+                </div>
+                <div class="checkbox">
+                      <label for="adventure_completed"><input class="checkbox" type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done">Done?</label>
+                </div>
+                <div class="form-group actions">
+                  <input class="btn btn-info" type="submit" name="commit" value="Add"/>
+                </div>
+          </form> 
+        </div>
     </div>
-  </form> 
-    
+</div>
+<% end %>  
 
-
-<%= link_to 'New Adventure', new_adventure_path %>
