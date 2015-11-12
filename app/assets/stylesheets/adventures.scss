@@ -19,7 +19,13 @@
     }
      h4 {    
         text-align: center;
-    }
-    
+    } 
 }
 
+.handle {
+  width: 215px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: -1px -15px 0 0 #444;
+  margin: 0 0 -110px 45px;
+}
