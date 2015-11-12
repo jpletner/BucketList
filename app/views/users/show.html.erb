@@ -20,22 +20,19 @@
 <% if @user.adventures.any? %>
 <% @user.adventures.each do |adventure| %>
 <div class="container-fluid">
-<div class="row">
-    <div class="bucket col-md-4 col-sm-6">
-        <%= image_tag(adventure.image.url(:med)) %>
-        <h4><%= adventure.title %></h4>
-        <h5><%= adventure.creator %></h5>
-        <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+    <div class="row">
+        <div class="bucket col-md-3 col-sm-6">
+            <%= image_tag(adventure.image.url(:large)) %>
+            <h4><%= adventure.title %></h4>
+            <h5><%= adventure.creator %></h5>
+            <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+        </div>
+    <% end %>
+    <% else %>
+      <p>no adventures added</p>
+    <% end %>
+
     </div>
-<% end %>
-<% else %>
-  <p>no adventures added</p>
-<% end %>
-<!--
-    <div class="bucket col-md-4 col-sm-6"><img src="http://www.discoverwalks.com/wp-content/uploads/2014/04/learn_french.jpg"></div>
-    <div class="bucket col-md-4 col-sm-6"><img src="http://www.smartgyaan.com/wp-content/uploads/2015/07/Learn-French-in-5-days.jpg"></div>
--->
-</div>
 </div>
 <!--<div class="bucket"></div>-->
 
