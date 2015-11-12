@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
     match('users/show' , {:via => :get, :to => 'users#show'})
 
+    match('users/all', {:via => :get, :to => 'users#index'})
+
     match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
 
     match('/adventures/search_adventures' , {:via => :get, :to => 'adventures#search_adventures'})
