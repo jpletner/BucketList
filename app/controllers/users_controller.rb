@@ -3,12 +3,16 @@ class UsersController < ApplicationController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
   before_action :authenticate_user!
-    
+
   def configure_permitted_parameters
      devise_parameter_sanitizer.for(:sign_in){ |u| u.permit(:email, :password) }
      devise_parameter_sanitizer.for(:sign_up){ |u| u.permit(:first_name, :email, :password, :password_confirmation)}
      devise_parameter_sanitizer.for(:account_update){ |u| u.permit(:first_name, :email, :password, :password_confirmation) }
    end
+
+  def index
+     @users = User.all
+  end
 
   def show
     @user = current_user
@@ -27,9 +31,9 @@ class UsersController < ApplicationController
     end
     render 'show.html.erb'
   end
-    
+
 private
-  
+
   def set_user
     @user = User.find(params[:id])
   end
@@ -37,7 +41,7 @@ private
 
  def user_params
      params.require(:user).permit(:first_name, :last_name, :city, :state, :about, adventures_attributes: [:id, :title, :description, :duedate, :creator, :priority, :completed, :image, :_destroy])
- end    
-    
-    
+ end
+
+
 end
