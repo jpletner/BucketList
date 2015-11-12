@@ -6,8 +6,6 @@ Rails.application.routes.draw do
     match('/adventures/:id/add_tag' , {:via => :post, :to => 'adventures#add_tag'})
 
     match('users/show' , {:via => :get, :to => 'users#show'})
-    
-    match('users/:id' , {:via => :get, :to => 'users#view_profile'})
 
     match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
 

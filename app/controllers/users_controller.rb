@@ -13,12 +13,7 @@ before_action :authenticate_user!
   def show
     @user = current_user
     render 'show.html.erb'
-  end
-    
-  def view_profile
-    @user = User.find(params[:id])
-    render 'show.html.erb'
-  end   
+  end  
 
   def add_adventure
     @user = User.find(params[:id])
