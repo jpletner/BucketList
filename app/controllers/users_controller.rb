@@ -33,7 +33,7 @@ before_action :authenticate_user!
       if !params[:image_url].blank?  
         newAdventure.image = newAdventure.image_from_url(params[:image_url])
       end
-      if params[:image_url].blank? && params[:image].blank?
+        if params[:image_url].blank? && newAdventure.image.blank?
           newAdventure.image = "https://briancromer.files.wordpress.com/2010/09/ds-print1.jpg"
       end      
       @user.adventures << newAdventure
