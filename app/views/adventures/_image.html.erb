@@ -1,0 +1,21 @@
+<%= form_for(@adventure, :html => { :multipart => true }) do |f| %>
+  <% if @adventure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
+
+      <ul>
+      <% @adventure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= file_field_tag "adventure[image]", type: :file, multiple: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

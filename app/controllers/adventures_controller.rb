@@ -1,6 +1,6 @@
 class AdventuresController < ApplicationController
-  before_action :set_adventure, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_adventure, only: [:show, :edit, :update, :destroy, :adventure_photo]
+  # before_action :set_adventure_photos, only: [:add_adventure_photos]
   # GET /adventures
   # GET /adventures.json
   def index
@@ -28,6 +28,8 @@ class AdventuresController < ApplicationController
 
     respond_to do |format|
       if @adventure.save
+        @adventure_photos = multiple_photos(@adventure)
+        @adventure.adventure_photos = params[:images]
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         format.json { render :show, status: :created, location: @adventure }
       else
@@ -37,18 +39,46 @@ class AdventuresController < ApplicationController
     end
   end
 
+  def multiple_photos(adventure)
+    if !params[:image].nil?
+      1/0
+      params[:image].each do |j|
+        adventures.adventure_photos.create(image: j)
+      end
+    end
+    adventure
+  end
+
+
+  # def add_adventure_photos
+  #   @adventure = Adventure.find(params[:id])
+  #   @adventure_photos = AdventurePhoto.new
+  #   @adventure_photos =
+  #   # newAdventurePhoto = AdventurePhoto.new(params[:adventure])
+  #
+  #
+  #   render 'show.html.erb'
+  # end
+
   # PATCH/PUT /adventures/1
   # PATCH/PUT /adventures/1.json
   def update
-    respond_to do |format|
-      if @adventure.update(adventure_params)
-        format.html { redirect_to users_show_url, notice: 'Adventure was successfully updated.' }
-        format.json { render :show, status: :ok, location: @adventure }
-      else
-        format.html { render :edit }
-        format.json { render json: @adventure.errors, status: :unprocessable_entity }
-      end
-    end
+    set_adventure
+    multiple_photos(@adventure)
+    render 'show.html.erb'
+
+    # respond_to do |format|
+    #   if @adventure.update(adventure_params)
+    #     @adventure_photos = multiple_photos(@adventure)
+    #     @adventure.adventure_photos = params[:images]
+    #
+    #     format.html { redirect_to users_show_url, notice: 'Adventure was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @adventure }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @adventure.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /adventures/1
@@ -102,7 +132,13 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments, :image, :tags)
+      params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments, :image, :tags, :adventure)
 
     end
+
+    def set_adventure_photos
+      @adventurePhoto = AdventurePhoto.new
+
+    end
+
 end

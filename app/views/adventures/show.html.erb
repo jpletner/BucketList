@@ -35,6 +35,22 @@
 <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
 <%= link_to 'Back', adventures_path %>
 
+
+<p> Add photos of your adventure! </p>
+
+<% if !@adventure.adventure_photos.nil? %>
+  <% @adventure.adventure_photos.each do |f| %>
+  <%= image_tag(f.image.url(:large)) %>
+  <% end %>
+<% else %>
+  <p>There are no photos to display yet</p>
+<% end %>
+<%= render 'image' %>
+<!-- <form id="adventuresPhotos" action="/adventures/<%= @adventure.id %>/add_adventure_photos" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+  <label for="adventure_image">Add Image</label><br>
+  <input type="file" name="adventure_photos[image]" id="adventure_image" /><br>
+  <input type="submit" name="commit" value="Add" />
+</form> -->
 <!-- Comments -->
 <form action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
     <label for="adventure_comment">Add A Comment For This Adventure</label><br>

@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+   <div class="field">
+    <%= f.label :image %><br>
+    <%= file_field_tag "photos[]", type: :file, multiple: true %>
+  </div>
+
+
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>

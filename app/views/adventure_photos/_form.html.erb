@@ -1,0 +1,22 @@
+<%= form_for(@adventure_photo) do |f| %>
+  <% if @adventure_photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adventure_photo.errors.count, "error") %> prohibited this adventure_photo from being saved:</h2>
+
+      <ul>
+      <% @adventure_photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

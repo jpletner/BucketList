@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :adventure_photos
     devise_for :users, :controllers => { registrations: 'registrations' }
 
     match('/adventures/:id/add_comment' , {:via => :post, :to => 'adventures#add_comment'})
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
 
 #  Rails.application.routes.draw do
+  match('/adventures/:id/add_adventure_photos' , {:via => :post, :to => 'adventures#add_adventure_photos'})
+  resources :adventure_photos
 #      devise_for :users, controllers: {
 #        sessions: 'users/sessions'
 #      }

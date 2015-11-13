@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Adventure Photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Adventure</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adventure_photos.each do |adventure_photo| %>
+      <tr>
+        <td><%= adventure_photo.adventure_id %></td>
+        <td><%= link_to 'Show', adventure_photo %></td>
+        <td><%= link_to 'Edit', edit_adventure_photo_path(adventure_photo) %></td>
+        <td><%= link_to 'Destroy', adventure_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adventure photo', new_adventure_photo_path %>

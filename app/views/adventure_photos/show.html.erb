@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Adventure:</strong>
+  <%= @adventure_photo.adventure_id %>
+</p>
+
+<%= link_to 'Edit', edit_adventure_photo_path(@adventure_photo) %> |
+<%= link_to 'Back', adventure_photos_path %>
