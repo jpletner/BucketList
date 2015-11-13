@@ -1,5 +1,7 @@
 require_relative '../rails_helper'
 
+include Capybara::DSL
+
 describe "search by adventure name" do
   before(:each) do
     bAdventure = Adventure.new

@@ -67,9 +67,11 @@ class AdventuresController < ApplicationController
   def search_adventures
    if !params[:adventure_title].nil?
      search_string = params[:adventure_title]
-     @adventures = Adventure.basic_search(title: search_string)
+     @adventures = Adventure.basic_search({title: search_string, tags: search_string}, false)
    end
   end
+
+
 
   def add_comment
     @adventure = Adventure.find(params[:id])
