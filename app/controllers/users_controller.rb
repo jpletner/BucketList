@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
 #before_filter :configure_sign_up_params, only: [:create]
 #before_filter :configure_account_update_params, only: [:update]
 before_action :authenticate_user!
-    
+
+=======
+#before_filter :authenticate_user!
+# before_filter :configure_sign_up_params, only: [:create]
+# before_filter :configure_account_update_params, only: [:update]
+  before_action :authenticate_user!
+
+>>>>>>> improvedSearch
   def configure_permitted_parameters
      devise_parameter_sanitizer.for(:sign_in){ |u| u.permit(:email, :password) }
      devise_parameter_sanitizer.for(:sign_up){ |u| u.permit(:first_name, :email, :password, :password_confirmation)}
@@ -16,7 +24,12 @@ before_action :authenticate_user!
   def show
     @user = current_user
     render 'show.html.erb'
-  end  
+  end
+
+  def view_profile
+    @user = User.find(params[:id])
+    render 'show.html.erb'
+  end
 
   def add_adventure
     @user = User.find(params[:id])
@@ -30,6 +43,16 @@ before_action :authenticate_user!
     end
     render 'show.html.erb'
   end
+
+
+  def search_users
+    if !params[:creator].nil?
+      search_string = params[:creator]
+      @user = User.basic_search({first_name: search_string, last_name: search_string}, false)
+      # @other_user = User.find(params[:id])
+    end
+  end
+
 
 private
 

@@ -57,4 +57,5 @@ RSpec.describe Adventure, type: :model do
     expect(adventure.tags).to eq ["fun", "times"]
   end
 
+
 end

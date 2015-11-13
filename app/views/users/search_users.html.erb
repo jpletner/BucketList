@@ -1,0 +1,22 @@
+<!--Search Adventure -->
+<p id="notice"><%= notice %></p>
+
+<h3>Search Users</h3>
+<form action='/users/search_users' method='get'>
+  <label for="creator">People</label><br>
+  <input type="text" name="creator" id="user" /><br>
+  <div class="actions">
+    <input type="submit" value="creator"/>
+  </div>
+</form>
+
+<% if !@user.nil? %>
+  <% if !@user.empty? %>
+    <h3>Users found:</h3>
+    <% @user.each do |user| %>
+    <p><a href="/users/<%= user.id %>"><%= user.first_name %></a></p></<br>
+    <% end %>
+  <% else %>
+    <h3>No People Found</h3>
+  <% end %>
+<% end %>
