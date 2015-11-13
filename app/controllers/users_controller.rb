@@ -30,19 +30,22 @@ before_action :authenticate_user!
       newAdventure.title.downcase! # ! alters the original
       newAdventure.save
       newAdventure.creator = @user.first_name + ' ' + @user.last_name
-      newAdventure.image = newAdventure.image_from_url(params[:image_url])
+      if !params[:image_url].blank?  
+        newAdventure.image = newAdventure.image_from_url(params[:image_url])
+      end
+        if params[:image_url].blank? && newAdventure.image.blank?
+          newAdventure.image = "https://briancromer.files.wordpress.com/2010/09/ds-print1.jpg"
+      end      
       @user.adventures << newAdventure
       @user.save
     end
     render 'show.html.erb'
   end
 
-
   def search_users
     if !params[:creator].nil?
       search_string = params[:creator]
       @user = User.basic_search({first_name: search_string, last_name: search_string}, false)
-      # @other_user = User.find(params[:id])
     end
   end
 

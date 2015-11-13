@@ -13,6 +13,8 @@
         height: 200px;
         text-align: center;
         overflow: hidden;
+        z-index: 2;
+        background-color: white;
     }
     h4, h5 {
         text-align: center;
@@ -22,12 +24,19 @@
     } 
 }
 
+.tip:hover {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
+}
+
 .handle {
   width: 215px;
   height: 150px;
   border-radius: 50%;
   box-shadow: -1px -15px 0 0 #444;
   margin: 0 0 -110px 45px;
+  z-index: -1;
 }
 
 div.fileinputs {
@@ -44,3 +53,8 @@ input.file {
     padding: 2px;
     display: inline;
 }
+
+#image_1, #image_2 {
+    display: none;
+}
+
