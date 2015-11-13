@@ -63,21 +63,23 @@
                       <label for="adventure_priority">Priority</label>
                       <input class="form-control" type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority"/>
                 </div>
-               <div class="form-group fileinputs"> 
-                    <p>Add an Image Options: (select one)</p>
-                    <label><input id="rdb1" type="radio" name="image_cb" value="1" />Upload Image Using a URL</label>
-<label><input id="rdb2" type="radio" name="image_cb" value="2" />Upload Image from Local Drive</label>
+              
+                <div class="form-group fileinputs"> <!-- Upload Images Options -->
+                        <p>Add an Image Options: (select one)</p>
+                        <label><input id="rdb1" type="radio" name="image_cb" value="1" />Upload Image Using a URL</label>
+    <label><input id="rdb2" type="radio" name="image_cb" value="2" />Upload Image from Local Drive</label>
 
-                    <div id="image_1" class="field toHide">
-                        Enter URL to Upload Your Image: <%= text_field_tag 'image_url' %>
-                    </div>
-                    <div id="image_2" class="form-group toHide">
-                      <label for="adventure_image">Upload an Image From Your PC:</label><input type="file" class="file" name="adventure[image]" id="adventure_image" />
-                    </div>
+                        <div id="image_1" class="field toHide">
+                            Enter URL to Upload Your Image: <%= text_field_tag 'image_url' %>
+                        </div>
+                        <div id="image_2" class="form-group toHide">
+                          <label for="adventure_image">Upload an Image From Your PC:</label><input type="file" class="file" name="adventure[image]" id="adventure_image" />
+                        </div>
+                 </div> <!-- Upload Image End -->
                     <div class="checkbox">
                           <label for="adventure_completed"><input class="checkbox" type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done">Done?</label>
                     </div>
-              </div>
+              
                 <div class="form-group actions">
                   <input class="btn btn-info" type="submit" name="commit" value="Add"/>
                 </div>

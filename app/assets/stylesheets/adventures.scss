@@ -13,6 +13,8 @@
         height: 200px;
         text-align: center;
         overflow: hidden;
+        z-index: 2;
+        background-color: white;
     }
     h4, h5 {
         text-align: center;
@@ -34,6 +36,7 @@
   border-radius: 50%;
   box-shadow: -1px -15px 0 0 #444;
   margin: 0 0 -110px 45px;
+  z-index: -1;
 }
 
 div.fileinputs {
