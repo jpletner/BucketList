@@ -8,8 +8,8 @@
     <h3 class="well"><%= @user.first_name %> <%= @user.last_name %></h3><br>
 
     <p><%= @user.city %>, <%= @user.state %></p><br>
-    
-<h3 class="well">About Me</h3>    
+
+<h3 class="well">About Me</h3>
 
     <p><%= @user.about %></p>
 
@@ -42,11 +42,11 @@
 <% if user_signed_in? %>
 <div class="container-fluid">
     <div class="row">
-        <h3 class="well">Add New Adventure</h3> 
+        <h3 class="well">Add New Adventure</h3>
         <div class="col-md-6">
           <form role="form" class="form-group new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
                 <div class="form-group">
-                      <label for="adventure_title">Adventure Name</label> 
+                      <label for="adventure_title">Adventure Name</label>
                       <input class="form-control" type="text" name="adventure[title]" id="adventure_title" />
                 </div>
                 <div class="form-group">
@@ -74,9 +74,8 @@
                 <div class="form-group actions">
                   <input class="btn btn-info" type="submit" name="commit" value="Add"/>
                 </div>
-          </form> 
+          </form>
         </div>
     </div>
 </div>
-<% end %>  
-
+<% end %>
