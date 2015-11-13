@@ -6,6 +6,8 @@ class Adventure < ActiveRecord::Base
         content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
         size: { in: 0..10.megabytes }
 
-    
+    def image_from_url(url)
+        self.image = open(url)
+    end
     
 end

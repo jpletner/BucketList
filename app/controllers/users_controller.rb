@@ -30,6 +30,7 @@ before_action :authenticate_user!
       newAdventure.title.downcase! # ! alters the original
       newAdventure.save
       newAdventure.creator = @user.first_name + ' ' + @user.last_name
+      newAdventure.image = newAdventure.image_from_url(params[:image_url])
       @user.adventures << newAdventure
       @user.save
     end
@@ -47,7 +48,7 @@ before_action :authenticate_user!
 
 
 private
-
+    
   def set_user
     @user = User.find(params[:id])
   end

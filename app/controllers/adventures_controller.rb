@@ -15,6 +15,7 @@ class AdventuresController < ApplicationController
   # GET /adventures/new
   def new
     @adventure = Adventure.new
+    @adventure.image_from_url(params[:image_url])
   end
 
   # GET /adventures/1/edit
@@ -25,7 +26,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
-
+    @adventure.image_from_url(params[:image_url])  
     respond_to do |format|
       if @adventure.save
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }

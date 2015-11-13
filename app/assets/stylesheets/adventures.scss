@@ -29,3 +29,18 @@
   box-shadow: -1px -15px 0 0 #444;
   margin: 0 0 -110px 45px;
 }
+
+div.fileinputs {
+	position: relative;
+}
+
+input.file {
+	position: relative;
+    border: .5px solid #444;
+    border-radius: 5%;
+	text-align: right;
+	z-index: 2;
+    font-weight: 400;
+    padding: 2px;
+    display: inline;
+}

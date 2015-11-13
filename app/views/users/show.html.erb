@@ -61,9 +61,12 @@
                       <label for="adventure_priority">Priority</label>
                       <input class="form-control" type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority"/>
                 </div>
-                <div class="form-group">
-                      <label for="adventure_image">Add Image</label>
-                      <input type="file" name="adventure[image]" id="adventure_image" />
+                <div class="form-group fileinputs">
+                      <label for="adventure_image">Upload an Image From Your PC:</label>
+                      <input type="file" class="file" name="adventure[image]" id="adventure_image" />
+                </div>
+                <div class="field">
+                    Enter URL to Upload Your Image: <%= text_field_tag 'image_url' %>
                 </div>
                 <div class="checkbox">
                       <label for="adventure_completed"><input class="checkbox" type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done">Done?</label>
