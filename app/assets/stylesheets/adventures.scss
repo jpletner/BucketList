@@ -22,6 +22,12 @@
     } 
 }
 
+.tip:hover {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
+}
+
 .handle {
   width: 215px;
   height: 150px;
@@ -44,3 +50,8 @@ input.file {
     padding: 2px;
     display: inline;
 }
+
+#image_1, #image_2 {
+    display: none;
+}
+
