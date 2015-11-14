@@ -1,5 +1,5 @@
 class AdventuresController < ApplicationController
-  before_action :set_adventure, only: [:show, :edit, :update, :destroy]
+  before_action :set_adventure, only: [:show, :edit, :update, :destroy, :picture]
 
   # GET /adventures
   # GET /adventures.json
@@ -29,6 +29,7 @@ class AdventuresController < ApplicationController
     @adventure.image_from_url(params[:image_url])  
     respond_to do |format|
       if @adventure.save
+        @adventure = multiple_photos(@adventure)
         format.html { redirect_to @adventure, notice: 'Adventure was successfully created.' }
         format.json { render :show, status: :created, location: @adventure }
       else
@@ -37,13 +38,15 @@ class AdventuresController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /adventures/1
   # PATCH/PUT /adventures/1.json
   def update
     respond_to do |format|
       if @adventure.update(adventure_params)
-        format.html { redirect_to users_show_url, notice: 'Adventure was successfully updated.' }
+        @adventure = multiple_photos(@adventure)
+    
+        format.html { redirect_to @adventure, notice: 'Adventure was successfully updated.' }
         format.json { render :show, status: :ok, location: @adventure }
       else
         format.html { render :edit }
@@ -71,8 +74,6 @@ class AdventuresController < ApplicationController
      @adventures = Adventure.basic_search({title: search_string, tags: search_string}, false)
    end
   end
-
-
 
   def add_comment
     @adventure = Adventure.find(params[:id])
@@ -102,10 +103,18 @@ class AdventuresController < ApplicationController
     def set_adventure
       @adventure = Adventure.find(params[:id])
     end
-
+    
+    def multiple_photos(adventure)
+      if params[:photos]
+        params[:photos].each do |image|
+          adventure.pictures.create(photo: image)
+        end
+      end
+        return adventure
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
       params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments, :image, :tags)
-
     end
 end

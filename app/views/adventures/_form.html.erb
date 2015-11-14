@@ -1,4 +1,4 @@
-<%= form_for(@adventure) do |f| %>
+<%= form_for @adventure, html: { multipart: true } do |f| %>
   <% if @adventure.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@adventure.errors.count, "error") %> prohibited this adventure from being saved:</h2>
@@ -15,6 +15,18 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
+<% @adventure.pictures.each do |picture| %>
+    <%= image_tag(picture.photo.url(:large)) %>
+    <%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Photo %>
+      <p class="note">Select one or more photos to upload</p>
+      <%= file_field_tag "photos[]", type: :file, multiple: true %>
+    </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>

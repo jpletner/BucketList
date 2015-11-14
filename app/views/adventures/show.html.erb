@@ -4,6 +4,11 @@
   <strong>Title:</strong>
   <%= @adventure.title %>
 </p>
+<%= image_tag(@adventure.image.url(:large))%>
+
+<% @adventure.pictures.each do |picture| %>
+    <%= image_tag(picture.photo.url(:large)) %>
+<% end %>
 
 <p>
   <strong>Description:</strong>
