@@ -36,11 +36,6 @@
 </p>
 
 
-
-<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-<%= link_to 'Back', adventures_path %>
-
-<!-- Comments -->
 <form action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
     <label for="adventure_comment">Add A Comment For This Adventure</label><br>
     <input type="text" name="comment" id="adventure_comment" /><br>
@@ -86,3 +81,6 @@
 
 
 </p>
+
+<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+<%= link_to 'Profile', users_show_path %>
