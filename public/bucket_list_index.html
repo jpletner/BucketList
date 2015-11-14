@@ -70,23 +70,30 @@
       </span>
 
         <h1 class="reallybigfont">Live Before You Die</h1>
-        <h3 class="bigfont">a bucket list for life</h3>
+        <h3 class="bigfont"> bucket list for life</h3>
     </div> <!-- end of headline-text -->
 <!-- Main Page Sign-In Section -->
     <div id="sign-in-main-page">
-      <form action= "/users/sign_in" class = "form-inline"role="form">
+      <form action= "/users/sign_in" class = "form-inline"role="form" id="new_user" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5h/ORD5HNW8Ab0A7bYxrKUC33utOCesBwqmA167JpnZV1vbKMqp8KthVaMioGHjZfdZ3u1FGQfDUqSkHr+hFCA==" />
         <div class="form-group email_input_landing">
-          <label for="email">Email address:</label>
-          <input type="email" class="form-control" id="email">
+          <label for="user_email">Email address:</label>
+          <input autofocus="autofocus" type="email" value="" placeholder="email" name="user[email]" class="form-control" id="user_email" />
         </div>
         <div class="form-group password_input_landing">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd">
+          <label for="user_password">Password:</label>
+          <input type="password" name="user[password]" placeholder="password" class="form-control" id="user_password" />
         </div>
-          <a href= "/users/sign_in">
-            <button type="submit" class="btn btn-default form-button">Submit</button>
-          </a>
+        <!-- <div class ="form-group password_input_landing">
+          <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+          <label for="user_remember_me">Remember me</label>
+        </div> -->
+        <div class="form-group password_input_landing">
+          <input type="submit" value="Log in" class="sign-inlinks btn btn-default"/>
+        </div>
+
+        <div class="form-group sign-inlinks">
           <a href="/users/sign_up"><span class="sign-inlinks btn btn-default">Sign Up</span>
+        </div>
       </form>
 
     </div>
