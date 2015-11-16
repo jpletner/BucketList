@@ -1,0 +1,21 @@
+<%= form_for(@migration) do |f| %>
+  <% if @migration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@migration.errors.count, "error") %> prohibited this migration from being saved:</h2>
+
+      <ul>
+      <% @migration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :addPaperclipToPictures %><br>
+    <%= f.text_field :addPaperclipToPictures %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

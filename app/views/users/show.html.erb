@@ -26,7 +26,7 @@
             <div class="handle"></div>
             <%= image_tag(adventure.image.url(:large))%>
         </div>
-            <h4><%= adventure.title %></h4>
+            <h4><%= adventure.title.upcase %></h4>
             <h5><%= adventure.creator %></h5>
             <% if user_signed_in? %>
             <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Dump', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>

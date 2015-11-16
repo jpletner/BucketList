@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Migrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Addpapercliptopictures</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @migrations.each do |migration| %>
+      <tr>
+        <td><%= migration.addPaperclipToPictures %></td>
+        <td><%= link_to 'Show', migration %></td>
+        <td><%= link_to 'Edit', edit_migration_path(migration) %></td>
+        <td><%= link_to 'Destroy', migration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Migration', new_migration_path %>

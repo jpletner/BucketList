@@ -1,35 +1,31 @@
 Rails.application.routes.draw do
+  
     devise_for :users, :controllers => { registrations: 'registrations' }
 
     match('/adventures/:id/add_comment' , {:via => :post, :to => 'adventures#add_comment'})
-
     match('/adventures/:id/add_tag' , {:via => :post, :to => 'adventures#add_tag'})
-
     match('/users/search_users' , {:via => :get, :to => 'users#search_users'})
-
     match('users/show' , {:via => :get, :to => 'users#show'})
-
-
     match('users/all', {:via => :get, :to => 'users#index'})
-
     match('users/:id' , {:via => :get, :to => 'users#view_profile'})
-
-
     match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
-
     match('/adventures/search_adventures' , {:via => :get, :to => 'adventures#search_adventures'})
 
 
 
 
 #  Rails.application.routes.draw do
+    resources :migrations
+    resources :pictures
+    resources :adventures
+
 #      devise_for :users, controllers: {
 #        sessions: 'users/sessions'
 #      }
 #  end
 
 
-  resources :adventures
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
     match '/', :via => [:get], :to => redirect('/bucket_list_index.html')

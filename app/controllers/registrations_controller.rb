@@ -12,6 +12,10 @@ class RegistrationsController < Devise::RegistrationsController
       users_show_path
   end
     
+    def sign_in_from_home
+        
+    end
+    
 private
 
   def sign_up_params
