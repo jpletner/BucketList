@@ -23,7 +23,22 @@ describe "edit adventure" do
     expect(page).to have_content "newDescription!@#"
     expect(page).to have_xpath('//img[contains(@src,"ruby.jpg")]')
   end
+    
+
+  it "should be able to delete an image" do
+    visit "adventures/" + @bAdventure.id.to_s + "/edit"
+    expect(page).to have_content "Edit Your Adventure"
+    fill_in "Title", :with => "newTitle!@#"
+    fill_in "Description", :with => "newDescription!@#"
+    attach_file("photos[]", fixture_image_path)
+    within('.inline-div') do
+        find('#destroy-image').click_link('Destroy')
+    end
+    expect(page).to have_content "Edit Your Adventure"
+    expect(page).to have_no_xpath('//img[contains(@src,"ruby.jpg")]')
+  end
 end
+
 
 def fixture_image_path
   Rails.root.join('spec', 'support', 'ruby.jpg')
