@@ -57,7 +57,7 @@ class PicturesController < ApplicationController
     @adventure = @picture.adventure
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to @adventure, notice: 'Picture was successfully destroyed.' }
+      format.html { redirect_to edit_adventure_url(@adventure), notice: 'Picture was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

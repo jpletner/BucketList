@@ -43,7 +43,7 @@
 <% @adventure.pictures.each do |picture| %>   
     <div class="inline-div">
         <%= image_tag(picture.photo.url(:large), :class => "edit_pic") %>
-        <div class="block-div"><%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="block-div"><%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' }, id:"destroy-image" %>
         </div>
     </div>
 <% end %>
