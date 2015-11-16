@@ -1,5 +1,13 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
-RSpec.describe Picture, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Picture, type: :model do
+    it "should belong to an adventure" do
+        aAdventure = Adventure.new
+        aAdventure.title = "Run a Marathon"
+
+        anAdventureImage = Picture.new
+
+        anAdventureImage.adventure = aAdventure
+        expect(anAdventureImage.adventure).to eq aAdventure
+    end
 end
