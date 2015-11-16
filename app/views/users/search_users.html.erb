@@ -2,11 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 <h3>Search Users</h3>
-<form action='/users/search_users' method='get'>
-  <label for="creator">People</label><br>
-  <input type="text" name="creator" id="user" /><br>
+<form class="form-group" action='/users/search_users' method='get'>
+  <input class="form-control half-width" type="text" name="creator" id="user" /><br>
   <div class="actions">
-    <input type="submit" value="creator"/>
+    <input class="btn btn-default" type="submit" value="creator"/>
   </div>
 </form>
 

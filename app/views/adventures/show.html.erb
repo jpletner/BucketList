@@ -4,10 +4,10 @@
   <strong>Title:</strong>
   <%= @adventure.title %>
 </p>
-<%= image_tag(@adventure.image.url(:large))%>
+<%= image_tag(@adventure.image.url(:large), :class => "edit_pic")%>
 
 <% @adventure.pictures.each do |picture| %>
-    <%= image_tag(picture.photo.url(:large)) %>
+    <%= image_tag(picture.photo.url(:large), :class => "edit_pic") %>
 <% end %>
 
 <p>
@@ -36,13 +36,21 @@
 </p>
 
 
-<form action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
-    <label for="adventure_comment">Add A Comment For This Adventure</label><br>
-    <input type="text" name="comment" id="adventure_comment" /><br>
-    <div class="actions">
-      <input type="submit" value="Add Comment"/>
-    </div>
-</form>
+  <p>
+    <strong>Tags:</strong><br>
+    <% if !@adventure.tags.empty? %>
+      <% @adventure.tags.each do | adventure | %>
+
+        <strong>User</strong><br>
+        <%= adventure %><br><br>
+      <% end %>
+    <% else %>
+      <em>Be the first to tag this adventure</em>
+
+    <% end %>
+
+
+</p>
 
 <p>
   <strong>Comments:</strong><br>
@@ -53,34 +61,30 @@
     <%= adventure %><br><br>
     <% end %>
     <% else %>
-      <strong>Be the first to comment on this adventure</strong>
+      <em>Be the first to comment on this adventure</em>
 
   <% end %>
-
+</p>
 <!-- Tags -->
-  <form action='/adventures/<%= @adventure.id %>/add_tag' method='post'>
-      <label for="adventure_tag">Add A Tag For This Adventure</label><br>
-      <input type="text" name="tag" id="adventure_tag" /><br>
+  <form role="form" class="form-group" action='/adventures/<%= @adventure.id %>/add_tag' method='post'>
+      <div class="form-group">
+          <label for="adventure_tag">Add A Tag For This Adventure</label>
+          <input class="form-control half-width" type="text" name="tag" id="adventure_tag" />
+      </div>
       <div class="actions">
-        <input type="submit" value="Add Tag"/>
+        <input class="btn btn-default" type="submit" value="Add Tag"/>
       </div>
   </form>
 
-  <p>
-    <strong>Tags:</strong><br>
-    <% if !@adventure.tags.empty? %>
-      <% @adventure.tags.each do | adventure | %>
-
-        <strong>User</strong><br>
-        <%= adventure %><br><br>
-      <% end %>
-    <% else %>
-      <strong>Be the first to tag this adventure</strong>
-
-    <% end %>
-
-
-</p>
+<form role="form" class="form-group" action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
+    <div class="form-group">
+        <label for="adventure_comment">Add A Comment For This Adventure</label>
+        <input class="form-control half-width" type="text" name="comment" id="adventure_comment" />
+    </div>
+    <div class="actions">
+      <input class="btn btn-default" type="submit" value="Add Comment"/>
+    </div>
+</form>
 
 <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
 <%= link_to 'Profile', users_show_path %>

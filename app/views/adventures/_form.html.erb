@@ -11,22 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </div>
-
-<% @adventure.pictures.each do |picture| %>
-    <%= image_tag(picture.photo.url(:large)) %>
-    <%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :Photo %>
-      <p class="note">Select one or more photos to upload</p>
-      <%= file_field_tag "photos[]", type: :file, multiple: true %>
-    </div>
-
+  </div>  
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
@@ -43,7 +31,26 @@
     <%= f.label :completed %><br>
     <%= f.check_box :completed %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+
+<div class="field">
+<h3 class="well">Adventure Photos</h3>
+      <p class="note">Select one or more photos to upload</p>
+      <%= file_field_tag "photos[]", type: :file, multiple: true %>
+</div>
+
+<% @adventure.pictures.each do |picture| %>   
+    <div class="inline-div">
+        <%= image_tag(picture.photo.url(:large), :class => "edit_pic") %>
+        <div class="block-div"><%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    </div>
+<% end %>
+
+<div class="margin">
+<div class="actions">
+  <%= f.submit(:class => "btn btn-default") %>
+</div>
+</div>
 <% end %>

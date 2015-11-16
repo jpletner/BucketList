@@ -2,11 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 <h3>Seach Adventures</h3>
-<form action='/adventures/search_adventures' method='get'>
-  <label for="adventure_title">Adventure or Tag Name</label><br>
-  <input type="text" name="adventure_title" id="adventure_title" /><br>
+<form class="form-group" action='/adventures/search_adventures' method='get'>
+  <input class="form-control half-width" type="text" name="adventure_title" id="adventure_title" /><br>
   <div class="actions">
-    <input type="submit" value="Search"/>
+    <input class="btn btn-default" type="submit" value="Search"/>
   </div>
 </form>
 

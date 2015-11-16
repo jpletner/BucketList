@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .bucket {
     margin-bottom: 5vh;
     img {
@@ -58,3 +57,27 @@ input.file {
     display: none;
 }
 
+.inline-div {
+    float: left;
+    display: inline-block;
+    padding-right: 10px;
+    .block-div {
+        display: block;
+        text-align: center;
+        position: relative;        
+    }
+}
+
+img.edit_pic {
+    width: 300px; 
+    height: 200px;
+}
+
+.margin {
+    margin-top: 20%;
+    left: 0;
+}
+
+.half-width {
+    width: 50%;
+}
