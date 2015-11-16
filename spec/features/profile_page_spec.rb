@@ -91,4 +91,4 @@ def fixture_image_path
     Rails.root.join('spec', 'support', 'ruby.jpg')
 end
 
-##before(:each) do code in here end
+
