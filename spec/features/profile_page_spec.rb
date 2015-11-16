@@ -25,13 +25,6 @@ describe "user profile page" do
    expect(page).to have_content "state"
   end
 
-it "should have social media buttons" do
-  visit "/users/show"
-  page.should have_selector(:link_or_button, 'Tweet')
-  page.should have_css('.fb-like')
-  page.should have_xpath('//img[contains(@src,"assets.pinterest.com/images/pidgets/pin_it_button.png")]')
-end
-
 it "user should be able to add adventures and view them" do
    visit "/users/sign_up"
    fill_in 'First name', :with => "Chuck"
@@ -58,34 +51,13 @@ it "user should be able to add adventures and view them" do
    fill_in 'Due Date', :with => "12" "20" "2015"
    attach_file('adventure[image]', fixture_image_path)
    click_button "Add"
-   expect(page).to have_content "sky diving"
+   expect(page).to have_content "SKY DIVING"
    expect(page).to have_xpath('//img[contains(@src,"ruby.jpg")]')
 end
      #page is currently routing to the index file on completion. we should re-route to the profile page.
  end
 
-it "should have a default image" do
-    visit "/users/sign_up"
-   fill_in 'First name', :with => "Chuck"
-   fill_in 'Last name', :with => "Norris"
-   fill_in 'Email', :with => "chuck.norris@gmail.com"
-   fill_in 'City', :with => "city"
-   fill_in 'State', :with => "state"
-   fill_in 'Password', :with => "password"
-   fill_in 'Password confirmation', :with => "password"
-   click_button "Sign up"
-   #log out so we can test log in of existing user
-   click_link "Logout"
-   visit "/users/sign_in"
-   fill_in "Email", :with => "chuck.norris@gmail.com"
-   fill_in 'Password', :with => "password"
-   click_button "Log in"
-   click_link 'Edit Profile'
-   fill_in 'About', :with => "interests"
-   fill_in 'Current password', :with => "password"
-   click_button "Update"
-   fill_in 'Adventure Name', :with => "sky diving"
-end
+
 ##create path to test image
 def fixture_image_path
     Rails.root.join('spec', 'support', 'ruby.jpg')

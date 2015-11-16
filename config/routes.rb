@@ -11,9 +11,6 @@ Rails.application.routes.draw do
     match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
     match('/adventures/search_adventures' , {:via => :get, :to => 'adventures#search_adventures'})
 
-
-
-
 #  Rails.application.routes.draw do
     resources :migrations
     resources :pictures
