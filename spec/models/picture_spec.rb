@@ -5,9 +5,12 @@ describe Picture, type: :model do
         aAdventure = Adventure.new
         aAdventure.title = "Run a Marathon"
 
-        anAdventureImage = Picture.new
+        anAdventureImage1 = Picture.new
+        anAdventureImage2 = Picture.new
 
-        anAdventureImage.adventure = aAdventure
-        expect(anAdventureImage.adventure).to eq aAdventure
+        anAdventureImage1.adventure = aAdventure
+        anAdventureImage2.adventure = aAdventure
+        expect(anAdventureImage1.adventure).to eq aAdventure
+        expect(anAdventureImage2.adventure).to eq aAdventure
     end
 end
