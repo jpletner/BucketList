@@ -49,17 +49,17 @@ before_action :authenticate_user!
     end
   end
 
-  def follow
-      @user = User.find(params[:id])
-      current_user.follow!(@user)
-      redirect_to "/users/#{@user.id}"
-    end
+  def followUser
+    @user = User.find(params[:id])
+    current_user.follow!(@user)
+    redirect_to "/users/#{@user.id}"
+  end
 
-    def unfollow
-      @user = User.find(params[:id])
-      current_user.unfollow!(@user)
-      redirect_to "/users/#{@user.id}"
-    end
+    def unfollowUser
+    @user = User.find(params[:id])
+    current_user.unfollow!(@user)
+    redirect_to "/users/#{@user.id}"
+  end
 
     def followPage
       @users = current_user.followees(User)

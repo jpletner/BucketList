@@ -8,9 +8,9 @@
     <div class="well"><h3 class="inline"><%= @user.first_name %> <%= @user.last_name %></h3>
     <% if user_signed_in? %>
       <% if @user != current_user && !current_user.follows?(@user) %>
-        <div class="follow inline"><a href="/users/<%= @user.id %>/follow" class="button btn btn-default">Follow</a></div>
+        <div class="follow inline"><a href="/users/<%= @user.id %>/followUser" class="button btn btn-default">Follow</a></div>
       <% elsif @user != current_user && current_user.follows?(@user) %>
-        <div class="unfollow inline"><a href="/users/<%= @user.id %>/unfollow" class="button btn btn-default">Unfollow</a></div>
+        <div class="unfollow inline"><a href="/users/<%= @user.id %>/unfollowUser" class="button btn btn-default">Unfollow</a></div>
       <% end %>
     <% end%></div>
     <br>
