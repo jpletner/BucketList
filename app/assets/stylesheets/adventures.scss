@@ -82,6 +82,14 @@ img.edit_pic {
     width: 50%;
 }
 
+
 .inline {
   display: inline-block;
+
+a.image_tip {
+  background-color: transparent;
+}
+
+a.image_tip:hover {
+  background-color: transparent;
 }
