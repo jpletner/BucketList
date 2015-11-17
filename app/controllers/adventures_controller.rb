@@ -94,10 +94,7 @@ class AdventuresController < ApplicationController
     end
     render "show.html.erb"
   end
-
-
-
-
+      
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure

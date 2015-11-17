@@ -37,6 +37,16 @@ describe "edit adventure" do
     expect(page).to have_content "Edit Your Adventure"
     expect(page).to have_no_xpath('//img[contains(@src,"ruby.jpg")]')
   end
+    
+  it "should be able to replace the main image" do
+    visit "adventures/" + @bAdventure.id.to_s + "/edit"
+    expect(page).to have_content "Edit Your Adventure"
+    fill_in "Title", :with => "newTitle!@#"
+    fill_in "Description", :with => "newDescription!@#"
+    attach_file('adventure[image]', fixture_image_path)
+    click_button "Update Adventure"
+    expect(page).to have_xpath('//img[contains(@src,"ruby.jpg")]')
+  end
 end
 
 
