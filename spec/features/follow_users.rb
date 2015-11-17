@@ -83,7 +83,5 @@ describe "search by adventure name" do
     click_link "Unfollow"
     click_link "View Follow"
     expect(page).to_not have_content "Chuck Norris"
-
   end
-
 end
