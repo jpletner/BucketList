@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151117184645) do
-=======
-ActiveRecord::Schema.define(version: 20151117032557) do
->>>>>>> addPaperclipForUser
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,15 +98,12 @@ ActiveRecord::Schema.define(version: 20151117032557) do
     t.string   "state"
     t.string   "username"
     t.text     "about"
-<<<<<<< HEAD
     t.string   "provider"
     t.string   "uid"
-=======
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
->>>>>>> addPaperclipForUser
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
