@@ -1,0 +1,19 @@
+<div class="form-group fileinputs2"> <!-- Upload Images Options -->
+  <form role="form" class="form-group user-picture" id="user-picture" action="/users/show/addUserPicture" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+  <p>Add an Image Options: (select one)</p>
+  <label><input id="rdb3" type="radio" name="image_cb2" value="3" />Upload Image Using a URL</label>
+  <label><input id="rdb4" type="radio" name="image_cb2" value="4" />Upload Image from Local Drive</label>
+
+  <div id="image_3" class="field toHide">
+      Enter URL to Upload Your Image: <%= text_field_tag 'image_url' %>
+  </div>
+  <div id="image_4" class="form-group toHide">
+    <label for="adventure_image">Upload an Image From Your PC:</label><input type="file" class="file" name="adventure[image]" id="adventure_image" />
+  </div>
+
+  <div class="actions">
+    <input class="btn btn-info" type="submit" name="commit" value="Add"/>
+  </div>
+
+   <%= link_to "Cancel", users_show_cancel_path, class: "block", id: "cancel", remote: true %>
+ </div> <!-- Upload Image End -->

@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require images
+//= require users
 //= require_tree .
-

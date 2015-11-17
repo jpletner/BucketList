@@ -53,8 +53,20 @@ input.file {
     display: inline;
 }
 
-#image_1, #image_2 {
+#image_1, #image_2 ,#image_3, #image_4 {
     display: none;
+}
+
+.radio-buttons {
+  display: none;
+}
+
+.profile-pic-submit {
+  display: none;
+}
+
+#cancel {
+  display: none;
 }
 
 .inline-div {
@@ -82,6 +94,9 @@ img.edit_pic {
     width: 50%;
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
 
 .inline {
   display: inline-block;
