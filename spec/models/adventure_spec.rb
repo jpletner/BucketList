@@ -57,5 +57,10 @@ RSpec.describe Adventure, type: :model do
     expect(adventure.tags).to eq ["fun", "times"]
   end
 
-
+  it "should have an image" do
+    adventure = Adventure.new
+    image = "http://michaeldanielho.com/fish237.jpg"
+    adventure.image = image
+    expect(adventure.image_file_name).to eq "fish237.jpg"
+  end
 end
