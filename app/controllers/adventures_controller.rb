@@ -26,7 +26,7 @@ class AdventuresController < ApplicationController
   # POST /adventures.json
   def create
     @adventure = Adventure.new(adventure_params)
-    @adventure.image_from_url(params[:image_url])  
+    @adventure.image_from_url(params[:image_url])
     respond_to do |format|
       if @adventure.save
         @adventure = multiple_photos(@adventure)
@@ -38,14 +38,14 @@ class AdventuresController < ApplicationController
       end
     end
   end
-  
+
   # PATCH/PUT /adventures/1
   # PATCH/PUT /adventures/1.json
   def update
     respond_to do |format|
       if @adventure.update(adventure_params)
         @adventure = multiple_photos(@adventure)
-    
+
         format.html { redirect_to @adventure, notice: 'Adventure was successfully updated.' }
         format.json { render :show, status: :ok, location: @adventure }
       else
@@ -103,7 +103,7 @@ class AdventuresController < ApplicationController
     def set_adventure
       @adventure = Adventure.find(params[:id])
     end
-    
+
     def multiple_photos(adventure)
       if params[:photos]
         params[:photos].each do |image|
@@ -112,7 +112,7 @@ class AdventuresController < ApplicationController
       end
         return adventure
     end
-    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
       params.require(:adventure).permit(:title, :description, :duedate, :creator, :priority, :completed, :comments, :image, :photos, :tags)
