@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+    devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
 
     match('/adventures/:id/add_comment' , {:via => :post, :to => 'adventures#add_comment'})
     match('/adventures/:id/add_tag' , {:via => :post, :to => 'adventures#add_tag'})
