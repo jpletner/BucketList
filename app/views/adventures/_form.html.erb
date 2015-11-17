@@ -39,7 +39,15 @@
       <p class="note">Select one or more photos to upload</p>
       <%= file_field_tag "photos[]", type: :file, multiple: true %>
 </div>
-
+<div class="field">
+        <div>
+            Enter URL to Replace the Main Image: <%= text_field_tag 'image_url' %>
+            <div class="actions">
+                <%= link_to 'Update Image', '/adventures/' + @adventure.id.to_s + '/update_image', method: :post, data: { confirm: 'Are you sure?' }, class:"btn btn-default" %>
+            </div>
+        </div>
+        <%= image_tag(@adventure.image.url(:large), :class => "edit_pic")%>
+</div>
 <% @adventure.pictures.each do |picture| %>   
     <div class="inline-div">
         <%= image_tag(picture.photo.url(:large), :class => "edit_pic") %>

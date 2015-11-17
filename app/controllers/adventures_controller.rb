@@ -95,9 +95,18 @@ class AdventuresController < ApplicationController
     render "show.html.erb"
   end
 
-
-
-
+  def update_image
+    @adventure = Adventure.find(params[:id])
+      if params[:image_url]
+          @adventure.image = @adventure.image_from_url(params[:image_url])
+      end
+    respond_to do |format|
+        format.html { redirect_to edit_adventure_url(@adventure), notice: 'Picture was successfully replaced.' }
+      format.json { head :no_content }
+    end
+  end
+      
+      
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure
