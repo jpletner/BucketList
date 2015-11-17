@@ -30,12 +30,12 @@ before_action :authenticate_user!
       newAdventure.title.downcase! # ! alters the original
       newAdventure.save
       newAdventure.creator = @user.first_name + ' ' + @user.last_name
-      if !params[:image_url].blank?  
+      if !params[:image_url].blank?
         newAdventure.image = newAdventure.image_from_url(params[:image_url])
       end
         if params[:image_url].blank? && newAdventure.image.blank?
           newAdventure.image = "https://briancromer.files.wordpress.com/2010/09/ds-print1.jpg"
-      end      
+      end
       @user.adventures << newAdventure
       @user.save
     end
@@ -49,9 +49,23 @@ before_action :authenticate_user!
     end
   end
 
+  def followUser
+    @user = User.find(params[:id])
+    current_user.follow!(@user)
+    redirect_to "/users/#{@user.id}"
+  end
+
+    def unfollowUser
+    @user = User.find(params[:id])
+    current_user.unfollow!(@user)
+    redirect_to "/users/#{@user.id}"
+  end
+
+    def followPage
+      @users = current_user.followees(User)
+    end
 
 private
-    
   def set_user
     @user = User.find(params[:id])
   end
@@ -60,6 +74,4 @@ private
  def user_params
      params.require(:user).permit(:first_name, :last_name, :city, :state, :about, adventures_attributes: [:id, :title, :description, :duedate, :creator, :priority, :completed, :image, :_destroy])
  end
-
-
 end

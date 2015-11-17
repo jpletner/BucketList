@@ -43,12 +43,9 @@ describe "edit adventure" do
     expect(page).to have_content "Edit Your Adventure"
     fill_in "Title", :with => "newTitle!@#"
     fill_in "Description", :with => "newDescription!@#"
-    fill_in 'image_url', :with => 'http://michaeldanielho.com/fish237.jpg'
-    within('.inline-div') do
-        find('.actions').click_link('Update Image')
-    end
-    expect(page).to have_content "Edit Your Adventure"
-    expect(page).to have_xpath('//img[contains(@src,"fish237.jpg")]')
+    attach_file('adventure[image]', fixture_image_path)
+    click_button "Update Adventure"
+    expect(page).to have_xpath('//img[contains(@src,"ruby.jpg")]')
   end
 end
 
