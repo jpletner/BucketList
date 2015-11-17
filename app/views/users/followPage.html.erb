@@ -1,0 +1,11 @@
+<h3 class="text-center">Users</h3>
+
+<% if @users != [] %>
+  <% @users.each do |f| %>
+    <a href="/users/<%= f.id %>"><p class="text-center"><%= f.first_name %> <%= f.last_name %></a></p>
+  <% end %>
+  <% else %>
+  <p class="text-center">You aren't curretly following any users.</p>
+<% end %>
+
+<h3 class="text-center">Advetures</h3>
