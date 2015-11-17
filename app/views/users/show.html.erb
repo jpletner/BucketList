@@ -4,15 +4,51 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user_info">
-
-    <div class="well"><h3 class="inline"><%= @user.first_name %> <%= @user.last_name %></h3>
-    <% if user_signed_in? %>
-      <% if @user != current_user && !current_user.follows?(@user) %>
-        <div class="follow inline"><a href="/users/<%= @user.id %>/followUser" class="button btn btn-default">Follow</a></div>
-      <% elsif @user != current_user && current_user.follows?(@user) %>
-        <div class="unfollow inline"><a href="/users/<%= @user.id %>/unfollowUser" class="button btn btn-default">Unfollow</a></div>
+    <div class="well">
+      <div class="user-pic inline">
+      <% if @user.image.blank? %>
+        <img src="/system/person-placeholder.jpg" class="user_image_placeholder"/>
+      <% else %>
+        <%= image_tag @user.image.url(:med) %>
       <% end %>
-    <% end%></div>
+      </div>
+
+
+      <h3 class="inline"><%= @user.first_name %> <%= @user.last_name %></h3>
+        <% if user_signed_in? %>
+          <% if @user != current_user && !current_user.follows?(@user) %>
+            <div class="follow inline"><a href="/users/<%= @user.id %>/followUser" class="button btn btn-default">Follow</a></div>
+          <% elsif @user != current_user && current_user.follows?(@user) %>
+            <div class="unfollow inline"><a href="/users/<%= @user.id %>/unfollowUser" class="button btn btn-default">Unfollow</a></div>
+          <% end %>
+          <% if current_user == @user %>
+            <p class="inline pointer" id="user_pic">Edit Picture</p>
+
+            <div class="form-group fileinputs2"> <!-- Upload Images Options -->
+              <form role="form" class="form-group user-picture" id="user-picture" action="/users/show/addUserPicture" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+              <div class="radio-buttons">
+                <p>Add an Image Options: (select one)</p>
+                <label><input id="rdb3" type="radio" name="image_cb2" value="3" />Upload Image Using a URL</label>
+                <label><input id="rdb4" type="radio" name="image_cb2" value="4" />Upload Image from Local Drive</label>
+              </div>
+              <div id="image_3" class="field toHide image-url">
+                  Enter URL to Upload Your Image: <%= text_field_tag 'image_url2', id: "profile-url-field" %>
+              </div>
+
+              <div id="image_4" class="form-group toHide image-file">
+                <label for="adventure_image2">Upload an Image From Your PC:</label><input type="file" class="file" name="user_image" id="adventure_image2" />
+              </div>
+
+              <div class="actions profile-pic-submit">
+                <input class="btn btn-info" type="submit" name="commit2" value="Add"/>
+              </div>
+              </form>
+
+               <p class="block" id="cancel">Cancel</p>
+             </div> <!-- Upload Image End -->
+          <% end %>
+        <% end%>
+    </div>
     <br>
 
     <p><%= @user.city %>, <%= @user.state %></p><br>

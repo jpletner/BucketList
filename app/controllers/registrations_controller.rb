@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
       users_show_path
   end
-   
+
   def after_sign_in_path_for(resource)
       users_show_path
   end
@@ -11,11 +11,11 @@ class RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
       users_show_path
   end
-    
-    def sign_in_from_home
-        
-    end
-    
+
+  def sign_in_from_home
+
+  end
+
 private
 
   def sign_up_params

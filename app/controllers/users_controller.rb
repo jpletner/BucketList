@@ -49,6 +49,24 @@ before_action :authenticate_user!
     end
   end
 
+  def newPic
+    @user = current_user
+  end
+
+  def cancel
+  end
+
+  def addUserPicture
+    @user = current_user
+    if params[:image_cb2] == "3"
+      @user.image = @user.image_from_url(params[:image_url2])
+    else
+      @user.image = params[:user_image]
+    end
+    @user.save
+    redirect_to users_show_path
+  end
+
   def followUser
     @user = User.find(params[:id])
     current_user.follow!(@user)
@@ -72,6 +90,6 @@ private
 
 
  def user_params
-     params.require(:user).permit(:first_name, :last_name, :city, :state, :about, adventures_attributes: [:id, :title, :description, :duedate, :creator, :priority, :completed, :image, :_destroy])
+     params.require(:user).permit(:first_name, :last_name, :city, :state, :about, :image, adventures_attributes: [:id, :title, :description, :duedate, :creator, :priority, :completed, :image, :_destroy])
  end
 end
