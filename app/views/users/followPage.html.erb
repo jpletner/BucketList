@@ -2,19 +2,21 @@
   <div class="row">
     <div class="col-md-6">
       <div class="col-md-12 my_box_center_mod">
-        <h3>Currently Following:</h3>
+        <h3>Currently Following (<%= @followers.length %>)</h3>
         <% if @followers != [] %> <!-- Can someone please explain this to me?-->
           <% @followers.each do |f| %>
             <div class="user-box inline">
               <div class="user-pic">
-              <% if f.image.blank? %>
-                <img src="/system/person-placeholder.jpg" class="follow-image"/>
-              <% else %>
-                <%= image_tag f.image.url(:med), class: 'follow-image' %>
-              <% end %>
+                <a href="/users/<%= f.id %>">
+                  <% if f.image.blank? %>
+                    <img src="/system/person-placeholder.jpg" class="follow-image"/>
+                  <% else %>
+                    <%= image_tag f.image.url(:med), class: 'follow-image' %>
+                  <% end %>
+                </a>
               <a href="/users/<%= f.id %>"><p class="text-center"><%= f.first_name %> <%= f.last_name %></a></p>
               </div>
-          </div>
+            </div>
           <% end %>
         <% else %>
           <p class="text-center">You aren't currently following any users.</p>
@@ -24,19 +26,21 @@
 
     <div class="col-md-6">
       <div class="col-md-12 my_box_center_mod">
-        <h3>Your Followers:</h3>
+        <h3>Your Followers (<%= @yourFollowers.length %>)</h3>
         <% if @yourFollowers != [] %> <!-- Can someone please explain this to me?-->
           <% @yourFollowers.each do |f| %>
             <div class="user-box inline">
               <div class="user-pic">
-              <% if f.image.blank? %>
-                <img src="/system/person-placeholder.jpg" class="follow-image"/>
-              <% else %>
-                <%= image_tag f.image.url(:med), class: 'follow-image' %>
-              <% end %>
+                <a href="/users/<%= f.id %>">
+                  <% if f.image.blank? %>
+                    <img src="/system/person-placeholder.jpg" class="follow-image"/>
+                  <% else %>
+                    <%= image_tag f.image.url(:med), class: 'follow-image' %>
+                  <% end %>
+                </a>
               <a href="/users/<%= f.id %>"><p class="text-center"><%= f.first_name %> <%= f.last_name %></a></p>
               </div>
-          </div>
+            </div>
           <% end %>
         <% else %>
           <p class="text-center">No users are currently following you.</p>

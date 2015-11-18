@@ -82,7 +82,6 @@ before_action :authenticate_user!
     def followPage
       @followers = current_user.followees(User)
       @yourFollowers = current_user.followers(User)
-
     end
 
 private
