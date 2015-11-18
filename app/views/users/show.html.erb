@@ -1,61 +1,134 @@
 <!--Profile Home Page -->
-
-
 <p id="notice"><%= notice %></p>
+<div class ="container-fluid my_user_info">
+    <div class="row col-sm-5">
+      <!-- <div class="my_user_profile_pic">
+      <h3> Need profile pic <h3>
+      </div> -->
+      <div class="my_user_about_me">
 
-<div class="user_info">
+        <div class="my_user_profile_pic">
+        <h3> Need profile pic <h3>
+        </div>
 
-    <div class="well">
-      <h3 class="inline">
-        <%= @user.first_name %> <%= @user.last_name %></h3>
-      <% if user_signed_in? %>
-        <% if @user != current_user && !current_user.follows?(@user) %>
-          <div class="follow inline"><a href="/users/<%= @user.id %>/followUser" class="button btn btn-default">Follow</a></div>
-        <% elsif @user != current_user && current_user.follows?(@user) %>
-          <div class="unfollow inline"><a href="/users/<%= @user.id %>/unfollowUser" class="button btn btn-default">Unfollow</a></div>
+        <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+
+  <!--follow/unfollow button displays only if the current signed in   -->
+        <% if user_signed_in? %>
+          <% if @user != current_user && !current_user.follows?(@user) %>
+            <div class="follow inline my_button_float_right"><a href="/users/<%= @user.id %>/followUser" class="button btn btn-default">Follow</a></div>
+          <% elsif @user != current_user && current_user.follows?(@user) %>
+            <div class="unfollow inline my_button_float_right"><a href="/users/<%= @user.id %>/unfollowUser" class="button btn btn-default">Unfollow</a></div>
           <% end %>
-      <% end%>
+        <% end%>
+
+        <p><%= @user.city %>, <%= @user.state %></p>
+  <br>
+
+    <% if @user == current_user %>
+        <h3>About Me</h3>
+    <% else %>
+        <h3>About <%= @user.first_name %></h3>
+    <% end %>
+        <p>We have @user.about here but it is not actually a field we render on any form. We need to fix this before going to production. ;) - Sam Note <p>
+        <p><%= @user.about %></p>
+
+       </div>
     </div>
+    <div class="row col-sm-1 blank_space"></div>
+    <div class="row col-sm-6">
 
-    <br>
+      <!--begin add adventure -->
+      <% if @user == current_user %>
+              <h3>Add New Adventure</h3>
+                <form role="form" class="form-group new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+                      <div class="form-group">
+                            <!-- <label for="adventure_title">Adventure Name</label> -->
+                            <input class="form-control" type="text" name="adventure[title]" id="adventure_title" value="Adventure Title"/>
+                      </div>
+                      <div class="form-group">
+                            <label for="adventure_description">Description</label>
+                            <textarea class="form-control" rows="3" name="adventure[description]" id="adventure_description"></textarea>
+                      </div>
+                      <div class="form-group">
+                            <label for="adventure_duedate">Due Date</label>
+                            <input class="form-control" type="date" name="adventure[duedate]" id="adventure_duedate" />
+                      </div>
+                      <div class="form-group">
+                            <label for="adventure_priority">Priority</label>
+                            <input class="form-control" type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority"/>
+                      </div>
 
-    <p><%= @user.city %>, <%= @user.state %></p><br>
+                      <!--Upload Image Begin -->
+                      <div class="my_box_for_image_upload">
+                        <div class="form-group fileinputs">
+                          <!-- Upload Images Options -->
+                              <p>Add an Image Options: (select one)</p>
+                              <label><input id="rdb1" type="radio" name="image_cb" value="1" />Upload Image Using a URL</label>
+                              <label><input id="rdb2" type="radio" name="image_cb" value="2" />Upload Image from Local Drive</label>
 
-    <h3 class="well">About Me</h3>
+                              <div id="image_1" class="field toHide">
+                                  Enter URL to Upload Your Image: <%= text_field_tag 'image_url' %>
+                              </div>
+                              <div id="image_2" class="form-group toHide">
+                                <label for="adventure_image">Upload an Image From Your PC:</label><input type="file" class="file" name="adventure[image]" id="adventure_image" />
+                              </div>
+                        </div>
+                       <!-- Upload Image End -->
 
-    <p><%= @user.about %></p>
+                       <div class="checkbox">
+                          <label for="adventure_completed"><input class="checkbox" type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done">Done?</label>
+                       </div>
 
+                       <!--Submit Button  -->
+                      <div class="form-group actions">
+                        <input class="btn btn-info" type="submit" name="commit" value="Add"/>
+                      </div>
+                    </div>
+                </form>
+
+        <% end %>
+      <!-- End add adventure  -->
+
+  </div>
+  <!--  -->
 </div>
-
-
-<h3 class="well">My Bucket List:</h3>
-<% if @user.adventures.any? %>
-<% @user.adventures.each do |adventure| %>
 <div class="container-fluid">
-    <div class="row">
-        <div class="bucket col-md-3 col-sm-6">
+    <div class="row my_headline_text">
+      <h3>My Bucket List:</h3>
+    </div>
+<!-- <img src="/public/css/bucketlist_images/medium_paint_bucket_icon.png"> -->
+  <% if @user.adventures.any? %>
+  <% @user.adventures.each do |adventure| %>
+  <div class="row col-md-3 col-sm-6">
+        <div class="bucket">
         <div class="tip" >
             <div class="handle"></div>
             <div class="img_tip">
-            <%= link_to image_tag(adventure.image.url(:large)), adventure, :class => "image_tip" %>
-          </div>
+              <%= link_to image_tag(adventure.image.url(:large)), adventure, :class => "image_tip" %>
+            </div>
         </div>
+        </div>
+        <div class="my_adventure_description">
             <h4><%= adventure.title.upcase %></h4>
             <h5><%= adventure.creator %></h5>
-            <% if @user == current_user %>
+          <% if @user == current_user %>
             <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Dump', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
-            <% end %>
+          <% end %>
         </div>
-    <% end %>
+        <% end %>
     <% else %>
-      <p>no adventures added</p>
+      <% if @user == current_user %>
+        <p class="my_no_adventures_yet"> You have not added any adventures yet. </p>
+      <% else %>
+        <p class="my_no_adventures_yet"> <%= @user.first_name %> has not created any adventures yet. </p>
+      <% end %>
     <% end %>
-
     </div>
 </div>
 <!--<div class="bucket"></div>-->
 
-<% if @user == current_user %>
+<!-- <% if @user == current_user %>
 <div class="container-fluid">
     <div class="row">
         <h3 class="well">Add New Adventure</h3>
@@ -78,8 +151,8 @@
                       <input class="form-control" type="number" name="adventure[priority]" min="1" max="5" id="adventure_priority"/>
                 </div>
 
-                <div class="form-group fileinputs"> <!-- Upload Images Options -->
-                        <p>Add an Image Options: (select one)</p>
+                <div class="form-group fileinputs"> <!- Upload Images Options -->
+                        <!-- <p>Add an Image Options: (select one)</p>
                         <label><input id="rdb1" type="radio" name="image_cb" value="1" />Upload Image Using a URL</label>
     <label><input id="rdb2" type="radio" name="image_cb" value="2" />Upload Image from Local Drive</label>
 
@@ -89,8 +162,8 @@
                         <div id="image_2" class="form-group toHide">
                           <label for="adventure_image">Upload an Image From Your PC:</label><input type="file" class="file" name="adventure[image]" id="adventure_image" />
                         </div>
-                 </div> <!-- Upload Image End -->
-                    <div class="checkbox">
+                 </div> <!- Upload Image End -->
+                    <!-- <div class="checkbox">
                           <label for="adventure_completed"><input class="checkbox" type="checkbox" name="adventure[completed]" id="adventure_completed" value="Done">Done?</label>
                     </div>
 
@@ -101,4 +174,4 @@
         </div>
     </div>
 </div>
-<% end %>
+<% end %> -->
