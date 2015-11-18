@@ -1,10 +1,48 @@
-<div class = "container my_box_center">
-<% if @users != [] %> <!-- Can someone please explain this to me?-->
-  <% @users.each do |f| %>
-    <h3 class="text-center">Users You Follow:</h3>
-    <a href="/users/<%= f.id %>"><p class="text-center"><%= f.first_name %> <%= f.last_name %></a></p>
-  <% end %>
-  <% else %>
-  <h3 class="text-center">You aren't currently following any users.</h3>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col-md-12 my_box_center_mod">
+        <h3>Currently Following:</h3>
+        <% if @followers != [] %> <!-- Can someone please explain this to me?-->
+          <% @followers.each do |f| %>
+            <div class="user-box inline">
+              <div class="user-pic">
+              <% if f.image.blank? %>
+                <img src="/system/person-placeholder.jpg" class="follow-image"/>
+              <% else %>
+                <%= image_tag f.image.url(:med), class: 'follow-image' %>
+              <% end %>
+              <a href="/users/<%= f.id %>"><p class="text-center"><%= f.first_name %> <%= f.last_name %></a></p>
+              </div>
+          </div>
+          <% end %>
+        <% else %>
+          <p class="text-center">You aren't currently following any users.</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="col-md-12 my_box_center_mod">
+        <h3>Your Followers:</h3>
+        <% if @yourFollowers != [] %> <!-- Can someone please explain this to me?-->
+          <% @yourFollowers.each do |f| %>
+            <div class="user-box inline">
+              <div class="user-pic">
+              <% if f.image.blank? %>
+                <img src="/system/person-placeholder.jpg" class="follow-image"/>
+              <% else %>
+                <%= image_tag f.image.url(:med), class: 'follow-image' %>
+              <% end %>
+              <a href="/users/<%= f.id %>"><p class="text-center"><%= f.first_name %> <%= f.last_name %></a></p>
+              </div>
+          </div>
+          <% end %>
+        <% else %>
+          <p class="text-center">No users are currently following you.</p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>
