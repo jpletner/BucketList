@@ -39,6 +39,18 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+.my_box_center_for_search_mod{
+  background-color: lightgray;
+  border-radius: 10px;
+  color: black;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  width: 50%;
+  margin-top: 5px;
 }
 
 /* css for show.html.erb (profile page)*/

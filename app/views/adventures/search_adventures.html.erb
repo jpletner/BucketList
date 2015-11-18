@@ -1,25 +1,38 @@
 <!--Search Adventure -->
-<div class="container my_box_center_for_search">
+<div class="container my_box_center_for_search_mod text-center">
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h3>Seach Adventures</h3>
-<form class="form-group" action='/adventures/search_adventures' method='get'>
-  <input class="form-control half-width" type="text" name="adventure_title" id="adventure_title" /><br>
-  <a href='/adventures'>All Adventures</a>
-  <div class="actions">
-    <input class="btn btn-default" type="submit" value="Search"/>
-  </div>
-</form>
+  <h3>Seach Adventures</h3>
+  <form class="form-group" action='/adventures/search_adventures' method='get'>
+    <input class="form-control half-width center-block" type="text" name="adventure_title" id="adventure_title" /><br>
+    <a href='/adventures'>All Adventures</a>
+    <div class="actions">
+      <input class="btn btn-default" type="submit" value="Search"/>
+    </div>
+  </form>
+</div>
 
 <% if !@adventures.nil? %>
   <% if !@adventures.empty? %>
-    <h3>Adventures found:</h3>
-    <% @adventures.each do |adventures| %>
-      <%= link_to adventures.title, adventures %><br>
+    <h3 class="text-center">Adventures found:</h3>
+
+    <% @adventures.each do |adventure| %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bucket col-md-3 col-sm-6">
+              <div class="tip" >
+                  <div class="handle"></div>
+                    <div class="img_tip">
+                        <%= link_to image_tag(adventure.image.url(:large)), adventure, :class => "image_tip" %>
+                    </div><!--end of img_tip-->
+              </div><!--end of tip-->
+              <a href="/adventure/<%= adventure.id %>"><h4><%= adventure.title.upcase %></h4></a>
+            </div><!--End of Bucket List Loop Columns-->
     <% end %>
+
   <% else %>
-    <h3>No Adventures Found</h3>
+    <h3 class="text-center">No Adventures Found</h3>
   <% end %>
+  </div>
 <% end %>
-</div>
