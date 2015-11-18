@@ -1,5 +1,6 @@
+<div class="container my_box_center_for_search">
 <!--Search Adventure -->
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 <h3>Search Users</h3>
 <form class="form-group" action='/users/search_users' method='get'>
@@ -10,13 +11,14 @@
   </div>
 </form>
 
-<% if !@user.nil? %>
-  <% if !@user.empty? %>
-    <h3>Users found:</h3>
-    <% @user.each do |user| %>
-    <p><a href="/users/<%= user.id %>"><%= user.first_name %></a></p></<br>
+  <% if !@user.nil? %>
+    <% if !@user.empty? %>
+      <h3>Users found:</h3>
+      <% @user.each do |user| %>
+      <p><a href="/users/<%= user.id %>"><%= user.first_name %></a></p></<br>
+      <% end %>
+    <% else %>
+      <h3>No People Found</h3>
     <% end %>
-  <% else %>
-    <h3>No People Found</h3>
   <% end %>
-<% end %>
+</div>
