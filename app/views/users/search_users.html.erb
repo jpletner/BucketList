@@ -1,6 +1,8 @@
+<div class="container my_box_center_for_search">
 <!--Search Adventure -->
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <h3>Search Users</h3>
 <form class="form-group" action='/users/search_users' method='get'>
   <input class="form-control half-width" type="text" name="creator" id="user" /><br>
@@ -9,14 +11,24 @@
     <input class="btn btn-default" type="submit" value="Search"/>
   </div>
 </form>
+=======
+  <h3>Search Users</h3>
+  <form class="form-group" action='/users/search_users' method='get'>
+    <input class="form-control half-width" type="text" name="creator" id="user" /><br>
+    <div class="actions">
+      <input class="btn btn-default" type="submit" value="Search"/>
+    </div>
+  </form>
+>>>>>>> 5d113d8c3c6615114ea3fa3a1823ee6ddeaabfae
 
-<% if !@user.nil? %>
-  <% if !@user.empty? %>
-    <h3>Users found:</h3>
-    <% @user.each do |user| %>
-    <p><a href="/users/<%= user.id %>"><%= user.first_name %></a></p></<br>
+  <% if !@user.nil? %>
+    <% if !@user.empty? %>
+      <h3>Users found:</h3>
+      <% @user.each do |user| %>
+      <p><a href="/users/<%= user.id %>"><%= user.first_name %></a></p></<br>
+      <% end %>
+    <% else %>
+      <h3>No People Found</h3>
     <% end %>
-  <% else %>
-    <h3>No People Found</h3>
   <% end %>
-<% end %>
+</div>
