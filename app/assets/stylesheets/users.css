@@ -91,3 +91,16 @@
 .my_no_adventures_yet{
   text-align: center;
 }
+
+.user-search-image {
+  width: 200px;
+  height: 200px;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.transparent:hover {
+  background-color: transparent;
+}

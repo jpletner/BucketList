@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 .DS_Store
+
+#added to not store paperclip images
+/public/system/
