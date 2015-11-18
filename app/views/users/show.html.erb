@@ -25,13 +25,13 @@
                     <div class="form-group fileinputs2"> 
                         <form role="form" class="form-group user-picture" id="user-picture" action="/users/show/addUserPicture" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
                             <div class="radio-buttons">
-                            <p class="muted">Add an Image Options: (select one)</p>
-                            <label class="muted padright"><input id="rdb3" type="radio" name="image_cb2" value="3" />Upload Image Using a URL</label>
-                            <label class="muted"><input id="rdb4" type="radio" name="image_cb2" value="4" />Upload Image from Local Drive</label>
+                                <p class="muted">Add an Image Options: (select one)</p>
+                                <label class="muted padright"><input id="rdb3" type="radio" name="image_cb2" value="3" />Upload Image Using a URL</label>
+                                <label class="muted"><input id="rdb4" type="radio" name="image_cb2" value="4" />Upload Image from Local Drive</label>
                             </div><!--end of radio buttons-->
-                            <div id="image_3" class="field toHide image-url">Enter URL to Upload Your Image: <%= text_field_tag 'image_url2' %>
+                            <div id="image_3" class="field toHide2 image-url">Enter URL to Upload Your Image: <%= text_field_tag 'image_url2' %>
                             </div>
-                            <div id="image_4" class="form-group toHide image-file">
+                            <div id="image_4" class="form-group toHide2 image-file">
                                 <label for="adventure_image2">Upload an Image From Your PC:</label><input type="file" class="file" name="user_image" id="adventure_image2" />
                             </div>
                             <div class="actions profile-pic-submit">

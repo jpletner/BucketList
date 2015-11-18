@@ -14,12 +14,13 @@ $(document).ready(function () {
     $("#cancel").click(function(){
       $('.radio-buttons').hide();
       $('#cancel').hide();
+      $('.toHide2').hide();
       $("#user_pic").show();
       $('.profile-pic-submit').hide();
     });
 
     $("[name=image_cb2]").click(function(){
-      $('.toHide').hide();
+      $('.toHide2').hide();
       $("#image_"+$(this).val()).show('slow');
     });
 
