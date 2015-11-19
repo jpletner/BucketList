@@ -98,12 +98,12 @@ ActiveRecord::Schema.define(version: 20151117184645) do
     t.string   "state"
     t.string   "username"
     t.text     "about"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

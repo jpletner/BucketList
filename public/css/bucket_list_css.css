@@ -1,21 +1,24 @@
 /*Carousel*/
 .carousel .item {
-    max-height: 600px; /*slider height*/
+    height: 100%; /*slider height*/
     width: 100%; /*slider width*/
 
 }
+
 .carousel .item img {
-    opacity: 0.4;
+    opacity: 0.5;
     width: 100%; /*img width*/
+    height: 650px;
 
 }
 /*full width container*/
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .block {
         margin-left: -20px;
         margin-right: -20px;
     }
 }
+
 .carousel-indicators li {
   background-color: transparent;
   border: none;
@@ -26,68 +29,93 @@
 
 /* below is box for headline-text overlay on carousel*/
 
+body {
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 5em;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+h3 {
+  font-size: 3em;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+
 #headline-text{
-  color:#353536;
+  color: #000003;
   left:0;
-  position:absolute;
+  position: absolute;
   text-align:center;
-  top:10%;
+  top:25%;
   width:100%;
-  z-index:12;/* z-index of carousel is 10*/
+  z-index:5;/* z-index of carousel is 10*/
 
 }
 
 /*sign in form*/
 
 #sign-in-main-page{
-  background-color: #353536;
-  border-radius: 20px;
-  top: 65%;
-  color: white;
+  background-color: #0f0a01;
+  border-radius: 10px;
+  top: 80%;
+  color: #fbfbfb;
   left: 10%;
-  padding: 20px;
+  padding: 15px;
   position: absolute;
-  /*text-align: center;*/
-  width: 80%;
+  text-align: center;
+  width: 75%;
   z-index:12;
-
+  opacity:0.5;
 }
 .form-button{
   margin-left: 45px;
+  padding-top: 7px;
 
 }
 .email_input_landing {
   margin left: 20px;
+  padding-top: 7px;
 }
 .password_input_landing {
   margin-left: 30px;
+  padding-top: 7px;
 }
 
 .sign-inlinks a {
- color: white;
+ color: #fbfbfb;
  margin-left: 45px;
- text-decoration: underline
+ text-decoration: underline;
+ padding-top: 10px;
 }
 
+a {
+  color: #000003
+}
 /*Navigation Bar*/
 
 
-.mynavbar {
-  background-color: #353536;
-  border: none;
-  border-radius: 0px;
 
+.topnav {
+  background-color: #ee8012;
+  border: none;
+  opacity: inherit;
 }
+
 .navbar-default .navbar-brand {
-  color: white;
+  color: #000003;
 }
 .navbar-default .navbar-nav>li>a{
-  color: white;
+  color: #000003;
 }
+
 .navbar-brand {
   padding-top: 7px;
-
 }
+
 /*Links*/
 #links{
   margin-bottom: 80px;
@@ -95,12 +123,12 @@
   padding-top: 8px;
 }
 .fa-circle{
-  color: #353536;
+  color: #000003;
 }
 .my_link_description {
-    background-color: rgba(53, 53, 54, 0.6);
+    background-color: #ee8012;
     border: 6px solid #353536;
-    border-radius: 50px;
+    border-radius: 5px;
     margin-left: 10px;
     margin-right:10px;
     margin-top: -50px;
@@ -108,28 +136,65 @@
 
 }
 .link-box {
-  color: #353536;
+  color: #fbfbfb;
   text-align: center;
 }
 
 /*begin footer*/
-#footer_logo{
+/*#footer_logo{
   padding-top: 30px;
-}
-.footer{
-  background-color: #353536;
-  color: white;
-  padding: 25px;
-  text-align:right;
+}*/
+
+footer {
+  background-color: #ee8012;
+  /*color: #fbfbfb;*/
+  padding: 10px 0;
+  /*text-align:right;*/
 }
 
-.footerlist{
+/*.footerlist{
   list-style-type: none;
 }
 
 .footer-info-headline{
   line-height: 25px;
   text-decoration: underline;
+}*/
+
+.content-section-a {
+  padding-left: 0;
+  padding-right: 0;
+  padding: 50px 0;
+  background-color: #f8f8f8;
+  margin-left: auto;
 }
 
+.content-section-b {
+  padding-right: 0;
+  padding-left: 0;
+  padding: 50px 0;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+html {
+  background-color: #e4e6dd;
+  height: 100%;
+  width: 100%;
+}
+
+h3.copyright {
+  text-align: center;
+  margin: 15px 0 0;
+}
 /*Responsive CSS for navbar http://www.bootply.com/nc7LvdaQMS*/

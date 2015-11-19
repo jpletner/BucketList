@@ -13,7 +13,7 @@
   <% if !@user.empty? %>
     <h3>Users found:</h3>
     <% @user.each do |user| %>
-    <p><a href="/users/<%= user.id %>"><%= user.first_name %></a></p></<br>
+    <p><a href="/users/<%= user.id %>"><%= user.first_name &&  %></a></p></<br>
     <% end %>
   <% else %>
     <h3>No People Found</h3>
