@@ -15,3 +15,4 @@
 //= require images
 //= require users
 //= require_tree .
+//= require random_bucket

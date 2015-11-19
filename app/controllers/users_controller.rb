@@ -82,6 +82,14 @@ before_action :authenticate_user!
     def followPage
       @users = current_user.followees(User)
     end
+    
+    def get_random_adventure
+      @adventure = Adventure.all.sample
+    respond_to do |format|
+      format.html { redirect_to adventures_url }
+      format.json { render :show, status: :ok, location: @adventure }
+    end
+  end
 
 private
   def set_user
