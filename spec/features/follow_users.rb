@@ -110,6 +110,7 @@ describe "search by adventure name" do
     within('.my_box_center') do
       fill_in "Email", :with => "jackie@gmail.com"
       fill_in "Password", :with => "password"
+      click_button "Log in"
     end
     within('.user-pic') do
       expect(page).to have_content "Jackie Chan"
