@@ -3,8 +3,8 @@ require_relative '../rails_helper'
 include Capybara::DSL
 describe "user sign up and log in" do
   before(:each) do
+    visit "/users/sign_up"
     within('my_box_center') do
-      visit "/users/sign_up"
       fill_in 'First name', :with => "Chuck"
       fill_in 'Last name', :with => "Norris"
       fill_in 'Email', :with => "chuck@gmail.com"
