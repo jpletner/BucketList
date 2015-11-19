@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//View Profile Page
+
+//User Profile Name and Photo
+.profile {
+    margin-bottom: 0;
+}
+
+//Bucket List
 .bucket {
-    margin-bottom: 5vh;
+    margin-bottom: 40px;
     img {
         -webkit-clip-path: polygon(12% 0, 88% 0%, 75% 100%, 25% 100%);
         border: 10px solid #444;
@@ -24,43 +32,6 @@
     }
 }
 
-.bucket2 {
-    margin: 5% 0 0 0;
-    img {
-        -webkit-clip-path: polygon(12% 0, 88% 0%, 75% 100%, 25% 100%);
-        border: 10px solid #444;
-        position: relative;
-        width: 400px;
-        height: 300px;
-        text-align: center;
-        overflow: hidden;
-        z-index: 2;
-        background-color: white;
-    }
-    h4, h5 {
-        text-align: center;
-        margin-left: 10px;
-    }
-     h4 {
-        text-align: center;
-    }
-}
-
-.handle2 {
-  width: 290px;
-  height: 150px;
-  border-radius: 50%;
-  box-shadow: -1px -15px 0 0 #444;
-  margin: 0 0 -110px 58px;
-  z-index: -1;
-}
-
-.tip:hover {
-    -ms-transform: rotate(40deg); /* IE 9 */
-    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
-    transform: rotate(40deg);
-}
-
 .handle {
   width: 215px;
   height: 150px;
@@ -68,6 +39,12 @@
   box-shadow: -1px -15px 0 0 #444;
   margin: 0 0 -110px 45px;
   z-index: -1;
+}
+
+.tip:hover {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
 }
 
 div.fileinputs {
@@ -144,4 +121,24 @@ a.image_tip {
 
 a.image_tip:hover {
   background-color: transparent;
+}
+
+//Featured Bucket
+
+.featured {
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fbtn {
+    vertical-align: top;
+    margin-left: 250px;
+}
+
+a.see-more {
+    font-style: italic;
+    color: lightgray;
+    text-align: center;
+    margin: 0 auto;
 }

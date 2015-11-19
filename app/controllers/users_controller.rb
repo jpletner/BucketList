@@ -42,6 +42,16 @@ before_action :authenticate_user!
     render 'show.html.erb'
   end
 
+  def get_random_adventure
+      @user = User.find(params[:id])
+      @adventure = @user.adventures.sample
+    respond_to do |format|
+      format.html { redirect_to adventures_url }
+      format.js
+      format.json { render :show, status: :ok, location: @adventure }
+    end
+  end
+
   def search_users
     if !params[:creator].nil?
       search_string = params[:creator]
@@ -73,22 +83,14 @@ before_action :authenticate_user!
     redirect_to "/users/#{@user.id}"
   end
 
-    def unfollowUser
+  def unfollowUser
     @user = User.find(params[:id])
     current_user.unfollow!(@user)
     redirect_to "/users/#{@user.id}"
   end
 
-    def followPage
+  def followPage
       @users = current_user.followees(User)
-    end
-    
-    def get_random_adventure
-      @adventure = Adventure.all.sample
-    respond_to do |format|
-      format.html { redirect_to adventures_url }
-      format.json { render :show, status: :ok, location: @adventure }
-    end
   end
 
 private
