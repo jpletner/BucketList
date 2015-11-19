@@ -41,10 +41,17 @@ describe "user profile page" do
    fill_in "Email", :with => "chuck.norris@gmail.com"
    fill_in 'Password', :with => "password"
    click_button "Log in"
-   click_link 'Edit Profile'
-   fill_in 'About', :with => "interests"
-   fill_in 'Current password', :with => "password"
-   click_button "Update"
+
+   within('.dropdown') do
+     click_link "Profile"
+     click_link "Edit Your Profile"
+   end
+   within('edit_user') do
+     fill_in 'About', :with => "Doing the thing, Zhu Li"
+     fill_in 'Current password', :with => "password"
+     click_button "Update"
+   end
+   
    expect(page).to have_content "interests"
    fill_in 'Adventure Name', :with => "sky diving"
    fill_in 'Description', :with => "I love sky diving"
@@ -54,7 +61,7 @@ describe "user profile page" do
    expect(page).to have_content "SKY DIVING"
    expect(page).to have_xpath('//img[contains(@src,"ruby.jpg")]')
   end
-     
+
 it "user should be able to add image from URL" do
    visit "/users/sign_up"
    fill_in 'First name', :with => "Chuck"
@@ -96,5 +103,3 @@ end
 def fixture_image_path
     Rails.root.join('spec', 'support', 'ruby.jpg')
 end
-
-

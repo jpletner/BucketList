@@ -15,3 +15,6 @@
 
 #added to not store paperclip images
 /public/system/
+
+#simple coverage
+coverage
