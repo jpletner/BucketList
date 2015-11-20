@@ -79,7 +79,7 @@ h3 {
   color: #fbfbfb;
   left: 10%;
   padding: 15px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   width: 75%;
   z-index:12;
