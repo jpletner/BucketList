@@ -16,3 +16,4 @@
 //= require users
 //= require_tree .
 //= require get_random_adventure
+//= require owl.carousel
