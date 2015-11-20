@@ -18,7 +18,7 @@
                         <% if @user.image.blank? %>
                             <img class= "responsive" src="/system/person-placeholder.jpg"/> <!--default photo-->
                         <% else %>
-                        <%= image_tag @user.image.url(:med), class:"img-responsive" %>
+                        <%= image_tag @user.image.url(:large), class:"user_image_placeholder  border-color" %>
                         <% end %>
                             <!--Edit Profile Picture Link-->
                             <% if current_user == @user %>
