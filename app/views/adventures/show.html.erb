@@ -1,90 +1,166 @@
-<p id="notice"><%= notice %></p>
-<%= render_shareable :buttons=> ['twitter', 'facebook', 'pinterest'] %>
-<p>
-  <strong>Title:</strong>
-  <%= @adventure.title %>
-</p>
-<%= image_tag(@adventure.image.url(:large), :class => "edit_pic")%>
+<!-- Social media share buttons  -->
 
-<% @adventure.pictures.each do |picture| %>
-    <%= image_tag(picture.photo.url(:large), :class => "edit_pic") %>
-<% end %>
+<!-- <div id="social_share_buttons" class="my_adventure_share_buttons"> -->
+  <div id="my_key" class="my_chevron_key">
+    <i class="fa fa-chevron-right"></i>
 
-<p>
-  <strong>Description:</strong>
-  <%= @adventure.description %>
-</p>
+    <div id ="my_sm_buttons">
+      <div class="my_share_button"><%= twitter_button %></div><br>
+      <div class="my_share_button"><%= facebook_button %></div><br>
+      <div class="my_share_button"><%= pinterest_button %></div><br>
+    </div>
+  </div>
+<!-- </div> -->
+<!-- End social media share buttons-->
 
-<p>
-  <strong>Duedate:</strong>
-  <%= @adventure.duedate %>
-</p>
+<div class="container-fluid my_main_photo">
+<!--Main Adventure Cover Photo  -->
+<div class="row">
+<div class="my_main_adventure_image">
+  <%= image_tag(@adventure.image.url(:xlarge), :class => "edit_pic", :size => '700x900')%>
+</div>
+</div>
+</div>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @adventure.creator %>
-</p>
+<!-- Header info Begins  -->
+<div class="container my_adventure_main_info">
+  <div class="row">
+  <h2 class="my_adventure_title">
+    <%= @adventure.title %>
+  </h2>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @adventure.priority %>
-</p>
+  <h3 class ="my_adventure_creator">
+    by <br>
+    <%= @adventure.creator %>
+  </h3>
+</div>
+</div>
 
-<p>
-  <strong>Completed:</strong>
-  <%= @adventure.completed %>
-</p>
+<!-- End Header info -->
 
 
-  <p>
-    <strong>Tags:</strong><br>
-    <% if !@adventure.tags.empty? %>
-      <% @adventure.tags.each do | adventure | %>
+<!--Begin page Content Box1 Adventure Info -->
+<div class="container my_adventure_info">
+  <div class="row">
 
-        <strong>User</strong><br>
-        <%= adventure %><br><br>
-      <% end %>
-    <% else %>
-      <em>Be the first to tag this adventure</em>
+<!-- Begin additional info -->
+    <div class="col-sm-7 my_adventure_additional_info">
+      <p id="notice"><%= notice %></p>
 
+            <h3>About My Bucket</h3>
+
+      <p class="my_adventure_description my_bigger_font">
+        <%= @adventure.description %>
+      </p>
+      <p class = "my_adventure_duedate my_bigger_font">
+        Duedate:
+        <%= @adventure.duedate %>
+      </p>
+
+      <p class="my_adventure_completed my_bigger_font">
+        Completed:
+        <%= @adventure.completed %>
+      </p>
+
+      <!--Since we are not using this functionality for any purpose Del and I discussed taking it out.   -->
+      <!-- <p>
+      <strong>Priority:</strong>
+      <%= @adventure.priority %>
+      </p> -->
+
+      <span class="my_edit_link"><%= link_to 'Edit My Bucket', edit_adventure_path(@adventure) %></span>
+    </div><!-- End additional info -->
+
+    <div class="col-md-1 my_vertical_spacer"></div>
+
+<!--Begin Tags and add_tag_form  -->
+    <div class="col-sm-4 my_adventure_tags_box">
+      <h3 class="my_tags_headline">Tags:</h3>
+        <p class="my_tags">
+
+         <% if !@adventure.tags.empty? %>
+           <% @adventure.tags.each do | adventure | %>
+              <%= adventure %>
+           <% end %>
+         <% else %>
+          <p><em>Be the first to tag this bucket!</em></p>
+         <% end %>
+      </p>
+
+      <div class="my_add_tag_form">
+        <form role="form" class="form-group" action='/adventures/<%= @adventure.id %>/add_tag' method='post'>
+            <div class="form-group">
+                <label for="adventure_tag">Add A Tag For This Bucket?</label>
+                <input class="form-control half-width" type="text" name="tag" id="adventure_tag" />
+            </div>
+            <div class="actions">
+              <input class="btn btn-default" type="submit" value="Add Tag"/>
+            </div>
+        </form>
+      </div><!--End add_tag_form  -->
+    </div><!-- End tags_box -->
+  </div>
+</div><!--End page Content Box1 -->
+
+<div class="container-fluid">
+<div class="my_dark_space_top"></div>
+</div>
+<!-- Begin page Content Box 2: Other Images and Comments -->
+
+<div class="container-fluid">
+  <h2 class="my_photo_headline">My Bucket Photos</h2>
+  <div class="my_dark_space_bottom"></div>
+
+<!-- Other Adventure Images -->
+
+    <% if !@adventure.pictures.empty? %>
+    <div id="owl-demo">
+      <% @adventure.pictures.each do |picture| %>
+      <%= image_tag(picture.photo.url(:large), :class => "owl_item") %>
     <% end %>
-
-
-</p>
-
-<p>
-  <strong>Comments:</strong><br>
-  <% if !@adventure.comments.empty? %>
-  <% @adventure.comments.each do | adventure | %>
-
-    <strong>User</strong><br>
-    <%= adventure %><br><br>
-    <% end %>
+  </div>
     <% else %>
-      <em>Be the first to comment on this adventure</em>
+    <div class="add_my_photos">
+      <a class="my_add_photos_link" href="/adventures/<%= @adventure.id %>/edit">
+        <h3>Add Your Bucket Photos!</h3></a>
+    <% end %>
+  </div>
+<!--End other Adventure Images  -->
+</div>
 
-  <% end %>
-</p>
-<!-- Tags -->
-  <form role="form" class="form-group" action='/adventures/<%= @adventure.id %>/add_tag' method='post'>
+<!--Begin Comments Section  -->
+<div class="container my_adventure_comment_section">
+  <div class="row">
+    <div class="col-sm-5 my_adventure_comments">
+      <h3 class="my_comment_headline">Comments:<h3>
+      <div id="my_comment_scroll_box">
+          <% if !@adventure.comments.empty? %>
+            <% @adventure.comments.each do | adventure | %>
+              <p><%= adventure %></p><br>
+            <% end %>
+          <% else %>
+            <p><em>Be the first to comment on this bucket!</em></p>
+          <% end %>
+      </div>
+    </div>
+  <!-- <div class="col-sm-1 my_vertical_spacer"></div> -->
+
+  <div class="col-sm-7 my_adventure_comment_form">
+    <div class="row">
+      <div class="col-xs-9 my_comment_form">
+      <form role="form" class="form-group" action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
       <div class="form-group">
-          <label for="adventure_tag">Add A Tag For This Adventure</label>
-          <input class="form-control half-width" type="text" name="tag" id="adventure_tag" />
+          <label for="adventure_comment">Add A Comment For This Bucket</label>
+          <input class="form-control half-width" type="text" name="comment" id="adventure_comment" />
       </div>
       <div class="actions">
-        <input class="btn btn-default" type="submit" value="Add Tag"/>
+        <input class="btn btn-default" type="submit" value="Add Comment"/>
       </div>
-  </form>
+    </form>
+  </div>
 
-<form role="form" class="form-group" action='/adventures/<%= @adventure.id %>/add_comment' method='post'>
-    <div class="form-group">
-        <label for="adventure_comment">Add A Comment For This Adventure</label>
-        <input class="form-control half-width" type="text" name="comment" id="adventure_comment" />
+    <div class="col-xs-3 my_image_for_foot">
+      <img src="system/adventures/images/paint_bucket.png">
     </div>
-    <div class="actions">
-      <input class="btn btn-default" type="submit" value="Add Comment"/>
     </div>
-</form>
-
-<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-<%= link_to 'Profile', users_show_path %>
+  </div>

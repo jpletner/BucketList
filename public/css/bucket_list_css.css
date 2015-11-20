@@ -1,3 +1,17 @@
+/*Variables*/
+
+$text_default: #000003;
+$brand_color: #ee8012;
+$brand_dark: #ee5000;
+$text_highlight: #666666;
+$bg_highlight: #e4e6dd;
+$sm_fs: 10px;
+$df_fs: 14px;
+$md_fs: 22px;
+$lg_fs: 36px;
+$xlg_fs: 80px;
+$font_fam: sans-serif;
+
 /*Carousel*/
 .carousel .item {
     height: 100%; /*slider height*/
@@ -57,7 +71,6 @@ h4 {
   top:25%;
   width:100%;
   z-index:5;/* z-index of carousel is 10*/
-
 }
 
 /*sign in form*/
@@ -202,4 +215,24 @@ h3.copyright {
   text-align: center;
   margin: 15px 0 0;
 }
+
+.marright {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.featured-bucket {
+    height: 350px;
+    width: 525px;
+}
+
+.title {
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.main-font {
+    color: #ee8012;
+}
+
 /*Responsive CSS for navbar http://www.bootply.com/nc7LvdaQMS*/

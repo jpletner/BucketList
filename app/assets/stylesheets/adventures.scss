@@ -9,7 +9,7 @@
 $text_default: #000003;
 $brand_color: #ee8012;
 $brand_dark: #ee5000;
-$text_highlight: #666666; 
+$text_highlight: #666666;
 $bg_highlight: #e4e6dd;
 $sm_fs: 10px;
 $df_fs: 14px;
@@ -38,35 +38,49 @@ $font_fam: sans-serif;
     margin-left: 5px;
 }
 
-.classWithPad { 
-    margin:10px; 
-    padding:10px; 
+.martop {
+    margin-top: 5%;
+}
+
+.marhalftop {
+    margin-top: 2.5%;
+}
+
+.nomartop {
+    margin-top: 0;
+}
+
+.marbot {
+    margin-bottom: 5%;
+}
+
+.nopad {
+    padding: 0;
+    margin:0;
 }
 
 //View Profile Page
 
 //User Profile Name and Photo
-.profile {
-    margin-right: 30px;
+.cancel {
+    padding: 7px 12px;
 }
 
-.cancel {
-    padding: 7px 12px;  
+
+.cancel:hover {
+    text-decoration: none;
 }
 
 //Bucket List
 
 .bucket {
-    margin-bottom: 50px;
-    position: relative;
+    margin-bottom: 5vh;
     img {
-        position: absolute;
-        left:50%;
-        margin-left:-150px;
-        top:50%;
-        margin-top:-100px;
+        margin-left: auto;
+        margin-right:auto;
         -webkit-clip-path: polygon(12% 0, 88% 0%, 75% 100%, 25% 100%);
         border: 10px solid #444;
+        position: relative;
         width: 300px;
         height: 200px;
         text-align: center;
@@ -76,11 +90,16 @@ $font_fam: sans-serif;
     }
     h4, h5 {
         text-align: center;
-        margin-left: 10px;
     }
      h4 {
         text-align: center;
     }
+}
+
+.tip:hover {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
 }
 
 .handle {
@@ -88,18 +107,8 @@ $font_fam: sans-serif;
   height: 150px;
   border-radius: 50%;
   box-shadow: -1px -15px 0 0 #444;
-  margin: 0 0 -120px 27px;
+  margin: 0 0 -110px 45px;
   z-index: -1;
-}
-
-.bucket-title {
-    margin-top: 225px;
-}
-
-.tip:hover {
-    -ms-transform: rotate(40deg); /* IE 9 */
-    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
-    transform: rotate(40deg);
 }
 
 div.fileinputs {
@@ -165,7 +174,7 @@ img.edit_pic {
 
 .pointer:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: $brand-color;
 }
 
 .inline {
@@ -174,14 +183,6 @@ img.edit_pic {
 
 .block {
   display: block;
-}
-
-a.image_tip {
-  background-color: transparent;
-}
-
-a.image_tip:hover {
-  background-color: transparent;
 }
 
 //Featured Bucket
@@ -201,9 +202,9 @@ a.see-more {
 
 .user_image_placeholder {
     img {
-       height: 150px; 
+       height: 150px;
        width: 150px;
-//       border: 1px solid $bg_highlight; 
+//       border: 1px solid $bg_highlight;
        background-color: transparent;
        border-radius: 2.5%;
     }
@@ -211,15 +212,27 @@ a.see-more {
 
 #bucket_image {
     img {
-       height: 220px; 
+       height: 220px;
        width: 75%;
        padding: 0;
        margin-top: 2%;
        margin-left: 12.5%;
-       border: 5px solid $brand_color; 
+       border: 5px solid $brand_color;
        border-radius: 2.5%;
        border: 1px solid $text_highlight;
     }
+}
+
+#bucket_image2 {
+    max-height: 350px;
+}
+
+a.image_tip {
+  background-color: transparent;
+}
+
+a.image_tip:hover {
+  background-color: transparent;
 }
 
 .bucket-header {
@@ -235,11 +248,11 @@ a.see-more {
 }
 
 .light-background {
-    background-color: $bg_highlight;    
+    background-color: $bg_highlight;
 }
 
 .border-color {
-    border: 1px solid $text_highlight;
+    border: 3px solid $brand-color;
 }
 
 .header {
@@ -297,9 +310,182 @@ a.see-more {
     background-color: $brand_color;
     border-color: $brand_dark;
 }
-    
+
 .btn-buckets:hover {
     color: $brand_color;
     background-color: $bg_highlight;
     border-color: $brand_color;
+}
+
+
+
+
+
+
+
+
+// Begin CSS for Adventures Show Page
+.my_main_photo{
+  width: 100%;
+}
+.my_main_adventure_image img {
+
+  height:550px;
+  margin-top: 45px;
+  padding-right:0;
+  padding-left: 0;
+  width:100%;
+}
+// coverphoto text
+.my_adventure_main_info{
+margin-top: -400px;
+position:absolute;
+text-align: center;
+}
+.my_adventure_title{
+color: #fff;
+font-size: $xlg_fs;
+opacity: 0.8;
+
+}
+.my_adventure_creator{
+  color: #fff;
+  font-size: $lg_fs;
+  opacity: 0.6;
+
+}
+.my_adventure_info{
+  margin-top: 30px;
+}
+// social media buttons
+
+#my_key {
+  background-color: $brand_color;
+  float: right;
+  padding: 8px;
+  opacity: .6;
+  position: fixed;
+  right:0;
+  top: 50%;
+  z-index:1;
+
+}
+
+#my_key div {
+  display: hidden;
+}
+#my_sm_buttons{
+  opacity: 1;
+}
+.my_bigger_font{
+  color: $text_highlight;
+  font-size: $df_fs;
+}
+.my_edit_link a{
+  color:$text_highlight;
+  font-size: $df_fs;
+
+}
+
+.my_adventure_additional_info{
+ // background-color: ;
+ padding-bottom: 20px;
+ padding-left: 30px;
+}
+
+.my_tags_headline{
+  color: $text_default;
+
+}
+
+.my_adventure_tags_box{
+  background-color: $bg_highlight;
+  color: $text_highlight;
+}
+
+.my_dark_space_top{
+  height: 5px;
+  width: 70%;
+  background-color: $text_default;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15%;
+  margin-bottom: 5px;
+}
+.my_photo_headline{
+  text-align: center;
+}
+
+
+.my_dark_space_bottom{
+  height: 5px;
+  width: 70%;
+  background-color: $text_default;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15%;
+  margin-bottom: 25px;
+}
+.add_my_photos{
+  height:200px;
+}
+.my_add_photos_link{
+  margin-left: 40%;
+
+  text-align: center;
+}
+#owl-demo{
+  margin-bottom: 15px;
+}
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.owl_item {
+  width: 300px;
+  height: 200px;
+  padding: 3px;
+  margin-bottom: 15px;
+}
+
+.my_comment_headline{
+  color: $text_default;
+  text-align: center;
+}
+
+#my_comment_scroll_box{
+color: $text_highlight;
+font-size: $df_fs;
+ height:150px;
+ overflow:scroll;
+ overflow-x:hidden;
+}
+
+.my_adventure_comment_section{
+  background-color: $bg_highlight;
+  height: 250px;
+}
+
+.my_adventure_comments{
+height: 200px;
+padding: 15px;
+
+}
+
+.my_adventure_comment_form{
+  padding-left: 45px;
+  padding-top: 40px;
+}
+
+.my_image_for_foot img{
+  height: 150px;
+  float: right;
+  position:fixed;
+  width: 150px;
+  z-index: 1;
 }

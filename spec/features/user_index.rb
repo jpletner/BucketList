@@ -16,6 +16,8 @@ describe "User index page" do
     end
     visit '/users/all'
     expect(page).to have_content('All Users')
-    expect(page).to have_selector('li', text: 'Chuck Norris')
+    within('.user-pic') do
+      expect(page).to have_content('Chuck Norris')
     end
+  end
 end

@@ -11,5 +11,5 @@ require_relative '../rails_helper'
 #   end
 # end
 RSpec.describe AdventuresHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
 end

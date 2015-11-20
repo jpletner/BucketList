@@ -13,10 +13,19 @@
     $(function ()
       { $("#myModal").modal({show:false });
   </script> -->
+  <script crc="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
   <title> Bucketlist </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script>
+  $(document).ready(function() {
+
+    $("#owl-demo").owlCarousel();
+
+  });
+  </script>
 </head>
 <body>
 <%= render "users/login_modal" %>

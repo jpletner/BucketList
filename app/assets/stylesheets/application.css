@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require owl.carousel
+ *= require owl.theme
  */
 
-//Variables
+/*Variables*/
 
 $text_default: #000003;
 $brand_color: #ee8012;
@@ -39,7 +41,6 @@ $font_fam: sans-serif;
  .my_inline {
    display: inline;
  }
-
 
  .my_navbar {
    background-color: #ee8012;
