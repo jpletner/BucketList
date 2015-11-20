@@ -198,4 +198,15 @@ h3.copyright {
   text-align: center;
   margin: 15px 0 0;
 }
+
+.marright {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.featured-bucket {
+    height: 350px;
+    width: 525px;
+}
+
 /*Responsive CSS for navbar http://www.bootply.com/nc7LvdaQMS*/
