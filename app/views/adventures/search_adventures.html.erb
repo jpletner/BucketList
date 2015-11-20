@@ -3,7 +3,7 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h3>Search Buckets</h3>
+  <h3>Search Adventures</h3>
   <form class="form-group" action='/adventures/search_adventures' method='get'>
     <input class="form-control half-width center-block" type="text" name="adventure_title" id="adventure_title" /><br>
     <a href='/adventures'>All Adventures</a>
@@ -15,7 +15,7 @@
 
 <% if !@adventures.nil? %>
   <% if !@adventures.empty? %>
-    <h3 class="text-center bucket-header">Buckets found:</h3>
+    <h3 class="text-center bucket-header">Adventures found:</h3>
 
     <% @adventures.each do |adventure| %>
     <div class="container-fluid">
@@ -33,7 +33,7 @@
     </div>
 
   <% else %>
-    <h3 class="text-center">No Buckets Found</h3>
+    <h3 class="text-center">No Adventures Found</h3>
   <% end %>
   </div>
 

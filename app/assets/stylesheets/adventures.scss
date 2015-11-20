@@ -18,6 +18,7 @@ $lg_fs: 36px;
 $xlg_fs: 80px;
 $font_fam: sans-serif;
 
+
 body {
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
@@ -333,30 +334,28 @@ a.image_tip:hover {
     border-color: $brand_color;
 }
 
-
-
 // Begin CSS for Adventures Show Page
 .my_main_photo{
   width: 100%;
 }
 .my_main_adventure_image img {
-
   height:550px;
-  margin-top: 45px;
   padding-right:0;
   padding-left: 0;
   width:100%;
 }
+
 // coverphoto text
 .my_adventure_main_info{
-margin-top: -400px;
-position:absolute;
-text-align: center;
+  margin-top: -400px;
+  position:absolute;
+  text-align: center;
 }
+
 .my_adventure_title{
-color: #fff;
-font-size: $xlg_fs;
-opacity: 0.8;
+  color: #fff;
+  font-size: $xlg_fs;
+  opacity: 0.8;
 
 }
 .my_adventure_creator{
@@ -368,6 +367,7 @@ opacity: 0.8;
 .my_adventure_info{
   margin-top: 30px;
 }
+
 // social media buttons
 
 #my_key {

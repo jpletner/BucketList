@@ -30,6 +30,15 @@ $lg_fs: 36px;
 $xlg_fs: 80px;
 $font_fam: sans-serif;
 
+h1, h2, h3{
+font-family: 'Fjalla One', sans-serif;
+}
+
+body {
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
  /*Sam Main Navigation Bar Styling*/
 
  .my_need_a_margin{
@@ -57,6 +66,7 @@ $font_fam: sans-serif;
    margin-right: 10px;
  }
 
+
  body {
    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
    font-weight: 700;
@@ -72,7 +82,41 @@ $font_fam: sans-serif;
    font-family: 'Fjalla One', sans-serif;
  }
 
- h4 {
+h4 {
    font-size: 1.5em;
    font-family: 'Fjalla One', sans-serif;
+
+footer {
+   background-color: #ee8012;
+   /*color: #fbfbfb;*/
+   padding: 10px 0;
+   /*text-align:right;*/
+   display: block;
+ }
+
+ .content-section-a {
+   padding-left: 0;
+   padding-right: 0;
+   padding: 50px 0;
+   background-color: #f8f8f8;
+   margin-left: auto;
+ }
+
+ .content-section-b {
+   padding-right: 0;
+   padding-left: 0;
+   padding: 50px 0;
+   border-top: 1px solid #e7e7e7;
+   border-bottom: 1px solid #e7e7e7;
+ }
+
+ .section-heading {
+     margin-bottom: 30px;
+ }
+
+ .section-heading-spacer {
+     float: left;
+     width: 200px;
+     border-top: 3px solid #e7e7e7;
+
  }
