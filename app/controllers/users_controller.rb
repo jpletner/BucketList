@@ -45,7 +45,7 @@ before_action :authenticate_user!
   def search_users
     if !params[:creator].nil?
       search_string = params[:creator]
-      @user = User.basic_search({first_name: search_string, last_name: search_string}, false)
+      @user = User.basic_search({first_name: search_string, last_name: search_string}, false).paginate(:page => params[:page], :per_page => 16)
     end
   end
 

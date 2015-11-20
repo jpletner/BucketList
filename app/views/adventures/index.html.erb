@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <h1 class='text-center bucket-header'>Listing Adventures</h1>
 
 <% if !@adventures.nil? %>
@@ -16,7 +15,6 @@
               </div><!--end of tip-->
               <h4 data-toggle="modal" data-target="#myModal<%= adventure.id %>"><%= adventure.title.upcase %></h4>
             </div><!--End of Bucket List Loop Columns-->
-
 
     <!--Modal Action-->
     <div class="modal fade" id="myModal<%= adventure.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
@@ -51,3 +49,5 @@
   <% end %>
   </div>
 <% end %>
+
+<div class="container text-right"><h4><%= will_paginate @adventures %></h4></div>
