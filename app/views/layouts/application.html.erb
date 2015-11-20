@@ -55,26 +55,17 @@
 
         <!--Right side of the nav bar  -->
         <ul class="nav navbar-nav navbar-right">
-            <li><% link_to 'Search Users', users_search_users_path %></li>
-          <li><a href="search_users", class="nav-custom">Search Users</a></li>
-          <!-- <li class="navbar-form ">
-            <form class="form-group" action='/users/search_users' method='get'>
-            <input class="form-control half-width" type="text" name="creator" id="user" />
-            <div class="actions my_inline">
-              <input class="btn btn-default my_tiny_font" type="submit" value="Search Users"/>
-            </div>
-          </form>
-        </li> -->
-        <li class><a href="/users/show/followPage" class="nav-custom navbar_brand fa fa-users fa-2x"></a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'Your Profile', users_show_path, class:"nav-custom" %></li>
-              <li><%= link_to 'Edit Your Profile', edit_user_registration_path, class:"nav-custom" %></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-custom" %></li>
-            </ul>
-        </li>
+            <li><%= link_to 'Search Users', users_search_users_path, class:"nav-custom" %></li>
+            <li><a href="/users/show/followPage" class="nav-custom navbar_brand fa fa-users fa-2x"></a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Your Profile', users_show_path, class:"nav-custom" %></li>
+                  <li><%= link_to 'Edit Your Profile', edit_user_registration_path, class:"nav-custom" %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-custom" %></li>
+                </ul>
+            </li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
             <ul class="dropdown-menu">
