@@ -39,12 +39,15 @@ $font_fam: sans-serif;
 }
 
 .martop {
-    margin-top: 1%;
+    margin-top: 5%;
 }
 
-.classWithPad { 
-    margin:10px; 
-    padding:10px; 
+.nomartop {
+    margin-top: 0;
+}
+
+.marbot {
+    margin-bottom: 5%;
 }
 
 //View Profile Page
@@ -59,14 +62,6 @@ $font_fam: sans-serif;
 }
 
 //Bucket List
-
-.tip {
-    position: absolute;
-    left:50%;
-    margin-left:-150px;
-    top:50%;
-    margin-top:-100px;
-}
 
 .bucket {
     margin-bottom: 5vh;
@@ -89,6 +84,12 @@ $font_fam: sans-serif;
     }
 }
 
+.tip:hover {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
+}
+
 .handle {
   width: 215px;
   height: 150px;
@@ -96,16 +97,6 @@ $font_fam: sans-serif;
   box-shadow: -1px -15px 0 0 #444;
   margin: 0 0 -110px 45px;
   z-index: -1;
-}
-
-.bucket-title {
-    margin-top: 225px;
-}
-
-.tip:hover {
-    -ms-transform: rotate(40deg); /* IE 9 */
-    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
-    transform: rotate(40deg);
 }
 
 div.fileinputs {
@@ -182,14 +173,6 @@ img.edit_pic {
   display: block;
 }
 
-a.image_tip {
-  background-color: transparent;
-}
-
-a.image_tip:hover {
-  background-color: transparent;
-}
-
 //Featured Bucket
 
 .featured {
@@ -226,6 +209,14 @@ a.see-more {
        border-radius: 2.5%;
        border: 1px solid $text_highlight;
     }
+}
+
+a.image_tip {
+  background-color: transparent;
+}
+
+a.image_tip:hover {
+  background-color: transparent;
 }
 
 .bucket-header {

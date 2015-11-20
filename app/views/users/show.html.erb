@@ -18,7 +18,7 @@
                         <% if @user.image.blank? %>
                             <img class= "responsive" src="/system/person-placeholder.jpg"/> <!--default photo-->
                         <% else %>
-                        <%= image_tag @user.image.url(:med), class:"responsive" %>
+                        <%= image_tag @user.image.url(:med), class:"img-responsive" %>
                         <% end %>
                             <!--Edit Profile Picture Link-->
                             <% if current_user == @user %>
@@ -84,7 +84,7 @@
     </div><!-- End of Profile Box Row-->   
     
     <!--About Me--> 
-    <div class="row">
+    <div class="row marbot">
         <div class="col-md-12">  
             <% if @user == current_user %>
                 <h3>About Me</h3>
@@ -99,31 +99,33 @@
 
 
 <!--Bucket List-->
-<div id="bucketlist" class="container-fluid">
-    <div class="row well light-background">
-            <h2 class="text-center bucket-header lg-font main-font">My Buckets:</h2>
-            <% if @user.adventures.any? %>
-                <% @user.adventures.each do |adventure| %>
-                        <div class="bucket col-md-3 col-sm-6 col-xs-12">
-                                
-                                <div class="tip">
-                                    <div class="handle"></div>
-                                    <%= link_to image_tag(adventure.image.url(:large)), adventure %>
-                                </div><!--end of img_tip-->
-
-                            <div class="bucket-title">
-                                <h4 class="text-center"><%= adventure.title.upcase %></h4>
-                            <% if @user == current_user %>
-                                <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Dump', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
-                            </div>
-                            <% end %>
-                        </div><!--End of Bucket List Loop Columns-->
+<div class="well light-background">
+    <h3 class="lg-font main-font text-center marbot nomartop">My Buckets:</h3>
+    <% if @user.adventures.any? %>
+    <% @user.adventures.each do |adventure| %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="bucket col-md-3 col-sm-6">
+                <div class="tip">
+                    <div class="handle"></div>
+                    <div class="img_tip">
+                    <%= link_to image_tag(adventure.image.url(:large)), adventure, :class => "image_tip" %>
+                    </div>
+                </div>
+                <h4><%= adventure.title.upcase %></h4>
+                <h5><%= adventure.creator %></h5>
+                <% if @user == current_user %>
+                <h5><%= link_to 'Show', adventure %> | <%= link_to 'Edit', edit_adventure_path(adventure) %> | <%= link_to 'Dump', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
                 <% end %>
-            <% else %>
-                <p>no adventures added</p>
-            <% end %>
-    </div><!--End of Row-->
-</div><!--End of Container-->
+            </div> <!--End of Bucket Loop Row-->
+        <% end %>
+        <% else %>
+          <p class="text-center">Adventures Coming Soon!</p>
+        </div> <!--End of Bucket Loop Row-->
+    <% end %>
+    </div> <!--End of Bucket Container-->
+</div>
+
 
 
 <!--Begin Add Adventure -->
