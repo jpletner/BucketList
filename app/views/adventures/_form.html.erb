@@ -11,50 +11,63 @@
     </div>
   <% end %>
 
-<div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>  
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :duedate %><br>
-    <%= f.date_select :duedate %>
-  </div>
-  <div class="field">
-    <%= f.label :priority %><br>
-    <%= f.number_field :priority, in: 1..5 %>
-  </div>
-  <div class="field">
-    <%= f.label :completed %><br>
-    <%= f.check_box :completed %>
-  </div>
-
-
-
-<div class="field">
-<h3 class="well">Adventure Photos</h3>
-        <div>
-            <%= image_tag(@adventure.image.url(:large), :class => "edit_pic")%>
-            <p>Replace Main Adventure Photo:<%= f.file_field :image %></p>
-            
+<div class="container-fluid">
+    <div class="row marleft">
+        
+        <div class="col-sm-3">
+            <%= image_tag(@adventure.image.url(:large), :class => "edit_pic marbot border-color")%>
+            <p class="main-font">Replace Main Adventure Photo:<%= f.file_field :image %></p>
         </div>
-      <p class="note">Add one or more photos to your adventure:</p>
-      <%= file_field_tag "photos[]", type: :file, multiple: true %>
-</div>        
-<% @adventure.pictures.each do |picture| %>   
-    <div class="inline-div">
-        <%= image_tag(picture.photo.url(:large), :class => "edit_pic") %>
-        <div class="block-div"><%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' }, id:"destroy-image" %>
+        
+        <div class="col-sm-offset-1 col-sm-6">
+          <div class="field form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class:"form-control" %>
+          </div>  
+          <div class="field form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class:"form-control" %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :duedate %>
+            <%= f.date_select :duedate, class:"form-control" %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :priority %>
+              <%= f.number_field :priority, in: 1..5, class:"form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :completed %>
+              <%= f.check_box :completed, class:"inline marbot" %>
+          </div>
         </div>
     </div>
-<% end %>
+</div>
 
-<div class="margin">
-<div class="actions">
-  <%= f.submit(:class => "btn btn-default") %>
+<div class="container-fluid well light-background martop">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="field">
+            <h3 class="main-font lg-font">Adventure Photos</h3>
+                  <p class="note marhalftop main-font">Add one or more photos to your adventure:</p>
+                  <%= file_field_tag "photos[]", type: :file, multiple: true, class:"main-font" %>
+            </div>        
+            <% @adventure.pictures.each do |picture| %>   
+                <div class="inline-div">
+                    <%= image_tag(picture.photo.url(:large), :class => "edit_pic martop") %>
+                    <div class="block-div"><%= link_to 'Destroy', '/pictures/' + picture.id.to_s, method: :delete, data: { confirm: 'Are you sure?' }, id:"destroy-image", class:"main-font" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    
+    <div class="row marhalftop">
+        <div class="col-sm-12">
+            <div class="actions">
+                <%= f.submit(:class => "btn btn-buckets") %>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
-</div>
-<% end %>
