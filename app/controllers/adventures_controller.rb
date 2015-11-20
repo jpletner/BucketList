@@ -94,7 +94,15 @@ class AdventuresController < ApplicationController
     end
     render "show.html.erb"
   end
-      
+
+  def get_random_adventure
+      @adventure = Adventure.all.sample
+    respond_to do |format|
+      format.html { redirect_to adventures_url }
+      format.json { render :show, status: :ok, location: @adventure }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure

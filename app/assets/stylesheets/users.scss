@@ -1,8 +1,35 @@
-.user_image_placeholder {
-  height: 150px;
-  width: 150px;
+
+
+/* css for the centered box on: followPage.html.erb */
+
+.my_box_center_mod {
+ background-color: lightgray;
+ border-radius: 10px;
+ color: black;
+ padding-bottom: 20px;
+ padding-left: 20px;
+ padding-top: 10px;
+ text-align: center;
+ margin-top: 25px;
+  }
+
+/*css for centering search box*/
+.my_box_center_for_search{
+  background-color: lightgray;
+  border-radius: 10px;
+  color: black;
+  left: 50%;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.block {
-  display: block;
-}
+/* css for show.html.erb (profile page)*/
+/* top right section (profile pic, about me)*/
+
+/*grey profile box*/
+
+

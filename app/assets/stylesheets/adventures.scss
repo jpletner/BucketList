@@ -2,12 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//General Styles
+
+//Variables
+
+$text_default: #000003;
+$brand_color: #ee8012;
+$brand_dark: #ee5000;
+$text_highlight: #666666; 
+$bg_highlight: #e4e6dd;
+$sm_fs: 10px;
+$df_fs: 14px;
+$md_fs: 22px;
+$lg_fs: 36px;
+$xlg_fs: 80px;
+$font_fam: sans-serif;
+
+.muted {
+    font-weight: 300;
+}
+
+.padright {
+    padding-right: 20px !important;
+}
+
+.padleft {
+    padding-right: 20px !important;
+}
+
+.marright {
+    margin-right: 5px;
+}
+
+.marleft {
+    margin-left: 5px;
+}
+
+.classWithPad { 
+    margin:10px; 
+    padding:10px; 
+}
+
+//View Profile Page
+
+//User Profile Name and Photo
+.profile {
+    margin-right: 30px;
+}
+
+.cancel {
+    padding: 7px 12px;  
+}
+
+//Bucket List
+
 .bucket {
-    margin-bottom: 5vh;
+    margin-bottom: 50px;
+    position: relative;
     img {
+        position: absolute;
+        left:50%;
+        margin-left:-150px;
+        top:50%;
+        margin-top:-100px;
         -webkit-clip-path: polygon(12% 0, 88% 0%, 75% 100%, 25% 100%);
         border: 10px solid #444;
-        position: relative;
         width: 300px;
         height: 200px;
         text-align: center;
@@ -24,19 +83,23 @@
     }
 }
 
-.tip:hover {
-    -ms-transform: rotate(40deg); /* IE 9 */
-    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
-    transform: rotate(40deg);
-}
-
 .handle {
   width: 215px;
   height: 150px;
   border-radius: 50%;
   box-shadow: -1px -15px 0 0 #444;
-  margin: 0 0 -110px 45px;
+  margin: 0 0 -120px 27px;
   z-index: -1;
+}
+
+.bucket-title {
+    margin-top: 225px;
+}
+
+.tip:hover {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+    transform: rotate(40deg);
 }
 
 div.fileinputs {
@@ -103,10 +166,134 @@ img.edit_pic {
   display: inline-block;
 }
 
+.block {
+  display: block;
+}
+
 a.image_tip {
   background-color: transparent;
 }
 
 a.image_tip:hover {
   background-color: transparent;
+}
+
+//Featured Bucket
+
+.featured {
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+a.see-more {
+    font-style: italic;
+    color: lightgray;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.user_image_placeholder {
+    img {
+       height: 150px; 
+       width: 150px;
+//       border: 1px solid $bg_highlight; 
+       background-color: transparent;
+       border-radius: 2.5%;
+    }
+}
+
+#bucket_image {
+    img {
+       height: 220px; 
+       width: 75%;
+       padding: 0;
+       margin-top: 2%;
+       margin-left: 12.5%;
+       border: 5px solid $brand_color; 
+       border-radius: 2.5%;
+       border: 1px solid $text_highlight;
+    }
+}
+
+.bucket-header {
+    padding-bottom: 50px;
+}
+
+.user_id {
+    display: none;
+}
+
+.main-background {
+    background-color: $brand_color;
+}
+
+.light-background {
+    background-color: $bg_highlight;    
+}
+
+.border-color {
+    border: 1px solid $text_highlight;
+}
+
+.header {
+    margin: 0 0 0 0;
+    padding-bottom: 10px;
+}
+
+.rounded-img {
+    border-radius: 5px;
+}
+
+.title {
+    margin: 0 0 0 0;
+    padding: 5px;
+    text-transform: capitalize;
+    text-align: center;
+    font-style: italic;
+}
+
+.light-font {
+    color: $bg_highlight;
+}
+
+.dark-font {
+    color: $text_highlight;
+}
+
+.main-font {
+    color: $brand_color;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.box {
+    height: 355px;
+}
+
+.small-font {
+    font-size: $sm_fs;
+}
+
+.med-font {
+    font-size: $md_fs;
+}
+
+.lg-font {
+    font-size: $lg_fs;
+}
+
+//Buttons
+.btn-buckets {
+    color: $bg_highlight;
+    background-color: $brand_color;
+    border-color: $brand_dark;
+}
+    
+.btn-buckets:hover {
+    color: $brand_color;
+    background-color: $bg_highlight;
+    border-color: $brand_color;
 }
