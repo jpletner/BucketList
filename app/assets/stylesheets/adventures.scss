@@ -18,6 +18,26 @@ $lg_fs: 36px;
 $xlg_fs: 80px;
 $font_fam: sans-serif;
 
+body {
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 5em;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+h3 {
+  font-size: 3em;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+h4 {
+  font-size: 1.5em;
+  font-family: 'Fjalla One', sans-serif;
+}
+
 .muted {
     font-weight: 300;
 }
