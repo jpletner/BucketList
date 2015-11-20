@@ -4,7 +4,7 @@ include Capybara::DSL
 describe "user sign up and log in" do
   before(:each) do
     visit "/users/sign_up"
-    within('my_box_center') do
+    within('.my_box_center') do
       fill_in 'First name', :with => "Chuck"
       fill_in 'Last name', :with => "Norris"
       fill_in 'Email', :with => "chuck@gmail.com"
@@ -17,7 +17,7 @@ describe "user sign up and log in" do
   end
  it "should sign up a new user and direct them to their new profile page" do
    #The following fields should be displayed on the profile page
-   within('.user_info') do
+   within('.box') do
      expect(page).to have_content "Chuck Norris"
      expect(page).to have_content "city"
      expect(page).to have_content "state"
@@ -37,7 +37,7 @@ describe "user sign up and log in" do
      click_button "Log in"
    end
    #The following fields should be displayed on the profile page
-   within('.user_info') do
+   within('.box') do
      expect(page).to have_content "Chuck Norris"
      expect(page).to have_content "city"
      expect(page).to have_content "state"
