@@ -19,7 +19,7 @@
 $text_default: #000003;
 $brand_color: #ee8012;
 $brand_dark: #ee5000;
-$text_highlight: #666666; 
+$text_highlight: #666666;
 $bg_highlight: #e4e6dd;
 $sm_fs: 10px;
 $df_fs: 14px;
@@ -43,7 +43,7 @@ $font_fam: sans-serif;
 
  .my_navbar {
    background-color: #ee8012;
-   color: white;
+   color: #000003;
  }
 
  .my_navbar_image {
@@ -55,4 +55,3 @@ $font_fam: sans-serif;
  .sign_in_buttons{
    margin-right: 10px;
  }
-

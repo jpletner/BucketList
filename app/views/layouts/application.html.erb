@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
           <span class="icon-bar"></span>
         </button>
         <span class="my_navbar_image">
-          <a href="/"><img src="/system/tiny_paint_icon.png"></a>
+          <a href="/"><img src="/assets/images/paintbucket.png" height="40" width="40"></a>
           <%= link_to "Hi " + current_user.first_name, users_show_path %>
         </span>
       </div>
@@ -45,6 +46,8 @@
 
         <!--Right side of the nav bar  -->
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="users/search_users"></a></li>
+          <li><a href="search_users">Search Users</a></li>
           <!-- <li class="navbar-form ">
             <form class="form-group" action='/users/search_users' method='get'>
             <input class="form-control half-width" type="text" name="creator" id="user" />
