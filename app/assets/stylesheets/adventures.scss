@@ -9,7 +9,7 @@
 $text_default: #000003;
 $brand_color: #ee8012;
 $brand_dark: #ee5000;
-$text_highlight: #666666; 
+$text_highlight: #666666;
 $bg_highlight: #e4e6dd;
 $sm_fs: 10px;
 $df_fs: 14px;
@@ -54,8 +54,9 @@ $font_fam: sans-serif;
 
 //User Profile Name and Photo
 .cancel {
-    padding: 7px 12px; 
+    padding: 7px 12px;
 }
+
 
 .cancel:hover {
     text-decoration: none;
@@ -192,9 +193,9 @@ a.see-more {
 
 .user_image_placeholder {
     img {
-       height: 150px; 
+       height: 150px;
        width: 150px;
-//       border: 1px solid $bg_highlight; 
+//       border: 1px solid $bg_highlight;
        background-color: transparent;
        border-radius: 2.5%;
     }
@@ -202,12 +203,12 @@ a.see-more {
 
 #bucket_image {
     img {
-       height: 220px; 
+       height: 220px;
        width: 75%;
        padding: 0;
        margin-top: 2%;
        margin-left: 12.5%;
-       border: 5px solid $brand_color; 
+       border: 5px solid $brand_color;
        border-radius: 2.5%;
        border: 1px solid $text_highlight;
     }
@@ -234,7 +235,7 @@ a.image_tip:hover {
 }
 
 .light-background {
-    background-color: $bg_highlight;    
+    background-color: $bg_highlight;
 }
 
 .border-color {
@@ -296,9 +297,134 @@ a.image_tip:hover {
     background-color: $brand_color;
     border-color: $brand_dark;
 }
-    
+
 .btn-buckets:hover {
     color: $brand_color;
     background-color: $bg_highlight;
     border-color: $brand_color;
+}
+
+
+
+
+
+
+
+
+// Begin CSS for Adventures Show Page
+
+//coverphoto
+// .my_main_adventure_image{
+//   width:100%;
+// }
+.my_main_adventure_image img {
+  height:450px;
+  width:100%;
+}
+// coverphoto text
+.my_adventure_main_info{
+margin-top: -240px;
+margin-bottom: 120px;
+text-align: center;
+}
+.my_adventure_title{
+color: $text_highlight;
+font-size: $xlg_fs;
+opacity: 0.8;
+
+}
+.my_adventure_creator{
+  color: $text_highlight;
+  font-size: $lg_fs;
+  opacity: 0.5;
+
+}
+// social media buttons
+.trigger i {
+  background-color: $brand_color;
+  border-radius-top-left:10px;
+  border-radius-bottom-left:10px;
+  float: right;
+  padding: 25px;
+  z-index:1;
+  position: fixed;
+  right:0;
+  top: 50%;
+}
+
+.my_adventure_share_buttons{
+  background-color: $brand_color;
+  border-radius-top-left:10px;
+  border-radius-bottom-left:10px;
+  float: right;
+  padding: 25px;
+  z-index:1;
+  position: fixed;
+  right:0;
+  top: 50%;
+
+}
+#my_sm_button{
+ display: none;
+}
+
+.my_bigger_font{
+  color: $text_highlight;
+  font-size: $md_fs;
+}
+.my_edit_link a{
+  color:$text_highlight;
+  font-size: $df_fs;
+
+}
+#social_share_buttons div{
+  display: none;
+}
+.trigger{
+  background-color: $brand_color;
+}
+
+.my_adventure_additional_info{
+ background-color: $brand_color;
+ padding-bottom: 20px;
+ padding-left: 30px;
+}
+
+.my_adventure_tags_box{
+  background-color: $bg_highlight;
+}
+
+.my_add_tag_form {
+
+}
+
+.my_blank_space{
+  height: 30px;
+}
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.owl_item {
+  width: 300px;
+  height: 200px;
+  padding: 3px;
+}
+
+
+.my_adventure_comments{
+background-color: $bg_highlight;
+color: $text_highlight;
+font-size: $df_fs;
+padding: 15px;
+
+}
+.my_adventure_comment_form{
+  background-color: $brand_color;
+  padding: 15px;
 }
