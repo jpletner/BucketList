@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-<h1 class='text-center bucket-header'>Listing Adventures</h1>
+<h1 class='text-center bucket-header martop'>All Adventures</h1>
 
 <% if !@adventures.nil? %>
   <% if !@adventures.empty? %>
     <% @adventures.each do |adventure| %>
     <div class="container-fluid">
         <div class="row">
-            <div class="bucket col-md-3 col-sm-6">
+            <div class="bucket col-md-3 col-sm-4 col-xs-12">
               <div class="tip" >
                   <div class="handle"></div>
                     <div class="img_tip" data-toggle="modal" data-target="#myModal<%= adventure.id %>">
