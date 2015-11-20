@@ -30,6 +30,15 @@ $lg_fs: 36px;
 $xlg_fs: 80px;
 $font_fam: sans-serif;
 
+h1, h2, h3{
+font-family: 'Fjalla One', sans-serif;
+}
+
+body {
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
  /*Sam Main Navigation Bar Styling*/
 
  .my_need_a_margin{
@@ -55,4 +64,12 @@ $font_fam: sans-serif;
 
  .sign_in_buttons{
    margin-right: 10px;
+ }
+
+ footer {
+   background-color: #ee8012;
+   /*color: #fbfbfb;*/
+   padding: 10px 0;
+
+   /*text-align:right;*/
  }
