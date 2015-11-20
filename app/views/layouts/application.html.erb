@@ -29,8 +29,7 @@
 
 
 <body>
-<%= render "users/login_modal" %>
-<%= render "users/sign_up_modal" %>
+
 <div class="mainContent container-fluid">
 <!-- Navigation  -->
   <% if user_signed_in? %>
@@ -64,7 +63,7 @@
             </div>
           </form>
         </li> -->
-        <li class><a href="/users/show/followPage" class="navbar_brand fa fa-users fa-2x"></a></li>
+
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -79,7 +78,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/users/show/followPage">Friends</a></li>
-              <li><a hfre="/users/search_users">Search Users</a> %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Search Users", users_search_users_path %></li>
               <li><a href="/users/all">View All Users</a></li>
             </ul>
         </li>
@@ -125,14 +125,6 @@
             <!--Right side of the nav bar  -->
             <ul class="nav navbar-nav navbar-right">
 
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="/users/show/followPage">Friends</a></li>
-                    <li><a hfre="/users/search_users">Search Users</a> %></li>
-                    <li><a href="/users/all">View All Users</a></li>
-                  </ul>
-              </li>
 
 
             <li class="dropdown">
@@ -152,16 +144,13 @@
       </nav>
     </div>
 
-
     <% end %>
-    <%= yield %>
-
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 </div>
-<footer>
-  <div class="container">
+
+
+
+<!-- <footer>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12 text-center page-scroll" href="#">
         <span class="fa-stack fa-3x">
@@ -174,6 +163,7 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> -->
+<%= yield %>
 </body>
 </html>

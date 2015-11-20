@@ -70,6 +70,32 @@ body {
    background-color: #ee8012;
    /*color: #fbfbfb;*/
    padding: 10px 0;
-
    /*text-align:right;*/
+   display: block;
+ }
+
+ .content-section-a {
+   padding-left: 0;
+   padding-right: 0;
+   padding: 50px 0;
+   background-color: #f8f8f8;
+   margin-left: auto;
+ }
+
+ .content-section-b {
+   padding-right: 0;
+   padding-left: 0;
+   padding: 50px 0;
+   border-top: 1px solid #e7e7e7;
+   border-bottom: 1px solid #e7e7e7;
+ }
+
+ .section-heading {
+     margin-bottom: 30px;
+ }
+
+ .section-heading-spacer {
+     float: left;
+     width: 200px;
+     border-top: 3px solid #e7e7e7;
  }

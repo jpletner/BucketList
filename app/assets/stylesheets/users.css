@@ -3,21 +3,21 @@
 /* css for the centered box on: followPage.html.erb */
 
 .my_box_center {
-  background-color: lightgray;
+  background-color: #e4e6dd;
   border-radius: 10px;
   color: black;
   left: 50%;
+  margin-top: 400px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-top: 10px;
   position: absolute;
   text-align: center;
-  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .my_box_center_mod {
-  background-color: lightgray;
+  background-color: #e4e6dd;
   border-radius: 10px;
   color: black;
   padding-bottom: 20px;
@@ -30,7 +30,7 @@
 
 /*css for centering search box*/
 .my_box_center_for_search{
-  background-color: lightgray;
+  background-color: #e4e6dd;
   border-radius: 10px;
   color: black;
   left: 50%;
@@ -44,7 +44,7 @@
 }
 
 .my_box_center_for_search_mod{
-  background-color: lightgray;
+  background-color: #e4e6dd;
   border-radius: 10px;
   color: black;
   padding-bottom: 20px;
@@ -52,6 +52,20 @@
   padding-top: 10px;
   width: 50%;
   margin-top: 125px;
+}
+.my_box_center_for_sign_in{
+  background-color: #e4e6dd;
+  border-radius: 10px;
+  color: black;
+  left: 50%;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
 }
 
 /* css for show.html.erb (profile page)*/
@@ -65,7 +79,7 @@
 }
 
 .my_user_about_me {
-  background-color:lightgray;
+  background-color:#e4e6dd;
   border-radius: 10px;
   padding: 20px;
 }
@@ -81,7 +95,7 @@
 }
 
 .my_headline_text {
-  background-color: lightgray;
+  background-color: #e4e6dd;
   margin-bottom: 40px;
   margin-top: 20px;
   padding:5px;
