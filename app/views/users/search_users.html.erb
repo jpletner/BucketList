@@ -2,6 +2,7 @@
 <!--Search Adventure -->
   <p id="notice"><%= notice %></p>
 
+
   <h3>Search Users</h3>
   <form class="form-group" action='/users/search_users' method='get'>
     <input class="form-control half-width center-block" type="text" name="creator" id="user" /><br>
@@ -11,6 +12,7 @@
     </div>
   </form>
 </div>
+
 
 <div class="container">
   <% if !@user.nil? %>
@@ -31,8 +33,10 @@
             <a href="/users/<%= f.id %>"><h4><%= f.first_name %> <%= f.last_name %></a></h4>
             </div>
           </div>
-      <% end %>
-    </div>
+        <% end %>
+        <div class="container text-right"><h4><%= will_paginate @user %></h4></div>
+
+      </div>
 
     <% else %>
       <h3 class="text-center">No Users Found</h3>

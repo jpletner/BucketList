@@ -3,7 +3,7 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h3>Seach Buckets</h3>
+  <h3>Search Buckets</h3>
   <form class="form-group" action='/adventures/search_adventures' method='get'>
     <input class="form-control half-width center-block" type="text" name="adventure_title" id="adventure_title" /><br>
     <a href='/adventures'>All Adventures</a>
@@ -30,9 +30,11 @@
               <a href="/adventure/<%= adventure.id %>"><h4><%= adventure.title.upcase %></h4></a>
             </div><!--End of Bucket List Loop Columns-->
     <% end %>
+    </div>
 
   <% else %>
     <h3 class="text-center">No Buckets Found</h3>
   <% end %>
   </div>
+
 <% end %>

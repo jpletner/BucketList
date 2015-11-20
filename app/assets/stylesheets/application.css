@@ -14,6 +14,20 @@
  *= require_self
  */
 
+//Variables
+
+$text_default: #000003;
+$brand_color: #ee8012;
+$brand_dark: #ee5000;
+$text_highlight: #666666; 
+$bg_highlight: #e4e6dd;
+$sm_fs: 10px;
+$df_fs: 14px;
+$md_fs: 22px;
+$lg_fs: 36px;
+$xlg_fs: 80px;
+$font_fam: sans-serif;
+
  /*Sam Main Navigation Bar Styling*/
 
  .my_need_a_margin{
@@ -41,3 +55,4 @@
  .sign_in_buttons{
    margin-right: 10px;
  }
+
