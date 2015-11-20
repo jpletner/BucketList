@@ -11,16 +11,9 @@ $(document).ready(function() {
 
   });
 
-//
-// #
-// #   $(".trigger").click(function(){
-// #     $(#my_sm_buttons).
-// #     $(this).next("#my_sm_buttons").toggleClass('open').slideToggle("slow");
-// #   });
-// #
-// #
-// #   $( "#my_comment_scroll_box" ).scroll(function() {
-// #     $( "p" ).css( "display", "inline" ).fadeOut( "slow" );
-// #   });
-// #
-// # });
+  $("#my_key").click(function(){
+      $("#my_sm_buttons").toggle();
+  });
+
+
+});

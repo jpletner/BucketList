@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
     devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
     match('/users/:id/get_random_adventure', {:via => :get, :to => 'users#get_random_adventure'})
-    
+
     get '/users/:id/get_random_adventure' => 'users#get_random_adventure'
     match('/adventures/:id/add_comment' , {:via => :post, :to => 'adventures#add_comment'})
     match('/adventures/:id/add_tag' , {:via => :post, :to => 'adventures#add_tag'})
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     match('/users/:id/add_adventure' , {:via => :post, :to => 'users#add_adventure'})
     match('/adventures/search_adventures' , {:via => :get, :to => 'adventures#search_adventures'})
 
-    
+
 #  Rails.application.routes.draw do
     resources :migrations
     resources :pictures
