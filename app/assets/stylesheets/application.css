@@ -14,7 +14,7 @@
  *= require_self
  */
 
-//Variables
+/*Variables*/
 
 $text_default: #000003;
 $brand_color: #ee8012;
@@ -40,10 +40,9 @@ $font_fam: sans-serif;
    display: inline;
  }
 
-
  .my_navbar {
-   background-color: turquoise;
-   color: white;
+   background-color: #ee8012;
+   color: #e4e6dd;
  }
 
  .my_navbar_image {
