@@ -53,12 +53,12 @@ $font_fam: sans-serif;
 //View Profile Page
 
 //User Profile Name and Photo
-.profile {
-    margin-right: 30px;
+.cancel {
+    padding: 7px 12px; 
 }
 
-.cancel {
-    padding: 7px 12px;  
+.cancel:hover {
+    text-decoration: none;
 }
 
 //Bucket List
@@ -66,6 +66,8 @@ $font_fam: sans-serif;
 .bucket {
     margin-bottom: 5vh;
     img {
+        margin-left: auto;
+        margin-right:auto;
         -webkit-clip-path: polygon(12% 0, 88% 0%, 75% 100%, 25% 100%);
         border: 10px solid #444;
         position: relative;
@@ -162,7 +164,7 @@ img.edit_pic {
 
 .pointer:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: $brand-color;
 }
 
 .inline {

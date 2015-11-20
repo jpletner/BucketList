@@ -58,7 +58,7 @@
                                 <label for="adventure_image2">Upload an Image From Your PC:</label><input type="file" class="file" name="user_image" id="adventure_image2" />
                             </div>
                             <div class="actions profile-pic-submit">
-                                <input class="btn btn-default" type="submit" name="commit2" value="Add"/>                   <p class="cancel pointer btn btn-default" style="display: inline;" id="cancel">Cancel</p>
+                                <input class="btn btn-buckets" type="submit" name="commit2" value="Add"/>                   <p class="cancel pointer btn btn-buckets" style="display: inline;" id="cancel">Cancel</p>
                             </div>
                         </form>
                     </div> <!-- End of Upload Profile Image Form-->
@@ -105,7 +105,7 @@
     <% @user.adventures.each do |adventure| %>
     <div class="container-fluid">
         <div class="row">
-            <div class="bucket col-md-3 col-sm-6">
+            <div class="bucket col-md-3 col-sm-4 col-xs-12">
                 <div class="tip">
                     <div class="handle"></div>
                     <div class="img_tip">
@@ -131,9 +131,9 @@
 <!--Begin Add Adventure -->
 <div id="add-adventure" class="container-fluid">    
     <div class="row">
-        <div class="col-sm-offset-2 col-sm-8">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
             <% if @user == current_user %>
-            <h3>Add New Bucket</h3>
+            <h3 class="lg-font main-font martop">Add New Bucket</h3>
                 <form role="form" class="form-group new_adventure" id="new_adventure" action="/users/<%= @user.id %>/add_adventure" enctype="multipart/form-data" accept-charset="UTF-8" method="post">
                     <div class="form-group">
                         <label for="adventure_title">Bucket Name</label>
@@ -155,7 +155,7 @@
                   <!--Upload Adventure Image Begin -->
                     <div class="form-group fileinputs">
                           <!-- Upload Images Options -->
-                          <p>Add an Image Options: <span class="muted">(select one)</span></p>
+                          <p><strong>Add an Image Options: </strong><span class="main-font">(select one)</span></p>
                           <label class="muted padright"><input id="rdb1" type="radio" name="image_cb" value="1" />Upload Image Using a URL</label>
                           <label class="muted"><input id="rdb2" type="radio" name="image_cb" value="2" />Upload Image from Local Drive</label>
                           <div id="image_1" class="field toHide muted">Enter URL to Upload Your Image: <%= text_field_tag 'image_url' %>
@@ -170,7 +170,7 @@
                    </div>
 
                       <div class="form-group actions">
-                        <input class="btn btn-default" type="submit" name="commit" value="Add"/>
+                        <input class="btn btn-buckets" type="submit" name="commit" value="Add"/>
                       </div>
                 </form>
             <% end %>
