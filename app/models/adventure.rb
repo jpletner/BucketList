@@ -3,7 +3,7 @@ class Adventure < ActiveRecord::Base
 
     has_many :pictures, :dependent => :destroy
 
-    has_attached_file :image, styles: { small: "64x64", med: "200x200", large: "400x400", xlarge: "700x900" }
+    has_attached_file :image, styles: { small: "50x50", med: "200x200", large: "400x400", xlarge: "700x900" }
 
     validates_attachment :image,
         content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },

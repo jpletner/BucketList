@@ -45,8 +45,8 @@
           <span class="icon-bar"></span>
         </button>
         <span class="my_navbar_image">
-          <a href="/"><img src="/assets/images/paintbucket.png" height="40" width="40"></a>
-          <%= link_to "Hi " + current_user.first_name, users_show_path %>
+            <%= link_to image_tag(current_user.image.url(:small)), root_path, class:"image_tip pro-thumb" %>
+            <%= link_to "Hi " + current_user.first_name, users_show_path, class:"nav-custom" %>
         </span>
       </div>
 
@@ -55,8 +55,8 @@
 
         <!--Right side of the nav bar  -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="users/search_users"></a></li>
-          <li><a href="search_users">Search Users</a></li>
+            <li><% link_to 'Search Users', users_search_users_path %></li>
+          <li><a href="search_users", class="nav-custom">Search Users</a></li>
           <!-- <li class="navbar-form ">
             <form class="form-group" action='/users/search_users' method='get'>
             <input class="form-control half-width" type="text" name="creator" id="user" />
@@ -65,18 +65,18 @@
             </div>
           </form>
         </li> -->
-        <li class><a href="/users/show/followPage" class="navbar_brand fa fa-users fa-2x"></a></li>
+        <li class><a href="/users/show/followPage" class="nav-custom navbar_brand fa fa-users fa-2x"></a></li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to 'Your Profile', users_show_path %></li>
-              <li><%= link_to 'Edit Your Profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Your Profile', users_show_path, class:"nav-custom" %></li>
+              <li><%= link_to 'Edit Your Profile', edit_user_registration_path, class:"nav-custom" %></li>
               <li role="separator" class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-custom" %></li>
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
               <li><a href="/adventures">View All Adventures!</a></li>
