@@ -27,3 +27,32 @@ $md_fs: 22px;
 $lg_fs: 36px;
 $xlg_fs: 80px;
 $font_fam: sans-serif;
+
+ /*Sam Main Navigation Bar Styling*/
+
+ .my_need_a_margin{
+   margin-bottom: 50px;
+ }
+ .my_tiny_font {
+   font-size: 10px;
+ }
+ .my_inline {
+   display: inline;
+ }
+
+
+ .my_navbar {
+   background-color: turquoise;
+   color: white;
+ }
+
+ .my_navbar_image {
+   float: left;
+   height: 50px;
+   padding: 10px 10px;
+ }
+
+ .sign_in_buttons{
+   margin-right: 10px;
+ }
+

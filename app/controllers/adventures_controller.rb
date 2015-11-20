@@ -4,9 +4,9 @@ class AdventuresController < ApplicationController
   # GET /adventures
   # GET /adventures.json
   def index
-    @adventures = Adventure.all
+    #@adventures = Adventure.all
+    @adventures = Adventure.paginate(:page => params[:page], :per_page => 16)
   end
-
   # GET /adventures/1
   # GET /adventures/1.json
   def show
@@ -72,6 +72,8 @@ class AdventuresController < ApplicationController
    if !params[:adventure_title].nil?
      search_string = params[:adventure_title]
      @adventures = Adventure.basic_search({title: search_string, tags: search_string}, false)
+     #@adventures = Adventure.where(search_string + " = ANY (tags")
+     #@adventures = @adventures.paginate(:page => params[:page], :per_page => 12)
    end
   end
 

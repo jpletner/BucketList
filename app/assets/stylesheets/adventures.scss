@@ -149,6 +149,11 @@ img.edit_pic {
     height: 200px;
 }
 
+.follow-image {
+  width: 120px;
+  height: 120px;
+}
+
 .margin {
     margin-top: 20%;
     left: 0;
@@ -160,6 +165,7 @@ img.edit_pic {
 
 .pointer:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .inline {

@@ -2,7 +2,6 @@ require_relative '../rails_helper'
 
 include Capybara::DSL
 
-
 describe "search by adventure name" do
   before(:each) do
     bAdventure = Adventure.new
@@ -14,19 +13,25 @@ describe "search by adventure name" do
     bAdventure.save
   end
 
-  it "should search for adventures by title return results" do
+  it "should search for adventures by title and return results" do
     visit "/adventures/search_adventures"
-    fill_in "adventure_title", :with => "MyString"
-    click_button "Search"
-    expect(page).to have_content "MyString"
+    within('.container') do
+      fill_in "Search Buckets", :with => "MyString"
+      click_button "Search"
+    end
+    within('.row') do
+      expect(page).to have_content "MyString"
+    end
   end
 
   it "should search for adventures by title return somthing if it is not found" do
     visit "/adventures/search_adventures"
-    fill_in "adventure_title", :with => "asdj"
-    click_button "Search"
-    expect(page).to have_content "No Adventures Found"
+    within('.container') do
+      fill_in "Search Buckets", :with => "random"
+      click_button "Search"
+    end
+    within('.row') do
+      expect(page).to have_content "No Buckets Found"
+    end
   end
-
-
 end
