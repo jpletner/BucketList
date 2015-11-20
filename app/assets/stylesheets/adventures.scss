@@ -42,12 +42,21 @@ $font_fam: sans-serif;
     margin-top: 5%;
 }
 
+.marhalftop {
+    margin-top: 2.5%;
+}
+
 .nomartop {
     margin-top: 0;
 }
 
 .marbot {
     margin-bottom: 5%;
+}
+
+.nopad {
+    padding: 0;
+    margin:0;
 }
 
 //View Profile Page
@@ -243,7 +252,7 @@ a.image_tip:hover {
 }
 
 .border-color {
-    border: 1px solid $text_highlight;
+    border: 3px solid $brand-color;
 }
 
 .header {
