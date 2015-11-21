@@ -13,7 +13,7 @@ describe "search by adventure name" do
   end
 
   it "should accept a comment and display it" do
-    visit "adventures/" + @bAdventure.id.to_s
+    visit "/adventures/" + @bAdventure.id.to_s
     within('.my_adventure_comment_form') do
       expect(page).to have_content "Be the first to comment on this adventure"
       fill_in "Add A Comment For This Adventure", :with => "newString!@#"
