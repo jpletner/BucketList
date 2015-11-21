@@ -30,18 +30,18 @@ $lg_fs: 36px;
 $xlg_fs: 80px;
 $font_fam: sans-serif;
 
-h1, h2, h3{
+h1, h2, h3 {
 font-family: 'Fjalla One', sans-serif;
 }
 
 body {
-  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
   font-weight: 700;
 }
 
  /*Sam Main Navigation Bar Styling*/
 
- .my_need_a_margin{
+ .my_need_a_margin {
    margin-bottom: 50px;
  }
  .my_tiny_font {
@@ -68,7 +68,7 @@ body {
 
 
  body {
-   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-family: "Lato", "Helvetica Neue", Helvetica,Arial,sans-serif;
    font-weight: 700;
  }
 
@@ -85,7 +85,7 @@ body {
 h4 {
    font-size: 1.5em;
    font-family: 'Fjalla One', sans-serif;
-
+}
 footer {
    background-color: #ee8012;
    /*color: #fbfbfb;*/
