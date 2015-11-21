@@ -1,169 +1,165 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300' rel='stylesheet' type='text/css'>
+    <link href="css/bucket_list_css.css" rel="stylesheet" type="text/css">
 
-  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+    <script crc="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/bucket_list_js_.js"></script>
+    <script src="js/get_random_adventure_home.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
-  <!-- <script type="text/javascript">
-    $(function ()
-      { $("#myModal").modal({show:false });
-  </script> -->
-  <script crc="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <title> Bucketlist </title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script>
+    $(document).ready(function() {
 
-  <title> Bucketlist </title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <script>
-  $(document).ready(function() {
+      $("#owl-demo").owlCarousel();
 
-    $("#owl-demo").owlCarousel();
+    });
+    </script>
+  </head>
+  <body>
 
-  });
-  </script>
-</head>
+  <div class="mainContent container-fluid">
+  <!-- Navigation  -->
+    <% if user_signed_in? %>
+  <div class="container-fluid my_need_a_margin">
+    <nav class="navbar navbar-default navbar-fixed-top my_navbar">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="my_navbar_image">
+              <%= link_to image_tag(current_user.image.url(:small)), root_path, class:"image_tip pro-thumb" %>
+              <%= link_to "Hi " + current_user.first_name, users_show_path, class:"nav-custom" %>
+          </span>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-<body>
-
-<div class="mainContent container-fluid">
-<!-- Navigation  -->
-  <% if user_signed_in? %>
-<div class="container-fluid my_need_a_margin">
-  <nav class="navbar navbar-default navbar-fixed-top my_navbar">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <span class="my_navbar_image">
-            <%= link_to image_tag(current_user.image.url(:small)), root_path, class:"image_tip pro-thumb" %>
-            <%= link_to "Hi " + current_user.first_name, users_show_path, class:"nav-custom" %>
-        </span>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-        <!--Right side of the nav bar  -->
-        <ul class="nav navbar-nav navbar-right">
-
-          <!-- <li class="navbar-form ">
-            <form class="form-group" action='/users/search_users' method='get'>
-            <input class="form-control half-width" type="text" name="creator" id="user" />
-            <div class="actions my_inline">
-              <input class="btn btn-default my_tiny_font" type="submit" value="Search Users"/>
-            </div>
-          </form>
-        </li> -->
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'Your Profile', users_show_path, class:"nav-custom" %></li>
-              <li><%= link_to 'Edit Your Profile', edit_user_registration_path, class:"nav-custom" %></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-custom" %></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/users/show/followPage">Friends</a></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to "Search Users", users_search_users_path %></li>
-              <li><a href="/users/all">View All Users</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
-              <li><a href="/adventures">View All Adventures!</a></li>
-            </ul>
-        </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-</div>
-<!-- End navigation for signed-in users -->
-
-
-      <% else %>
-
-<!-- Begin navigation for non-signed in users -->
-    <div class="container-fluid need_a_margin">
-      <nav class="navbar navbar-default navbar-fixed-top my_navbar">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <span class="my_navbar_image">
-    </span>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <!--Right side of the nav bar  -->
-            <ul class="nav navbar-nav navbar-right">
-
-
+          <!--Right side of the nav bar  -->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li class="navbar-form ">
+              <form class="form-group" action='/users/search_users' method='get'>
+              <input class="form-control half-width" type="text" name="creator" id="user" />
+              <div class="actions my_inline">
+                <input class="btn btn-default my_tiny_font" type="submit" value="Search Users"/>
+              </div>
+            </form>
+          </li> -->
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Your Profile', users_show_path %></li>
+                  <li><%= link_to 'Edit Your Profile', edit_user_registration_path %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/users/show/followPage">Friends</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "Search Users", users_search_users_path %></li>
+                  <li><a href="/users/all">View All Users</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
                   <li><a href="/adventures">View All Adventures!</a></li>
                 </ul>
             </li>
-            <div class="navbar-form navbar-right sign_in_buttons">
-              <a href="/users/sign_in" class="btn btn-default my_tiny_font">Sign In</a>
-              <a href="/users/sign_up" class="btn btn-default my_tiny_font">Sign Up</a>
-            </div>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div>
-      </nav>
-    </div>
-
-    <% end %>
-</div>
-
-
-
-<!-- <footer>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12 text-center page-scroll" href="#">
-        <span class="fa-stack fa-3x">
-          <img src="css/bucketlist_images/paint_bucket.png" height="75" width="75">
-        </span>
-      </div>
-      <div class="col-lg-12 text-center">
-        <span class="copyright">Copyright 2015&copy; Dysfunctional. All Rights Reserved
-        </span>
-      </div>
-    </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
   </div>
-</footer> -->
-<%= yield %>
-</body>
+  <!-- End navigation for signed-in users -->
+
+
+        <% else %>
+
+  <!-- Begin navigation for non-signed in users -->
+      <div class="container-fluid need_a_margin">
+        <nav class="navbar navbar-default navbar-fixed-top my_navbar">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="my_navbar_image">
+      </span>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <!--Right side of the nav bar  -->
+              <ul class="nav navbar-nav navbar-right">
+
+
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
+                    <li><a href="/adventures">View All Adventures!</a></li>
+                  </ul>
+              </li>
+              <div class="navbar-form navbar-right sign_in_buttons">
+                <a href="/users/sign_in" class="btn btn-default my_tiny_font">Sign In</a>
+                <a href="/users/sign_up" class="btn btn-default my_tiny_font">Sign Up</a>
+              </div>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div>
+        </nav>
+      </div>
+
+      <% end %>
+  </div>
+
+
+
+  <!-- <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 text-center page-scroll" href="#">
+          <span class="fa-stack fa-3x">
+            <img src="css/bucketlist_images/paint_bucket.png" height="75" width="75">
+          </span>
+        </div>
+        <div class="col-lg-12 text-center">
+          <span class="copyright">Copyright 2015&copy; Dysfunctional. All Rights Reserved
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <%= yield %>
+  </body>
 </html>

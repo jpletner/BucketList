@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Live Before You Die</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link href="css/bucket_list_css.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bucket_list_js_.js"></script>
+    <script src="js/get_random_adventure_home.js"></script>
+
+  </head>
+<body>
+      <!-- Begin carousel -->
+
+<div class="Topper martop">
+  <div id="myMainPageTop">
+    <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li class="carousel-circles" data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+          <li class="carousel-circles" data-target="#mainCarousel" data-slide-to="1"></li>
+          <li class="carousel-circles" data-target="#mainCarousel" data-slide-to="2"></li>
+          <li class="carousel-circles" data-target="#mainCarousel" data-slide-to="3"></li>
+          <li class="carousel-circles" data-target="#mainCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+            <!--Each Carousel Item(Picture)  -->
+
+        <div class="item active">
+          <img src="css/bucketlist_images/base-jumping.jpg" alt="Basejumping">
+        </div>
+
+        <div class="item">
+          <img src="css/bucketlist_images/Thailand.jpg" alt="Thailand">
+        </div>
+
+        <div class="item">
+          <img src="css/bucketlist_images/Slovenia.jpg" alt="Adriatic">
+        </div>
+
+        <div class="item" >
+          <img src="css/bucketlist_images/Bulls.jpg" alt="Bulls">
+        </div>
+
+        <div class="item" >
+          <img src="css/bucketlist_images/phosflourescent.jpg" alt="Maldives">
+        </div>
+
+          <!--End each Carousel Item  -->
+      <!-- Left and right controls -->
+          <a class="left carousel-control" href="#mainCarousel" role="button" data-slide="prev">
+              <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next">
+              <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+            <span class="sr-only">Next</span>
+          </a>
+            <!--End of L&R controls  -->
+        </div> <!-- End of carousel-inner -->
+    </div>
+
+    <!--End of Carousel-->
+  <!--Begin Headline  -->
+
+
+    <div id="headline-text">
+      <div class="headline-image">
+        <img src="css/bucketlist_images/paint_bucket.png" height="150" width="150">
+      </div>
+
+      <h1>Live Before You Die</h1>
+      <h3> your bucket list for life</h3>
+    </div>
+      <!-- end of headline-text -->
+  </div>
+
+  <!-- Main Page Sign-In Section -->
+  <div id="sign-in-main-page">
+    <form action= "/users/sign_in" class= "form-inline" role="form" id="new_user" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5h/ORD5HNW8Ab0A7bYxrKUC33utOCesBwqmA167JpnZV1vbKMqp8KthVaMioGHjZfdZ3u1FGQfDUqSkHr+hFCA==" />
+      <div class="form-group email_input_landing">
+        <label for="user_email">Email address:</label>
+        <input autofocus="autofocus" type="email" value="" placeholder="email" name="user[email]" class="form-control" id="user_email" />
+      </div>
+      <div class="form-group password_input_landing">
+        <label for="user_password">Password:</label>
+        <input type="password" name="user[password]" placeholder="password" class="form-control" id="user_password" />
+      </div>
+
+      <div class="form-group password_input_landing">
+        <input type="submit" value="Log in" class="sign-inlinks btn btn-default"/>
+      </div>
+
+      <div class="form-group password_input_landing">
+              <!-- <input type="submit" value="Sign Up" class="sign-inlinks btn btn-default"/> -->
+        <a href="/users/sign_up"><span class="sign-inlinks btn btn-default">Sign Up</span>
+        </a>
+      </div>
+    </form>
+  </div> <!-- end sign-in-main-page -->
+
+   <!--END OF #mymainpagetop -->
+
+  <!--Navigation Bar  -->
+  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+  <div class="container topnav">
+    <div class="navbar-header">
+        <!-- Brand and toggle get grouped for better mobile display -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand page-scroll" href="#">
+        <span class="fa-stack fa-1x">
+          <img src="css/bucketlist_images/paint_bucket.png" height="40" width="40">
+        </span>
+
+      </a>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li><h4>LBYD</h4></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="users/search_users"></a></li>
+          <li><a href="adventures/search_adventures">Search Adventures</a></li>
+          <li><a href="users/search_users">Search Users</a></li>
+        </ul>
+      </div>
+  </div><!--end of .navbar-default  -->
+  </nav>
+</div><!--end of navbar .navbar-wrapper  -->
+
+  <!--Beginning of links  -->
+
+<!-- First Link -->
+<div class="content-section-a">
+  <div id="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+          <div class="clearfix">
+          </div>
+        <h2 class="section-heading">
+          <a href="adventures/search_adventures">Search For Adventures</a>
+        </h2>
+        <p class="lead">
+          There are adventures out there already waiting for you. Search through people you may already know or people you may be taking the adventure of a lifetime with. The adventures are out there waiting for you, search to see if there is something that is right up your alley.
+        </p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <img class="img-responsive" src="css/bucketlist_images/trees.jpg" alt>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Second Link  -->
+
+<div class="content-section-b">
+  <div id="container">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+        <hr class="section-heading-spacer">
+          <div class="clearfix">
+          </div>
+        <h2 class="section-heading">
+
+          <a href="/users/show">Join Other Users</a>
+        </h2>
+        <p class="lead">
+          There are already thousands of people using our esrvice, that just may want to look for a companion for their trip. You may find people that you already know and learn even more about them. Or you can find others that you haven't met YET. <a  href="/users/sign_up">Sign Up</a> and see who you may find. You may be surprised who is already using LBYD.
+
+        </p>
+      </div>
+      <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+        <img class="img-responsive" src="css/bucketlist_images/friends.jpg" alt>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Third Link -->
+<div class="content-section-a">
+  <div id="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+          <div class="clearfix">
+          </div>
+        <h2 class="section-heading">
+          <a href="adventures">Existing Adventures</a>
+        </h2>
+        <p class="lead">
+          Here are some examples of adventures that have already been added to our service. You may see something that you didn't even know you wanted to do.
+        </p>
+      </div>
+      <div id="bucket_image2" class="col-lg-5 col-lg-offset-2 col-sm-6"></div>
+    </div>
+  </div>
+</div>
+  <!-- End links  -->
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center page-scroll" href="#">
+        <span class="fa-stack fa-3x">
+          <img src="css/bucketlist_images/paint_bucket.png" height="75" width="75">
+        </span>
+      </div>
+      <div class="col-lg-12 text-center">
+        <span class="copyright">Copyright 2015&copy; Dysfunctional. All Rights Reserved
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>

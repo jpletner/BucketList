@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
     devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
+    root 'public#bucket_list_index'
+
     match('/users/:id/get_random_adventure', {:via => :get, :to => 'users#get_random_adventure'})
     match('/adventures/get_random_adventure', {:via => :get, :to => 'adventures#get_random_adventure'})
 
@@ -34,9 +36,8 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-    match '/', :via => [:get], :to => redirect('/bucket_list_index.html')
+    # match '/', :via => [:get], :to => redirect('/bucket_list_index.html')
   # You can have the root of your site routed with "root"
-    root 'adventures#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
