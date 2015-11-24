@@ -14,7 +14,9 @@
 .DS_Store
 
 #added to not store paperclip images
-/public/system/
+/public/system/adventures
+/public/system/pictures
+/public/system/users
 
 #simple coverage
 coverage

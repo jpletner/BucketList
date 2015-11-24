@@ -5,12 +5,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poppins:400,300' rel='stylesheet' type='text/css'>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-   
+
 
     <title> Bucketlist </title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -41,7 +41,11 @@
             <span class="icon-bar"></span>
           </button>
           <span class="my_navbar_image">
+            <% if !current_user.image.blank? %>
               <%= link_to image_tag(current_user.image.url(:small)), root_path, class:"image_tip pro-thumb" %>
+            <% else %>
+              <a class="pro-thumb image_tip" href="/"><img src="/system/person-placeholder.jpg"/></a>
+            <% end %>
               <%= link_to "Hi " + current_user.first_name, users_show_path, class:"nav-custom" %>
           </span>
         </div>
@@ -135,7 +139,7 @@
 
 
 <%= yield %>
-      
+
 
 
   </body>
