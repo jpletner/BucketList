@@ -15,5 +15,5 @@
 //= require images
 //= require users
 //= require_tree .
-//= require get_random_adventure
+//= require get_random_adventure_home
 //= require owl.carousel

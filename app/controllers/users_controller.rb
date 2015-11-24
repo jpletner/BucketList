@@ -43,11 +43,9 @@ before_action :authenticate_user!
   end
 
   def get_random_adventure
-      @user = User.find(params[:id])
+      @user = User.find(params[:id])    
       @adventure = @user.adventures.sample
     respond_to do |format|
-      format.html { redirect_to adventures_url }
-      format.js
       format.json { render :show, status: :ok, location: @adventure }
     end
   end
