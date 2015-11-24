@@ -104,7 +104,7 @@
                 <span class="icon-bar"></span>
               </button>
               <span class="my_navbar_image">
-                  <img src="css/bucketlist_images/paint_bucket.png" height="40" width="40">
+                  <%= link_to image_tag("paintbucket.png"),root_path, class: "pro-thumb" %>
               </span>
             </div>
 
@@ -114,7 +114,7 @@
               <!--Right side of the nav bar  -->
               <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle nav-custom-main" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
                         <li><a href="/adventures">View All Adventures!</a></li>

@@ -506,7 +506,7 @@ padding: 15px;
 a.pro-thumb {
     img {
         height: 40px !important;
-        width: 50px !important;
+        width: 40px !important;
         padding: 0;
         margin: 0;
     }
@@ -514,19 +514,26 @@ a.pro-thumb {
 
 .signin {
     display: flex;
+    line-height: 20px;
 }
-
 
 a.nav-custom {
     color: $text_default !important;
     font-weight: 600 !important;
-    font-size: 13px;
+    font-size: 13px !important;
+    font-family: verdana, arial, helvetica, sans-serif;
 }
 
 a.nav-custom:hover {
     color: $bg_highlight !important;
     text-decoration: none;
     background-color: none;
+}
+
+a.nav-custom-main {
+    color: $text_default !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
 }
 
 .comments {
