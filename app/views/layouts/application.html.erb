@@ -55,7 +55,7 @@
           <ul class="nav navbar-nav navbar-right">
 
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle dark-font" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Your Profile', users_show_path %></li>
                   <li><%= link_to 'Edit Your Profile', edit_user_registration_path %></li>
@@ -65,7 +65,7 @@
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle dark-font" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="/users/show/followPage">Friends</a></li>
                   <li role="separator" class="divider"></li>
@@ -75,7 +75,7 @@
             </li>
 
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle nav-custom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle dark-font" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
                   <li><a href="/adventures">View All Adventures!</a></li>
@@ -114,7 +114,7 @@
               <!--Right side of the nav bar  -->
               <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle nav-custom-main" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle dark-font" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adventures<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><%= link_to "Search Adventures!", adventures_search_adventures_path %></li>
                         <li><a href="/adventures">View All Adventures!</a></li>
@@ -136,22 +136,8 @@
   </div>
 
 
+<%= yield %>
+      
 
-  <!-- <footer>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12 text-center page-scroll" href="#">
-          <span class="fa-stack fa-3x">
-            <img src="css/bucketlist_images/paint_bucket.png" height="75" width="75">
-          </span>
-        </div>
-        <div class="col-lg-12 text-center">
-          <span class="copyright">Copyright 2015&copy; Dysfunctional. All Rights Reserved
-          </span>
-        </div>
-      </div>
-    </div>
-  </footer> -->
-  <%= yield %>
   </body>
 </html>

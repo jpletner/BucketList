@@ -53,20 +53,6 @@
   width: 50%;
   margin-top: 125px;
 }
-.my_box_center_for_sign_in{
-  background-color: #e4e6dd;
-  border-radius: 10px;
-  color: black;
-  left: 50%;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-top: 10px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-}
 
 /* css for show.html.erb (profile page)*/
 /* top right section (profile pic, about me)*/
