@@ -45,9 +45,13 @@ before_action :authenticate_user!
   def get_random_adventure
       @user = User.find(params[:id])    
       @adventure = @user.adventures.sample
-    respond_to do |format|
-      format.json { render :show, status: :ok, location: @adventure }
-    end
+      if !@adventure.nil?
+            respond_to do |format|
+              format.json { render :show, status: :ok, location: @adventure }
+            end
+      else
+          "Check back soon! Bucket List Coming!"
+      end
   end
 
   def search_users
