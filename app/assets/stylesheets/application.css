@@ -54,6 +54,7 @@ body {
  .my_navbar {
    background-color: #ee8012;
    color: #000003;
+   border: 2px solid #ee8012;
  }
 
  .my_navbar_image {
@@ -61,11 +62,6 @@ body {
    height: 50px;
    padding: 10px 10px;
  }
-
- .sign_in_buttons{
-   margin-right: 10px;
- }
-
 
  body {
    font-family: "Lato", "Helvetica Neue", Helvetica,Arial,sans-serif;
@@ -86,6 +82,7 @@ h4 {
    font-size: 1.5em;
    font-family: 'Fjalla One', sans-serif;
 }
+
 footer {
    background-color: #ee8012;
    /*color: #fbfbfb;*/
@@ -118,5 +115,4 @@ footer {
      float: left;
      width: 200px;
      border-top: 3px solid #e7e7e7;
-
  }

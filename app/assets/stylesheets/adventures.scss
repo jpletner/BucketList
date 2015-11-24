@@ -77,7 +77,6 @@ h4 {
 
 .nopad {
     padding: 0;
-    margin:0;
 }
 
 //View Profile Page
@@ -321,6 +320,10 @@ a.image_tip:hover {
     font-size: $lg_fs;
 }
 
+.dark-font {
+    color: $text_default;
+}
+
 //Buttons
 .btn-buckets {
     color: $bg_highlight;
@@ -348,21 +351,24 @@ a.image_tip:hover {
 // coverphoto text
 .my_adventure_main_info {
   margin-top: -400px;
-  position:absolute;
+  position: absolute;
   text-align: center;
+  width: 100%;
 }
 
 .my_adventure_title {
   color: #fff;
   font-size: $xlg_fs;
   opacity: 0.8;
-
+  text-transform: capitalize;
+  text-shadow: 2px 2px $text_default;
 }
 .my_adventure_creator {
   color: #fff;
   font-size: $lg_fs;
   opacity: 0.6;
-
+  text-transform: capitalize;
+  text-shadow: 2px 2px $text_default;
 }
 .my_adventure_info {
   margin-top: 30px;
@@ -392,7 +398,6 @@ a.image_tip:hover {
   font-size: $df_fs;
 }
 .my_edit_link a {
-  color:$text_highlight;
   font-size: $df_fs;
 }
 
@@ -404,12 +409,12 @@ a.image_tip:hover {
 
 .my_tags_headline {
   color: $text_default;
-
 }
 
 .my_adventure_tags_box {
   background-color: $bg_highlight;
   color: $text_highlight;
+  height: auto;
 }
 
 .my_dark_space_top {
@@ -424,7 +429,6 @@ a.image_tip:hover {
 .my_photo_headline {
   text-align: center;
 }
-
 
 .my_dark_space_bottom {
   height: 5px;
@@ -477,11 +481,11 @@ font-size: $df_fs;
 
 .my_adventure_comment_section {
   background-color: $bg_highlight;
-  height: 250px;
+  height: auto;
 }
 
 .my_adventure_comments {
-height: 200px;
+height: auto;
 padding: 15px;
 
 }
@@ -508,20 +512,24 @@ a.pro-thumb {
     }
 }
 
-.dark-font {
-    color: $text_default;
+.signin {
+    display: flex;
 }
+
 
 a.nav-custom {
     color: $text_default !important;
     font-weight: 600 !important;
-    background-color: transparent !important;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 13px;
 }
 
 a.nav-custom:hover {
     color: $bg_highlight !important;
     text-decoration: none;
     background-color: none;
+}
+
+.comments {
+    margin: 10px 40px;
+    text-transform: capitalize;
 }

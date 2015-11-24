@@ -23,17 +23,14 @@
 </div>
 
 <!-- Header info Begins  -->
-<div class="container my_adventure_main_info">
-  <div class="row">
-  <h2 class="my_adventure_title">
-    <%= @adventure.title %>
-  </h2>
-
+<div class="my_adventure_main_info">
+        <h2 class="my_adventure_title">
+        <%= @adventure.title %>
+        </h2>
   <h3 class ="my_adventure_creator">
     by <br>
     <%= @adventure.creator %>
   </h3>
-</div>
 </div>
 
 <!-- End Header info -->
@@ -68,7 +65,7 @@
       <%= @adventure.priority %>
       </p> -->
 
-      <span class="my_edit_link"><%= link_to 'Edit My Adventure', edit_adventure_path(@adventure) %></span>
+      <span class="my_edit_link"><%= link_to 'Edit My Adventure', edit_adventure_path(@adventure), class:"btn btn-buckets" %></span>
     </div><!-- End additional info -->
 
     <div class="col-md-1 my_vertical_spacer"></div>
@@ -80,7 +77,7 @@
 
          <% if !@adventure.tags.empty? %>
            <% @adventure.tags.each do | adventure | %>
-              <%= adventure %>
+              <span class="main-font"><%= adventure %> |</span>
            <% end %>
          <% else %>
           <p><em>Be the first to tag this adventure.</em></p>
@@ -94,7 +91,7 @@
                 <input class="form-control half-width" type="text" name="tag" id="adventure_tag" />
             </div>
             <div class="actions">
-              <input class="btn btn-default" type="submit" value="Add Tag"/>
+              <input class="btn btn-buckets" type="submit" value="Add Tag"/>
             </div>
         </form>
       </div><!--End add_tag_form  -->
@@ -136,7 +133,7 @@
       <div id="my_comment_scroll_box">
           <% if !@adventure.comments.empty? %>
             <% @adventure.comments.each do | adventure | %>
-              <p><%= adventure %></p><br>
+              <p class="main-font comments"><%= adventure %></p>
             <% end %>
           <% else %>
             <p><em>Be the first to comment on this adventure.</em></p>
@@ -154,7 +151,7 @@
           <input class="form-control half-width" type="text" name="comment" id="adventure_comment" />
       </div>
       <div class="actions">
-        <input class="btn btn-default" type="submit" value="Add Comment"/>
+        <input class="btn btn-buckets" type="submit" value="Add Comment"/>
       </div>
     </form>
   </div>
