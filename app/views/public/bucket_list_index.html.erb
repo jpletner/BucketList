@@ -45,39 +45,39 @@
 
 
     <div id="headline-text">
-      <div class="headline-image">
-        <img src="css/bucketlist_images/paint_bucket.png" height="150" width="150">
+          <div class="headline-image">
+            <img src="css/bucketlist_images/paint_bucket.png" height="150" width="150">
+          </div>
+
+          <h1>Live Before You Die</h1>
+          <h3> your bucket list for life</h3>
+
+          <!-- end of headline-text -->
+
+
+          <!-- Main Page Sign-In Section -->
+          <div id="sign-in-main-page">
+            <form action= "/users/sign_in" class= "form-inline" role="form" id="new_user" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5h/ORD5HNW8Ab0A7bYxrKUC33utOCesBwqmA167JpnZV1vbKMqp8KthVaMioGHjZfdZ3u1FGQfDUqSkHr+hFCA==" />
+              <div class="form-group email_input_landing">
+                <label for="user_email">Email address:</label>
+                <input autofocus="autofocus" type="email" value="" placeholder="email" name="user[email]" class="form-control" id="user_email" />
+              </div>
+              <div class="form-group password_input_landing">
+                <label for="user_password">Password:</label>
+                <input type="password" name="user[password]" placeholder="password" class="form-control" id="user_password" />
+              </div>
+
+              <div class="form-group password_input_landing">
+                <input type="submit" value="Log in" class="sign-inlinks btn btn-default"/>
+              </div>
+
+              <div class="form-group password_input_landing">
+                      <!-- <input type="submit" value="Sign Up" class="sign-inlinks btn btn-default"/> -->
+                <a href="/users/sign_up"><span class="sign-inlinks btn btn-default">Sign Up</span></a>
+              </div>
+            </form>
+          </div> <!-- end sign-in-main-page -->
       </div>
-
-      <h1>Live Before You Die</h1>
-      <h3> your bucket list for life</h3>
-    
-      <!-- end of headline-text -->
-
-
-  <!-- Main Page Sign-In Section -->
-      <div id="sign-in-main-page">
-        <form action= "/users/sign_in" class= "form-inline" role="form" id="new_user" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5h/ORD5HNW8Ab0A7bYxrKUC33utOCesBwqmA167JpnZV1vbKMqp8KthVaMioGHjZfdZ3u1FGQfDUqSkHr+hFCA==" />
-          <div class="form-group email_input_landing">
-            <label for="user_email">Email address:</label>
-            <input autofocus="autofocus" type="email" value="" placeholder="email" name="user[email]" class="form-control" id="user_email" />
-          </div>
-          <div class="form-group password_input_landing">
-            <label for="user_password">Password:</label>
-            <input type="password" name="user[password]" placeholder="password" class="form-control" id="user_password" />
-          </div>
-
-          <div class="form-group password_input_landing">
-            <input type="submit" value="Log in" class="sign-inlinks btn btn-default"/>
-          </div>
-
-          <div class="form-group password_input_landing">
-                  <!-- <input type="submit" value="Sign Up" class="sign-inlinks btn btn-default"/> -->
-            <a href="/users/sign_up"><span class="sign-inlinks btn btn-default">Sign Up</span></a>
-          </div>
-        </form>
-      </div> <!-- end sign-in-main-page -->
-</div>
    </div>  <!--END OF #mymainpagetop -->
 
   <!--Beginning of links  -->
