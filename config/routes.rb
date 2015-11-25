@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
     match('/users/:id/get_random_adventure', {:via => :get, :to => 'users#get_random_adventure'})
     match('/adventures/get_random_adventure', {:via => :get, :to => 'adventures#get_random_adventure'})
-
     match('/adventures/:id/add_comment' , {:via => :post, :to => 'adventures#add_comment'})
     match('/adventures/:id/add_tag' , {:via => :post, :to => 'adventures#add_tag'})
     match('/users/search_users' , {:via => :get, :to => 'users#search_users'})

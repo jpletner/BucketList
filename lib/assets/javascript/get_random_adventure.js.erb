@@ -1,0 +1,38 @@
+$(document).ready(function() {
+
+ 
+      var interval = setInterval(resetBucket, 5000);
+
+      var userId = $('div.user_id').text()
+    
+      $.ajax({
+          dataType: 'json',
+          url: '/users/'+ userId +'/get_random_adventure',
+          success: function(data){
+            if (data.id == null) {
+              $("#bucket_image").html("<p class='text-center marlgtop'>Check back soon! Bucket List Coming!<p>"); 
+            }
+            else {
+              $("#bucket_image").html("<img src='" + data.image + "'/>");
+            }  
+              
+          }
+      });
+
+        function resetBucket() {
+           $.ajax({
+             dataType: 'json',
+             url: '/users/'+ userId +'/get_random_adventure',
+             success: function(data){
+                 if (data.id == null) {
+                  $("#bucket_image").html("<p class='text-center marlgtop'>Check back soon! Bucket List Coming!<p>"); 
+                }
+                else {
+                  $("#bucket_image").html("<img src='" + data.image + "'/>");
+                }  
+             }
+            });
+        }
+ 
+  
+});

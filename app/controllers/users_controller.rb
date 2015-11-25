@@ -50,7 +50,9 @@ before_action :authenticate_user!
               format.json { render :show, status: :ok, location: @adventure }
             end
       else
-          "Check back soon! Bucket List Coming!"
+          respond_to do |format|
+              format.json { render :json => {}, :status => :ok } 
+          end
       end
   end
 
