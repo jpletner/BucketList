@@ -164,25 +164,11 @@ a {
 }
 
 /*begin footer*/
-/*#footer_logo{
-  padding-top: 30px;
-}*/
 
 footer {
   background-color: #ee8012;
-  /*color: #fbfbfb;*/
   padding: 10px 0;
-  /*text-align:right;*/
 }
-
-/*.footerlist{
-  list-style-type: none;
-}
-
-.footer-info-headline{
-  line-height: 25px;
-  text-decoration: underline;
-}*/
 
 .content-section-a {
   padding-left: 0;
@@ -211,7 +197,6 @@ footer {
 }
 
 html {
-  background-color: #e4e6dd;
   height: 100%;
   width: 100%;
 }

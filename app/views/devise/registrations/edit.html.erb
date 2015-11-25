@@ -1,7 +1,7 @@
 <div class="container my_box_center_for_search_mod text-center">
 
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit My Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -56,13 +56,13 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class:"btn btn-buckets" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h4 class="martop">Unhappy? Cancel my account:</h4>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Cancel", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-buckets" %></p>
 
 <%= link_to "Back", :back %>
 </div>
