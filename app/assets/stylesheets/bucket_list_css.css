@@ -84,11 +84,11 @@ h4 {
 #sign-in-main-page{
   background-color: #0f0a01;
   border-radius: 10px;
-  top: 80%;
+  bottom: 5%;
   color: #fbfbfb;
   left: 10%;
   padding: 15px;
-  position: absolute;
+  margin: 5% auto;
   text-align: center;
   width: 75%;
   z-index:12;
@@ -97,7 +97,6 @@ h4 {
 .form-button{
   margin-left: 45px;
   padding-top: 7px;
-
 }
 .email_input_landing {
   margin left: 20px;

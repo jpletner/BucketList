@@ -51,34 +51,34 @@
 
       <h1>Live Before You Die</h1>
       <h3> your bucket list for life</h3>
-    </div>
+    
       <!-- end of headline-text -->
-  </div>
+
 
   <!-- Main Page Sign-In Section -->
-  <div id="sign-in-main-page">
-    <form action= "/users/sign_in" class= "form-inline" role="form" id="new_user" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5h/ORD5HNW8Ab0A7bYxrKUC33utOCesBwqmA167JpnZV1vbKMqp8KthVaMioGHjZfdZ3u1FGQfDUqSkHr+hFCA==" />
-      <div class="form-group email_input_landing">
-        <label for="user_email">Email address:</label>
-        <input autofocus="autofocus" type="email" value="" placeholder="email" name="user[email]" class="form-control" id="user_email" />
-      </div>
-      <div class="form-group password_input_landing">
-        <label for="user_password">Password:</label>
-        <input type="password" name="user[password]" placeholder="password" class="form-control" id="user_password" />
-      </div>
+      <div id="sign-in-main-page">
+        <form action= "/users/sign_in" class= "form-inline" role="form" id="new_user" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5h/ORD5HNW8Ab0A7bYxrKUC33utOCesBwqmA167JpnZV1vbKMqp8KthVaMioGHjZfdZ3u1FGQfDUqSkHr+hFCA==" />
+          <div class="form-group email_input_landing">
+            <label for="user_email">Email address:</label>
+            <input autofocus="autofocus" type="email" value="" placeholder="email" name="user[email]" class="form-control" id="user_email" />
+          </div>
+          <div class="form-group password_input_landing">
+            <label for="user_password">Password:</label>
+            <input type="password" name="user[password]" placeholder="password" class="form-control" id="user_password" />
+          </div>
 
-      <div class="form-group password_input_landing">
-        <input type="submit" value="Log in" class="sign-inlinks btn btn-default"/>
-      </div>
+          <div class="form-group password_input_landing">
+            <input type="submit" value="Log in" class="sign-inlinks btn btn-default"/>
+          </div>
 
-      <div class="form-group password_input_landing">
-              <!-- <input type="submit" value="Sign Up" class="sign-inlinks btn btn-default"/> -->
-        <a href="/users/sign_up"><span class="sign-inlinks btn btn-default">Sign Up</span></a>
-      </div>
-    </form>
-  </div> <!-- end sign-in-main-page -->
-
-   <!--END OF #mymainpagetop -->
+          <div class="form-group password_input_landing">
+                  <!-- <input type="submit" value="Sign Up" class="sign-inlinks btn btn-default"/> -->
+            <a href="/users/sign_up"><span class="sign-inlinks btn btn-default">Sign Up</span></a>
+          </div>
+        </form>
+      </div> <!-- end sign-in-main-page -->
+</div>
+   </div>  <!--END OF #mymainpagetop -->
 
   <!--Beginning of links  -->
 
@@ -91,21 +91,18 @@
           <div class="clearfix">
           </div>
         <h2 class="section-heading">
-          <a href="adventures/search_adventures">Search For Adventures</a>
+          <a href="adventures">Adventure Gallery</a>
         </h2>
         <p class="lead">
-          There are adventures out there already waiting for you. Search through people you may already know or people you may be taking the adventure of a lifetime with. The adventures are out there waiting for you, search to see if there is something that is right up your alley.
+          Here are some examples of adventures that have already been added to our service. You may see something that you didn't even know you wanted to do.
         </p>
       </div>
-      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img class="img-responsive" src="css/bucketlist_images/trees.jpg" alt>
-      </div>
+      <div id="bucket_image2" class="col-lg-5 col-lg-offset-2 col-sm-6"></div>
     </div>
   </div>
 </div>
 
-      <!-- Second Link  -->
-
+<!-- Second Link  -->
 <div class="content-section-b">
   <div class="container">
     <div class="row">
@@ -136,13 +133,15 @@
           <div class="clearfix">
           </div>
         <h2 class="section-heading">
-          <a href="adventures">Existing Adventures</a>
+          <a href="adventures/search_adventures">Search For Adventures</a>
         </h2>
         <p class="lead">
-          Here are some examples of adventures that have already been added to our service. You may see something that you didn't even know you wanted to do.
+          There are adventures out there already waiting for you. Search through people you may already know or people you may be taking the adventure of a lifetime with. The adventures are out there waiting for you, search to see if there is something that is right up your alley.
         </p>
       </div>
-      <div id="bucket_image2" class="col-lg-5 col-lg-offset-2 col-sm-6"></div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <img class="img-responsive" src="css/bucketlist_images/trees.jpg" alt>
+      </div>
     </div>
   </div>
 </div>
