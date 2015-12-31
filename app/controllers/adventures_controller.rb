@@ -80,7 +80,11 @@ class AdventuresController < ApplicationController
   def add_comment
     @adventure = Adventure.find(params[:id])
     comment = params[:comment]
-    if !comment.nil?
+    if !comment.blank? && @adventure.comments.blank?
+      @adventure.comments = []
+      @adventure.comments << comment
+      @adventure.save
+    elsif !comment.blank?
       @adventure.comments << comment
       @adventure.save
     end

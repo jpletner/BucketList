@@ -74,7 +74,7 @@
       <h3 class="my_tags_headline">Tags:</h3>
         <p class="my_tags">
 
-         <% if !@adventure.tags.empty? %>
+         <% if !@adventure.tags.blank? %>
            <% @adventure.tags.each do | adventure | %>
               <span class="main-font"><%= adventure %> |</span>
            <% end %>
@@ -109,7 +109,7 @@
 
 <!-- Other Adventure Images -->
 
-    <% if !@adventure.pictures.empty? %>
+    <% if !@adventure.pictures.blank? %>
     <div id="owl-demo">
       <% @adventure.pictures.each do |picture| %>
       <%= image_tag(picture.photo.url(:large), :class => "owl_item") %>
@@ -130,7 +130,7 @@
     <div class="col-sm-5 my_adventure_comments">
       <h3 class="my_comment_headline">Comments:<h3>
       <div id="my_comment_scroll_box">
-          <% if !@adventure.comments.empty? %>
+          <% if !@adventure.comments.blank? %>
             <% @adventure.comments.each do | adventure | %>
               <p class="main-font comments"><%= adventure %></p>
             <% end %>

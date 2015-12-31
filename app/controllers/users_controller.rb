@@ -39,11 +39,11 @@ before_action :authenticate_user!
       @user.adventures << newAdventure
       @user.save
     end
-    render 'show.html.erb'
+    redirect_to "/users/#{@user.id}"
   end
 
   def get_random_adventure
-      @user = User.find(params[:id])    
+      @user = User.find(params[:id])
       @adventure = @user.adventures.sample
       if !@adventure.nil?
             respond_to do |format|
@@ -51,7 +51,7 @@ before_action :authenticate_user!
             end
       else
           respond_to do |format|
-              format.json { render :json => {}, :status => :ok } 
+              format.json { render :json => {}, :status => :ok }
           end
       end
   end
