@@ -34,40 +34,7 @@
   top:10%;
   width:100%;
   z-index:12;/* z-index of carousel is 10*/
-
 }
-
-/*sign in form*/
-
-/*#sign-in-main-page{
-  background-color: #353536;
-  border-radius: 20px;
-  top: 65%;
-  color: white;
-  left: 10%;
-  padding: 20px;
-  position: absolute;*/
-  /*text-align: center;*/
-  /*width: 80%;
-  z-index:12;
-
-}
-.form-button{
-  margin-left: 45px;
-
-}
-.email_input_landing {
-  margin left: 20px;
-}
-.password_input_landing {
-  margin-left: 30px;
-}
-
-.sign-inlinks a {
- color: white;
- margin-left: 45px;
- text-decoration: underline
-}*/
 
 /*Navigation Bar*/
 
