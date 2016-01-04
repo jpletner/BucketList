@@ -35,7 +35,7 @@ gem 'omniauth-facebook'
 gem 'simplecov', :require => false, :group => :test
 gem 'will_paginate'
 gem 'owlcarousel-rails'
-gem 'aws-sdk'
+gem 'aws-sdk-v1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -68,6 +68,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
