@@ -1,28 +1,6 @@
-== README
+A group collaboration completed at SD Learn.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Live Before You Die is a bucket list style application where users can add events that interest them and view the events of others. Users can interact with each other by searching for events, following users, and by commenting on event pages.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Collaborators:
+Jenny Pletner, Samantha Montoya, Del Phillips, Erin Clark, and Joseph Cabral
